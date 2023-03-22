@@ -6,103 +6,110 @@
     <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
+    <!--lien vers la police fontawesome pour les icônes-->
+    <script src="https://kit.fontawesome.com/3e43fca011.js" crossorigin="anonymous"></script>
+    </script>
     <title>Ohmyfood</title>
 </head>
 
 <body>
-    <header>
-        <img src="" alt="logo">
-        <p>Champs de recherche</p>
-        <h1>Titre H1</h1>
-        <h2>Titre H2</h2>
-        <input type="button" value="Bouton 1">
+    <header class="header">
+        <h1 class="header__logo">ohmyfood</h1>
+        <div class="header__input">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Champs de recherche</p>
+        </div>
+        <h2 class="header__heading">Titre H1</h1>
+            <h3 class="header__subtitle">Titre H2
+        </h2>
+        <input type="button" value="Bouton 1" class="header__button">
     </header>
     <!--SECTION FONCTIONNEMENT-->
-    <section>
-        <h2>Titre de section 1</h2>
-        <div>
-            <p>icone</p>
-            <p>Texte 1</p>
+    <section class="process">
+        <h2 class="process__heading">Titre de section 1</h2>
+        <div class="process__button">
+            <i class="fa-sharp fa-solid fa-mobile-screen-button process__icon"></i>
+            <p>Texte</p>
             <div>
-                <p>icone chiffre indépendant</p>
+                <p>1</p>
             </div>
         </div>
-        <div>
-            <p>icone</p>
-            <p>Texte 1</p>
+        <div class="process__button">
+            <i class="fa-solid fa-list-ul process__icon"></i>
+            <p>Texte</p>
             <div>
-                <p>icone chiffre indépendant</p>
+                <p>2</p>
             </div>
         </div>
-        <div>
-            <p>icone</p>
-            <p>Texte 1</p>
+        <div class="process__button">
+            <i class="fa-solid fa-store process__icon"></i>
+            <p>Texte</p>
             <div>
-                <p>icone chiffre indépendant</p>
+                <p>3</p>
             </div>
         </div>
     </section>
     <!--SECTION RESTAURANTS-->
-    <section>
-        <div>
-            <img src="" alt="image restau 1">
-            <div>
-                <div>
+    <section class="restaurants">
+        <h2 class="restaurants__header">Titre 2</h2>
+        <!--RESTAURANT LA PALETTE DU GOUT-->
+        <div class="card__first-container">
+            <img src="" alt="image restau 1" class="card__picture">
+            <div class="card__second-container">
+                <div class="card__text">
                     <p>Nom du restau 1</p>
                     <p>Lieu du restau 1</p>
                 </div>
-                <p>Icone coeur</p>
+                <i class="fa-regular fa-heart card__heart"></i>
             </div>
-            <p>Badge nouveau</p>
+            <p class="card__new-tag">Badge nouveau</p>
         </div>
-    </section>
-    <section>
-        <div>
-            <img src="" alt="image restau 2">
-            <div>
-                <div>
+        <!--RESTAURANT LA NOTE ENCHANTEE-->
+        <div class="card__first-container">
+            <img src="" alt="image restau 2" class="card__picture">
+            <div class="card__second-container">
+                <div class="card__text">
                     <p>Nom du restau 2</p>
                     <p>Lieu du restau 2</p>
                 </div>
-                <p>Icone coeur</p>
+                <i class="fa-regular fa-heart card__heart"></i>
             </div>
-            <p>Badge nouveau</p>
+            <p class="card__new-tag">Badge nouveau</p>
         </div>
-    </section>
-    <section>
-        <div>
-            <img src="" alt="image restau 3">
-            <div>
-                <div>
+
+        <!--RESTAURANT A LA FRANCAISE-->
+        <div class="card__first-container">
+            <img src="" alt="image restau 3" class="card__picture">
+            <div class="card__second-container">
+                <div class="card__text">
                     <p>Nom du restau 3</p>
                     <p>Lieu du restau 3</p>
                 </div>
-                <p>Icone coeur</p>
+                <i class="fa-regular fa-heart card__heart"></i>
             </div>
-            <p>Badge nouveau</p>
         </div>
-    </section>
-    <section>
-        <div>
-            <img src="" alt="image restau 4">
-            <div>
-                <div>
+
+        <!--RESTAURANT LE DELICE DES SENS-->
+        <div class="card__first-container">
+            <img src="" alt="image restau 4" class="card__picture">
+            <div class="card__second-container">
+                <div class="card__text">
                     <p>Nom du restau 4</p>
                     <p>Lieu du restau 4</p>
                 </div>
-                <p>Icone coeur</p>
+                <i class="fa-regular fa-heart card__heart"></i>
             </div>
-            <p>Badge nouveau</p>
         </div>
     </section>
 
-    <footer>
-        <img src="" alt="logo">
-        <ul>
-            <li>Icone + Ligne 1</i></li>
-            <li>Icone + Ligne 2</i></li>
-            <li>Ligne 3</i></li>
-            <li>Ligne 4</i></li>
+
+    <footer class="footer">
+        <p class="footer__logo">ohmyfood</p>
+        <ul class="footer__menu">
+            <li class="footer__element"><i class="fa-solid fa-utensils"></i> Ligne 1</i></li>
+            <li class="footer__element"><i class="fa-solid fa-handshake-angle"></i> Ligne 2</i></li>
+            <li class="footer__element">Ligne 3</i></li>
+            <li class="footer__element">Ligne 4</i></li>
         </ul>
     </footer>
 

@@ -1,4 +1,109 @@
-$breakpoints:(
-    mobile: 767px,
+/* import de la police shrikhand */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+/* import de la police roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+$breakpoints:(mobile: 767px,
     tab: 992px,
 );
+
+$color-primary: #9356DC;
+$color-secondary: #FF79D4;
+$color-tertiary: #99E2DD;
+$color-light-grey: #f7f7f7;
+$color-medium-grey: #eaeaea;
+$color-dark-grey: #353535;
+
+body {
+    font-family: roboto;
+}
+
+.display_flexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.display_flexcolumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.alignitems_center {
+    align-items: center;
+}
+
+.font_logo {
+    font-family: Shrikhand;
+}
+
+.card_design{
+    background-color: white;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    padding-bottom: 10px;
+}
+
+.header {
+    background-color: $color-light-grey;
+    &__input {
+        @extend .display_flexrow;
+        @extend .alignitems_center;
+        background-color: $color-medium-grey;
+    }
+
+    &__logo {
+        @extend .font_logo;
+        background-color: white;
+    }
+}
+
+.process {
+    &__button {
+        @extend .display_flexrow;
+        @extend .alignitems_center;
+    }
+    &__icon {
+        color: $color-dark-grey;
+    }
+}
+
+.restaurants{
+    background-color: $color-light-grey;
+}
+
+.card {
+    &__first-container{
+        @extend .card_design;
+    }
+    &__second-container {
+        @extend .display_flexrow;
+        @extend .alignitems_center;
+    }
+    &__text {
+        @extend .display_flexcolumn;
+    }
+    &__heart{
+        color: $color-dark-grey;
+    }
+
+
+}
+
+.footer {
+    background: $color-dark-grey;
+    color: white;
+    &__logo {
+        @extend .font_logo;
+    }
+    &__menu{
+        padding-inline-start: 0px;
+    }
+    &__element{
+        list-style: none;
+    }
+}
