@@ -1,27 +1,40 @@
+@charset "UTF-8";
 /* import de la police shrikhand */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 /* import de la police roboto */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+/* définition des breakpoints */
+/* définition des couleurs */
+/* configuration de la police roboto comme règle générale */
 body {
   font-family: roboto;
 }
 
+/* configuration de la police shrikhand pour tout logo */
+.font_logo, .footer__logo, .header__logo {
+  font-family: Shrikhand;
+}
+
+/* suppression du soulignement des liens comme règle générale */
+a {
+  text-decoration: none;
+}
+
+/* extension display flex row */
 .display_flexrow, .card__second-container, .process__button, .header__input {
   display: flex;
   flex-direction: row;
 }
 
+/* extension display flex column */
 .display_flexcolumn, .card__text {
   display: flex;
   flex-direction: column;
 }
 
+/* extension align items center */
 .alignitems_center, .card__second-container, .process__button, .header__input {
   align-items: center;
-}
-
-.font_logo, .footer__logo, .header__logo {
-  font-family: Shrikhand;
 }
 
 .card_design, .card__first-container {
@@ -35,8 +48,11 @@ body {
   padding-bottom: 10px;
 }
 
+/* configuration du header */
 .header {
   background-color: #f7f7f7;
+  /* configuration de l'input dans le header */
+  /* configuration du logo dans le header */
 }
 .header__input {
   background-color: #eaeaea;
@@ -45,21 +61,38 @@ body {
   background-color: white;
 }
 
+/* configuration de la zone décrivant le fonctionnement */
+.process {
+  /* configuration des boutons dans la zone de fonctionnement */
+  /* configuration des icônes dans la zone de fonctionnement */
+}
 .process__icon {
   color: #353535;
 }
 
+/* configuration de la zone restaurants */
 .restaurants {
   background-color: #f7f7f7;
 }
 
+/* configuration des cards dans la zone restaurants */
+.card {
+  /*configuration du container principal */
+  /* configuration du second container : titre, texte, icone*/
+  /* configuration du container text : titre, texte*/
+  /* configuration de l'icone coeur dans la card */
+}
 .card__heart {
   color: #353535;
 }
 
+/* configuration du footer */
 .footer {
   background: #353535;
   color: white;
+  /* configuration du logo dans le footer */
+  /* configuration du menu dans le footer */
+  /*configuration des éléments de liste dans le menu du footer */
 }
 .footer__menu {
   padding-inline-start: 0px;

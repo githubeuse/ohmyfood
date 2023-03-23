@@ -4,10 +4,12 @@
 /* import de la police roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
+/* définition des breakpoints */
 $breakpoints:(mobile: 767px,
     tab: 992px,
 );
 
+/* définition des couleurs */
 $color-primary: #9356DC;
 $color-secondary: #FF79D4;
 $color-tertiary: #99E2DD;
@@ -15,27 +17,40 @@ $color-light-grey: #f7f7f7;
 $color-medium-grey: #eaeaea;
 $color-dark-grey: #353535;
 
+/* configuration de la police roboto comme règle générale */
 body {
     font-family: roboto;
 }
 
+/* configuration de la police shrikhand pour tout logo */
+.font_logo {
+    font-family: Shrikhand;
+}
+
+/* suppression du soulignement des liens comme règle générale */
+a{
+    text-decoration: none;
+}
+
+/* extension display flex row */
 .display_flexrow {
     display: flex;
     flex-direction: row;
 }
 
+/* extension display flex column */
 .display_flexcolumn {
     display: flex;
     flex-direction: column;
 }
 
+/* extension align items center */
 .alignitems_center {
     align-items: center;
 }
 
-.font_logo {
-    font-family: Shrikhand;
-}
+
+
 
 .card_design{
     background-color: white;
@@ -48,61 +63,73 @@ body {
     padding-bottom: 10px;
 }
 
+/* configuration du header */
 .header {
     background-color: $color-light-grey;
+    /* configuration de l'input dans le header */
     &__input {
         @extend .display_flexrow;
         @extend .alignitems_center;
         background-color: $color-medium-grey;
     }
-
+    /* configuration du logo dans le header */
     &__logo {
         @extend .font_logo;
         background-color: white;
     }
 }
 
+/* configuration de la zone décrivant le fonctionnement */
 .process {
+    /* configuration des boutons dans la zone de fonctionnement */
     &__button {
         @extend .display_flexrow;
         @extend .alignitems_center;
     }
+    /* configuration des icônes dans la zone de fonctionnement */
     &__icon {
         color: $color-dark-grey;
     }
 }
 
+/* configuration de la zone restaurants */
 .restaurants{
     background-color: $color-light-grey;
-}
+    }
 
+/* configuration des cards dans la zone restaurants */
 .card {
+    /*configuration du container principal */
     &__first-container{
         @extend .card_design;
     }
+    /* configuration du second container : titre, texte, icone*/
     &__second-container {
         @extend .display_flexrow;
         @extend .alignitems_center;
     }
+    /* configuration du container text : titre, texte*/
     &__text {
         @extend .display_flexcolumn;
     }
+    /* configuration de l'icone coeur dans la card */
     &__heart{
         color: $color-dark-grey;
     }
-
-
 }
-
+/* configuration du footer */
 .footer {
     background: $color-dark-grey;
     color: white;
+    /* configuration du logo dans le footer */
     &__logo {
         @extend .font_logo;
     }
+    /* configuration du menu dans le footer */
     &__menu{
         padding-inline-start: 0px;
     }
+    /*configuration des éléments de liste dans le menu du footer */
     &__element{
         list-style: none;
     }
