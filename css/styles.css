@@ -98,6 +98,12 @@ a {
 .menu__button {
   align-self: center;
 }
+@media screen and (max-width: 767px) {
+  .menu__container {
+    display: flex;
+    flex-direction: row;
+  }
+}
 
 /* configuration du footer */
 .footer {
