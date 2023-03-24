@@ -21,7 +21,7 @@ a {
 }
 
 /* extension display flex row */
-.display_flexrow, .restaurant-card__second-container, .process__button, .header__input {
+.display_flexrow, .menu__third-container, .menu__header, .restaurant-card__second-container, .process__button, .header__container, .header__input {
   display: flex;
   flex-direction: row;
 }
@@ -33,13 +33,23 @@ a {
 }
 
 /* extension align items center */
-.alignitems_center, .restaurant-card__second-container, .process__button, .header__input {
+.alignitems_center, .menu__header, .restaurant-card__second-container, .process__button, .header__container, .header__input {
   align-items: center;
 }
 
-/* fond en gris clair */
+/* extension align items space-between */
+.justifycontent_spacebetween, .menu__third-container {
+  justify-content: space-between;
+}
+
+/* extension fond en gris clair */
 .bg-light-grey, .menu, .restaurants, .header {
   background-color: #f7f7f7;
+}
+
+/* extension fond en blanc */
+.bg-white, .header__container, .header__logo {
+  background-color: white;
 }
 
 .card_design, .menu__card, .restaurant-card__first-container {
@@ -55,16 +65,13 @@ a {
 
 /* configuration du header */
 .header {
-  /* configuration de l'input dans le header */
-  /* configuration du logo dans le header */
+  /* configuration de l'input dans le header sur index.html*/
+  /* configuration du logo dans le header sur index.html */
+  /*configuration de la flèche arrière dans le header sur page restaurant */
 }
 .header__input {
   background-color: #eaeaea;
 }
-.header__logo {
-  background-color: white;
-}
-
 /* configuration de la zone décrivant le fonctionnement */
 .process {
   /* configuration des boutons dans la zone de fonctionnement */
@@ -84,6 +91,10 @@ a {
 }
 .restaurant-card__heart {
   color: #353535;
+}
+
+.menu__button {
+  align-self: center;
 }
 
 /* configuration du footer */

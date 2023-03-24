@@ -49,10 +49,19 @@ a {
     align-items: center;
 }
 
+/* extension align items space-between */
+.justifycontent_spacebetween{
+    justify-content: space-between;
+}
 
-/* fond en gris clair */
+/* extension fond en gris clair */
 .bg-light-grey {
     background-color: $color-light-grey;
+}
+
+/* extension fond en blanc */
+.bg-white{
+    background-color: white;
 }
 
 
@@ -70,18 +79,22 @@ a {
 /* configuration du header */
 .header {
     @extend .bg-light-grey;
-
-    /* configuration de l'input dans le header */
+    /* configuration de l'input dans le header sur index.html*/
     &__input {
         @extend .display_flexrow;
         @extend .alignitems_center;
         background-color: $color-medium-grey;
     }
-
-    /* configuration du logo dans le header */
+    /* configuration du logo dans le header sur index.html */
     &__logo {
         @extend .font_logo;
-        background-color: white;
+        @extend .bg-white;
+    }
+    /*configuration de la flèche arrière dans le header sur page restaurant */
+    &__container{
+        @extend .bg-white;
+        @extend .display_flexrow;
+        @extend .alignitems_center;
     }
 }
 
@@ -133,9 +146,19 @@ a {
 
 .menu {
     @extend .bg-light-grey;
-
+    &__header{
+        @extend .display_flexrow;
+        @extend .alignitems_center;
+    }
     &__card {
         @extend .card_design;
+    }
+    &__third-container{
+        @extend .display_flexrow;
+        @extend .justifycontent_spacebetween;
+    }
+    &__button{
+        align-self: center;
     }
 }
 
