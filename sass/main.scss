@@ -98,7 +98,7 @@ a{
     }
 
 /* configuration des cards dans la zone restaurants */
-.card {
+.restaurant-card {
     /*configuration du container principal */
     &__first-container{
         @extend .card_design;

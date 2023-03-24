@@ -21,23 +21,23 @@ a {
 }
 
 /* extension display flex row */
-.display_flexrow, .card__second-container, .process__button, .header__input {
+.display_flexrow, .restaurant-card__second-container, .process__button, .header__input {
   display: flex;
   flex-direction: row;
 }
 
 /* extension display flex column */
-.display_flexcolumn, .card__text {
+.display_flexcolumn, .restaurant-card__text {
   display: flex;
   flex-direction: column;
 }
 
 /* extension align items center */
-.alignitems_center, .card__second-container, .process__button, .header__input {
+.alignitems_center, .restaurant-card__second-container, .process__button, .header__input {
   align-items: center;
 }
 
-.card_design, .card__first-container {
+.card_design, .restaurant-card__first-container {
   background-color: white;
   padding: 5px;
   border-radius: 20px;
@@ -76,13 +76,13 @@ a {
 }
 
 /* configuration des cards dans la zone restaurants */
-.card {
+.restaurant-card {
   /*configuration du container principal */
   /* configuration du second container : titre, texte, icone*/
   /* configuration du container text : titre, texte*/
   /* configuration de l'icone coeur dans la card */
 }
-.card__heart {
+.restaurant-card__heart {
   color: #353535;
 }
 
