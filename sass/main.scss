@@ -127,6 +127,13 @@ a {
     &__icon {
         color: $color-dark-grey;
     }
+
+    &__container {
+        @include tab-only {
+            display: flex;
+            flex-direction: row;
+        }
+    }
 }
 
 /* configuration de la zone restaurants */
@@ -138,12 +145,12 @@ a {
 .restaurant-card {
 
     /*configuration du container principal */
-    &__first-container {
+    &__elements-container {
         @extend %card_design;
     }
 
     /* configuration du second container : titre, texte, icone*/
-    &__second-container {
+    &__last-line-container {
         @extend %display_flexrow;
         @extend %alignitems_center;
     }
@@ -156,6 +163,13 @@ a {
     /* configuration de l'icone coeur dans la card */
     &__heart {
         color: $color-dark-grey;
+    }
+
+    &__principal-container {
+        @include tab-only {
+            display: flex;
+            flex-direction: row;
+        }
     }
 }
 
