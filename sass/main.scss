@@ -23,7 +23,7 @@ body {
 }
 
 /* configuration de la police shrikhand pour tout logo */
-.font_logo {
+%font_logo {
     font-family: Shrikhand;
 }
 
@@ -33,39 +33,39 @@ a {
 }
 
 /* extension display flex row */
-.display_flexrow {
+%display_flexrow {
     display: flex;
     flex-direction: row;
 }
 
 /* extension display flex column */
-.display_flexcolumn {
+%display_flexcolumn {
     display: flex;
     flex-direction: column;
 }
 
 /* extension align items center */
-.alignitems_center {
+%alignitems_center {
     align-items: center;
 }
 
 /* extension align items space-between */
-.justifycontent_spacebetween{
+%justifycontent_spacebetween{
     justify-content: space-between;
 }
 
 /* extension fond en gris clair */
-.bg-light-grey {
+%bg-light-grey {
     background-color: $color-light-grey;
 }
 
 /* extension fond en blanc */
-.bg-white{
+%bg-white{
     background-color: white;
 }
 
 
-.card_design {
+%card_design {
     background-color: white;
     padding: 5px;
     border-radius: 20px;
@@ -78,23 +78,23 @@ a {
 
 /* configuration du header */
 .header {
-    @extend .bg-light-grey;
+    @extend %bg-light-grey;
     /* configuration de l'input dans le header sur index.html*/
     &__input {
-        @extend .display_flexrow;
-        @extend .alignitems_center;
+        @extend %display_flexrow;
+        @extend %alignitems_center;
         background-color: $color-medium-grey;
     }
     /* configuration du logo dans le header sur index.html */
     &__logo {
-        @extend .font_logo;
-        @extend .bg-white;
+        @extend %font_logo;
+        @extend %bg-white;
     }
     /*configuration de la flèche arrière dans le header sur page restaurant */
     &__container{
-        @extend .bg-white;
-        @extend .display_flexrow;
-        @extend .alignitems_center;
+        @extend %bg-white;
+        @extend %display_flexrow;
+        @extend %alignitems_center;
     }
 }
 
@@ -103,8 +103,8 @@ a {
 
     /* configuration des boutons dans la zone de fonctionnement */
     &__button {
-        @extend .display_flexrow;
-        @extend .alignitems_center;
+        @extend %display_flexrow;
+        @extend %alignitems_center;
     }
 
     /* configuration des icônes dans la zone de fonctionnement */
@@ -115,7 +115,7 @@ a {
 
 /* configuration de la zone restaurants */
 .restaurants {
-    @extend .bg-light-grey;
+    @extend %bg-light-grey;
 }
 
 /* configuration des cards dans la zone restaurants */
@@ -123,18 +123,18 @@ a {
 
     /*configuration du container principal */
     &__first-container {
-        @extend .card_design;
+        @extend %card_design;
     }
 
     /* configuration du second container : titre, texte, icone*/
     &__second-container {
-        @extend .display_flexrow;
-        @extend .alignitems_center;
+        @extend %display_flexrow;
+        @extend %alignitems_center;
     }
 
     /* configuration du container text : titre, texte*/
     &__text {
-        @extend .display_flexcolumn;
+        @extend %display_flexcolumn;
     }
 
     /* configuration de l'icone coeur dans la card */
@@ -145,17 +145,17 @@ a {
 
 
 .menu {
-    @extend .bg-light-grey;
+    @extend %bg-light-grey;
     &__header{
-        @extend .display_flexrow;
-        @extend .alignitems_center;
+        @extend %display_flexrow;
+        @extend %alignitems_center;
     }
     &__card {
-        @extend .card_design;
+        @extend %card_design;
     }
     &__third-container{
-        @extend .display_flexrow;
-        @extend .justifycontent_spacebetween;
+        @extend %display_flexrow;
+        @extend %justifycontent_spacebetween;
     }
     &__button{
         align-self: center;
@@ -170,7 +170,7 @@ a {
 
     /* configuration du logo dans le footer */
     &__logo {
-        @extend .font_logo;
+        @extend %font_logo;
     }
 
     /* configuration du menu dans le footer */
