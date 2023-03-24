@@ -5,19 +5,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 /* définition des breakpoints */
-$breakpoints:(tab-only: 767px,
-    desktop-only: 991px);
+$breakpoints:(tab-only: 768px,
+    desktop-only: 992px);
 
 /* responsive : création d'une mixin tablette */
 @mixin tab-only {
-    @media screen and (max-width: map-get($breakpoints, tab-only)) {
+    @media screen and (min-width: map-get($breakpoints, tab-only)) {
         @content;
     }
 }
 
 /* responsive :c réation d'une mixin desktop */
 @mixin desktop-only {
-    @media screen and (max-width: map-get($breakpoints, desktop-only)) {
+    @media screen and (min-width: map-get($breakpoints, desktop-only)) {
         @content;
     }
 }
@@ -172,7 +172,7 @@ a {
         @extend %card_design;
     }
 
-    &__third-container {
+    &__last-line-container {
         @extend %display_flexrow;
         @extend %justifycontent_spacebetween;
     }
@@ -181,12 +181,20 @@ a {
         align-self: center;
     }
 
-    &__container {
+    &__principal-container {
+        @include tab-only {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__secondary-container {
         @include tab-only {
             display: flex;
             flex-direction: row;
         }
     }
+
 }
 
 

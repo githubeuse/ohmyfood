@@ -23,7 +23,7 @@ a {
 }
 
 /* extension display flex row */
-.menu__third-container, .menu__header, .restaurant-card__second-container, .process__button, .header__container, .header__input {
+.menu__last-line-container, .menu__header, .restaurant-card__second-container, .process__button, .header__container, .header__input {
   display: flex;
   flex-direction: row;
 }
@@ -40,7 +40,7 @@ a {
 }
 
 /* extension align items space-between */
-.menu__third-container {
+.menu__last-line-container {
   justify-content: space-between;
 }
 
@@ -98,8 +98,14 @@ a {
 .menu__button {
   align-self: center;
 }
-@media screen and (max-width: 767px) {
-  .menu__container {
+@media screen and (min-width: 768px) {
+  .menu__principal-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu__secondary-container {
     display: flex;
     flex-direction: row;
   }
