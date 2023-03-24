@@ -4,6 +4,8 @@
 /* import de la police roboto */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 /* définition des breakpoints */
+/* responsive : création d'une mixin tablette */
+/* responsive :c réation d'une mixin desktop */
 /* définition des couleurs */
 /* configuration de la police roboto comme règle générale */
 body {

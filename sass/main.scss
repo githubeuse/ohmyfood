@@ -5,9 +5,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 /* définition des breakpoints */
-$breakpoints:(mobile: 767px,
-    tab: 992px,
+$breakpoints:(
+    tab-only: 767px,
+    desktop-only: 991px
 );
+
+/* responsive : création d'une mixin tablette */
+@mixin tab-only{
+    @media screen and (max-width: map-get($breakpoints, tab-only)) {
+        @content;
+    }
+}
+
+/* responsive :c réation d'une mixin desktop */
+@mixin desktop-only{
+    @media screen and (max-width: map-get($breakpoints, desktop-only)) {
+        @content;
+    }
+}
 
 /* définition des couleurs */
 $color-primary: #9356DC;
