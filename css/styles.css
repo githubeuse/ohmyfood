@@ -37,7 +37,12 @@ a {
   align-items: center;
 }
 
-.card_design, .restaurant-card__first-container {
+/* fond en gris clair */
+.bg-light-grey, .menu, .restaurants, .header {
+  background-color: #f7f7f7;
+}
+
+.card_design, .menu__card, .restaurant-card__first-container {
   background-color: white;
   padding: 5px;
   border-radius: 20px;
@@ -50,7 +55,6 @@ a {
 
 /* configuration du header */
 .header {
-  background-color: #f7f7f7;
   /* configuration de l'input dans le header */
   /* configuration du logo dans le header */
 }
@@ -71,10 +75,6 @@ a {
 }
 
 /* configuration de la zone restaurants */
-.restaurants {
-  background-color: #f7f7f7;
-}
-
 /* configuration des cards dans la zone restaurants */
 .restaurant-card {
   /*configuration du container principal */

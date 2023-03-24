@@ -28,7 +28,7 @@ body {
 }
 
 /* suppression du soulignement des liens comme règle générale */
-a{
+a {
     text-decoration: none;
 }
 
@@ -50,9 +50,13 @@ a{
 }
 
 
+/* fond en gris clair */
+.bg-light-grey {
+    background-color: $color-light-grey;
+}
 
 
-.card_design{
+.card_design {
     background-color: white;
     padding: 5px;
     border-radius: 20px;
@@ -65,13 +69,15 @@ a{
 
 /* configuration du header */
 .header {
-    background-color: $color-light-grey;
+    @extend .bg-light-grey;
+
     /* configuration de l'input dans le header */
     &__input {
         @extend .display_flexrow;
         @extend .alignitems_center;
         background-color: $color-medium-grey;
     }
+
     /* configuration du logo dans le header */
     &__logo {
         @extend .font_logo;
@@ -81,11 +87,13 @@ a{
 
 /* configuration de la zone décrivant le fonctionnement */
 .process {
+
     /* configuration des boutons dans la zone de fonctionnement */
     &__button {
         @extend .display_flexrow;
         @extend .alignitems_center;
     }
+
     /* configuration des icônes dans la zone de fonctionnement */
     &__icon {
         color: $color-dark-grey;
@@ -93,44 +101,62 @@ a{
 }
 
 /* configuration de la zone restaurants */
-.restaurants{
-    background-color: $color-light-grey;
-    }
+.restaurants {
+    @extend .bg-light-grey;
+}
 
 /* configuration des cards dans la zone restaurants */
 .restaurant-card {
+
     /*configuration du container principal */
-    &__first-container{
+    &__first-container {
         @extend .card_design;
     }
+
     /* configuration du second container : titre, texte, icone*/
     &__second-container {
         @extend .display_flexrow;
         @extend .alignitems_center;
     }
+
     /* configuration du container text : titre, texte*/
     &__text {
         @extend .display_flexcolumn;
     }
+
     /* configuration de l'icone coeur dans la card */
-    &__heart{
+    &__heart {
         color: $color-dark-grey;
     }
 }
+
+
+.menu {
+    @extend .bg-light-grey;
+
+    &__card {
+        @extend .card_design;
+    }
+}
+
+
 /* configuration du footer */
 .footer {
     background: $color-dark-grey;
     color: white;
+
     /* configuration du logo dans le footer */
     &__logo {
         @extend .font_logo;
     }
+
     /* configuration du menu dans le footer */
-    &__menu{
+    &__menu {
         padding-inline-start: 0px;
     }
+
     /*configuration des éléments de liste dans le menu du footer */
-    &__element{
+    &__element {
         list-style: none;
     }
 }
