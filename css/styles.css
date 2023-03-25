@@ -10,6 +10,8 @@
 /* configuration de la police roboto comme règle générale */
 body {
   font-family: roboto;
+  max-width: 1000px;
+  margin: auto;
 }
 
 /* configuration de la police shrikhand pour tout logo */
@@ -52,6 +54,10 @@ a {
 /* extension fond en blanc */
 .header__container, .header__logo {
   background-color: white;
+}
+
+.menu__button, .header__button {
+  background: linear-gradient(#FF79D4, #9356DC);
 }
 
 .menu__card, .restaurant-card__elements-container {
