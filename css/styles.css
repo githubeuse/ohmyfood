@@ -48,7 +48,7 @@ a {
 }
 
 /* extension fond en gris clair */
-.menu, .restaurants, .header {
+.menu, .restaurants, .process__button, .header {
   background-color: #f7f7f7;
 }
 
@@ -95,7 +95,7 @@ a {
 .header__button:after {
   content: "";
   background: linear-gradient(#ff88d9 0%, #9b63df 100%);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
   opacity: 0;
   position: absolute;
   top: 0;
@@ -113,18 +113,46 @@ a {
 
 /* configuration de la zone décrivant le fonctionnement */
 .process {
+  /* mise en place du display en version tab */
   /* configuration des boutons dans la zone de fonctionnement */
   /* configuration des icônes dans la zone de fonctionnement */
-  /* mise en place du display en version tab */
-}
-.process__icon {
-  color: #353535;
 }
 @media screen and (min-width: 768px) {
   .process__container {
     display: flex;
     flex-direction: row;
   }
+}
+.process__button {
+  opacity: 1;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 20px;
+  /* insertion d'un pseudo élément pour le changement de couleur au survol*/
+  /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
+}
+.process__button::after {
+  content: "";
+  background: #ece1f9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
+  border-radius: 20px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 210ms;
+}
+.process__button:hover::after {
+  opacity: 1;
+}
+.process__icon {
+  color: #7e7e7e;
 }
 
 /* configuration de la zone restaurants */
@@ -167,7 +195,7 @@ a {
 .menu__button:after {
   content: "";
   background: linear-gradient(#ff88d9 0%, #9b63df 100%);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
   opacity: 0;
   position: absolute;
   top: 0;
