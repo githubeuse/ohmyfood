@@ -141,6 +141,28 @@ a {
 
 .menu__button {
   align-self: center;
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.menu__button:after {
+  content: "";
+  background: linear-gradient(#ff88d9 0%, #9b63df 100%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 210ms;
+}
+.menu__button:hover:after {
+  opacity: 1;
 }
 @media screen and (min-width: 768px) {
   .menu__principal-container {

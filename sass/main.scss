@@ -236,6 +236,32 @@ a {
     &__button {
         align-self: center;
         @extend %bg-gradient;
+        opacity: 1;
+        position: relative;
+        z-index: 1;
+        box-shadow: $default-box-shadow;
+
+        &:after {
+            content: "";
+            background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
+            box-shadow: $darker-box-shadow;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: opacity 210ms;
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
     }
 
     &__principal-container {
@@ -251,8 +277,10 @@ a {
             flex-direction: row;
         }
     }
-
 }
+
+
+
 
 
 /* configuration du footer */
