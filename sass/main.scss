@@ -84,10 +84,12 @@ a {
     background-color: white;
 }
 
+/* extension fond en dégradé */
 %bg-gradient {
     background: linear-gradient($color-secondary, $color-primary);
 }
 
+/* extension design de card */
 %card_design {
     background-color: white;
     padding: 5px;
@@ -116,13 +118,14 @@ a {
         @extend %bg-white;
     }
 
-    /*configuration de la flèche arrière dans le header sur page restaurant */
+    /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
     &__container {
         @extend %bg-white;
         @extend %display_flexrow;
         @extend %alignitems_center;
     }
 
+    /* configuration du bouton dans le header sur la page index*/
     &__button {
         @extend %bg-gradient;
         opacity: 1;
@@ -130,6 +133,7 @@ a {
         z-index: 1;
         box-shadow: $default-box-shadow;
 
+        /* insertion d'un pseudo élément pour le changement de couleur au survol*/
         &:after {
             content: "";
             background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
@@ -146,6 +150,7 @@ a {
             transition: opacity 210ms;
         }
 
+        /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
         &:hover {
             &:after {
                 opacity: 1;
@@ -168,6 +173,7 @@ a {
         color: $color-dark-grey;
     }
 
+    /* mise en place du display en version tab */
     &__container {
         @include tab-only {
             display: flex;
@@ -184,11 +190,7 @@ a {
 /* configuration des cards dans la zone restaurants */
 .restaurant-card {
 
-    /*configuration du container principal */
-    &__elements-container {
-        @extend %card_design;
-    }
-
+    /* configuration du container qui contient 2 cards de plats */
     &__principal-container {
         @include tab-only {
             display: flex;
@@ -196,13 +198,19 @@ a {
         }
     }
 
-    /* configuration du second container : titre, texte, icone*/
+    /*configuration du container qui contient : l'image, le texte*/
+    &__elements-container {
+        @extend %card_design;
+    }
+
+
+    /* configuration du container qui contient : titre, texte, icone*/
     &__last-line-container {
         @extend %display_flexrow;
         @extend %alignitems_center;
     }
 
-    /* configuration du container text : titre, texte*/
+    /* configuration du container qui contient text : titre, texte*/
     &__text {
         @extend %display_flexcolumn;
     }
@@ -216,23 +224,28 @@ a {
 }
 
 
+/*mise en place du fond du menu */
 .menu {
     @extend %bg-light-grey;
 
+    /* stylisation de la disposition de l'entête du menu */
     &__header {
         @extend %display_flexrow;
         @extend %alignitems_center;
     }
 
+    /* stylisation des plats du menu, avec le design de card */
     &__card {
         @extend %card_design;
     }
 
+    /* stylisation de la dernière ligne du menu : description + plat */
     &__last-line-container {
         @extend %display_flexrow;
         @extend %justifycontent_spacebetween;
     }
 
+    /* stylisation du bouton du menu */
     &__button {
         align-self: center;
         @extend %bg-gradient;
@@ -241,6 +254,7 @@ a {
         z-index: 1;
         box-shadow: $default-box-shadow;
 
+        /* stylisation du pseudo élément after avec l'opacity 0*/
         &:after {
             content: "";
             background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
@@ -257,6 +271,7 @@ a {
             transition: opacity 210ms;
         }
 
+        /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
         &:hover {
             &:after {
                 opacity: 1;
@@ -264,6 +279,7 @@ a {
         }
     }
 
+    /* stylisation de la disposition du container contenant toutes les cards de repas*/
     &__principal-container {
         @include tab-only {
             display: flex;
@@ -271,6 +287,7 @@ a {
         }
     }
 
+    /* stylisation de la disposition du container contenant : 2 repas par 2*/
     &__secondary-container {
         @include tab-only {
             display: flex;

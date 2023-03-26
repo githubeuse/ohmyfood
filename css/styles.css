@@ -57,10 +57,12 @@ a {
   background-color: white;
 }
 
+/* extension fond en dégradé */
 .menu__button, .header__button {
   background: linear-gradient(#FF79D4, #9356DC);
 }
 
+/* extension design de card */
 .menu__card, .restaurant-card__elements-container {
   background-color: white;
   padding: 5px;
@@ -76,7 +78,8 @@ a {
 .header {
   /* configuration de l'input dans le header sur index.html*/
   /* configuration du logo dans le header sur index.html */
-  /*configuration de la flèche arrière dans le header sur page restaurant */
+  /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
+  /* configuration du bouton dans le header sur la page index*/
 }
 .header__input {
   background-color: #eaeaea;
@@ -86,6 +89,8 @@ a {
   position: relative;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* insertion d'un pseudo élément pour le changement de couleur au survol*/
+  /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
 }
 .header__button:after {
   content: "";
@@ -110,6 +115,7 @@ a {
 .process {
   /* configuration des boutons dans la zone de fonctionnement */
   /* configuration des icônes dans la zone de fonctionnement */
+  /* mise en place du display en version tab */
 }
 .process__icon {
   color: #353535;
@@ -124,9 +130,10 @@ a {
 /* configuration de la zone restaurants */
 /* configuration des cards dans la zone restaurants */
 .restaurant-card {
-  /*configuration du container principal */
-  /* configuration du second container : titre, texte, icone*/
-  /* configuration du container text : titre, texte*/
+  /* configuration du container qui contient 2 cards de plats */
+  /*configuration du container qui contient : l'image, le texte*/
+  /* configuration du container qui contient : titre, texte, icone*/
+  /* configuration du container qui contient text : titre, texte*/
   /* configuration de l'icone coeur dans la card */
 }
 @media screen and (min-width: 768px) {
@@ -139,12 +146,23 @@ a {
   color: #353535;
 }
 
+/*mise en place du fond du menu */
+.menu {
+  /* stylisation de la disposition de l'entête du menu */
+  /* stylisation des plats du menu, avec le design de card */
+  /* stylisation de la dernière ligne du menu : description + plat */
+  /* stylisation du bouton du menu */
+  /* stylisation de la disposition du container contenant toutes les cards de repas*/
+  /* stylisation de la disposition du container contenant : 2 repas par 2*/
+}
 .menu__button {
   align-self: center;
   opacity: 1;
   position: relative;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* stylisation du pseudo élément after avec l'opacity 0*/
+  /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
 }
 .menu__button:after {
   content: "";
