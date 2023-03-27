@@ -153,6 +153,7 @@ a {
 }
 .process__icon {
   color: #7e7e7e;
+  position: relative;
 }
 
 /* configuration de la zone restaurants */

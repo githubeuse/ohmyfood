@@ -212,6 +212,7 @@ a {
     /* configuration des icônes dans la zone de fonctionnement */
     &__icon {
         color: $color-medium-grey;
+        position: relative;
     }
 }
 
