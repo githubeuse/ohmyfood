@@ -22,6 +22,21 @@ $breakpoints:(tab-only: 768px,
     }
 }
 
+@mixin heart-icon-before {
+    color: $color-dark-grey;
+    content: "\f004";
+    transition: color 100ms ease-in-out;
+}
+
+@mixin heart-icon-hover-before {
+    cursor: pointer;
+    background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
 /* définition des couleurs */
 $color-primary: #9356DC;
 $color-secondary: #FF79D4;
@@ -257,18 +272,11 @@ a {
     /* configuration de l'icone coeur dans la card */
     &__heart {
         &::before {
-            color: $color-dark-grey;
-            content: "\f004";
-            transition: color 100ms ease-in-out;
+            @include heart-icon-before;
         }
 
         &:hover::before {
-            cursor: pointer;
-            background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: bold;
+            @include heart-icon-hover-before;
         }
     }
 
@@ -285,6 +293,8 @@ a {
             @extend %display_flexrow;
             @extend %alignitems_center;
         }
+
+        &__card {}
 
         /* stylisation des plats du menu, avec le design de card */
         &__card {
