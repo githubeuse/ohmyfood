@@ -256,107 +256,120 @@ a {
 
     /* configuration de l'icone coeur dans la card */
     &__heart {
-        color: $color-dark-grey;
-        padding: .2em;
-    }
-
-
-}
-
-
-/*mise en place du fond du menu */
-.menu {
-    @extend %bg-light-grey;
-
-    /* stylisation de la disposition de l'entête du menu */
-    &__header {
-        @extend %display_flexrow;
-        @extend %alignitems_center;
-    }
-
-    /* stylisation des plats du menu, avec le design de card */
-    &__card {
-        @extend %card_design;
-    }
-
-    /* stylisation de la dernière ligne du menu : description + plat */
-    &__last-line-container {
-        @extend %display_flexrow;
-        @extend %justifycontent_spacebetween;
-    }
-
-    /* stylisation du bouton du menu */
-    &__button {
-        align-self: center;
-        @extend %bg-gradient;
-        opacity: 1;
-        position: relative;
-        z-index: 1;
-        box-shadow: $default-box-shadow;
-
-        /* stylisation du pseudo élément after avec l'opacity 0*/
-        &:after {
-            content: "";
-            background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
-            box-shadow: $darker-box-shadow;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            transition: opacity 210ms;
+        &::before {
+            color: $color-dark-grey;
+            content: "\f004";
+            transition: color 100ms ease-in-out;
         }
 
-        /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
-        &:hover {
+        &:hover::before {
+            cursor: pointer;
+            background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+    }
+
+
+
+
+
+    /*mise en place du fond du menu */
+    .menu {
+        @extend %bg-light-grey;
+
+        /* stylisation de la disposition de l'entête du menu */
+        &__header {
+            @extend %display_flexrow;
+            @extend %alignitems_center;
+        }
+
+        /* stylisation des plats du menu, avec le design de card */
+        &__card {
+            @extend %card_design;
+        }
+
+        /* stylisation de la dernière ligne du menu : description + plat */
+        &__last-line-container {
+            @extend %display_flexrow;
+            @extend %justifycontent_spacebetween;
+        }
+
+        /* stylisation du bouton du menu */
+        &__button {
+            align-self: center;
+            @extend %bg-gradient;
+            opacity: 1;
+            position: relative;
+            z-index: 1;
+            box-shadow: $default-box-shadow;
+
+            /* stylisation du pseudo élément after avec l'opacity 0*/
             &:after {
-                opacity: 1;
+                content: "";
+                background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
+                box-shadow: $darker-box-shadow;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                transition: opacity 210ms;
+            }
+
+            /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        /* stylisation de la disposition du container contenant toutes les cards de repas*/
+        &__principal-container {
+            @include tab-only {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        /* stylisation de la disposition du container contenant : 2 repas par 2*/
+        &__secondary-container {
+            @include tab-only {
+                display: flex;
+                flex-direction: row;
             }
         }
     }
 
-    /* stylisation de la disposition du container contenant toutes les cards de repas*/
-    &__principal-container {
-        @include tab-only {
-            display: flex;
-            flex-direction: column;
+
+
+
+
+    /* configuration du footer */
+    .footer {
+        background: $color-dark-grey;
+        color: white;
+
+        /* configuration du logo dans le footer */
+        &__logo {
+            @extend %font_logo;
         }
-    }
 
-    /* stylisation de la disposition du container contenant : 2 repas par 2*/
-    &__secondary-container {
-        @include tab-only {
-            display: flex;
-            flex-direction: row;
+        /* configuration du menu dans le footer */
+        &__menu {
+            padding-inline-start: 0px;
         }
-    }
-}
 
-
-
-
-
-/* configuration du footer */
-.footer {
-    background: $color-dark-grey;
-    color: white;
-
-    /* configuration du logo dans le footer */
-    &__logo {
-        @extend %font_logo;
-    }
-
-    /* configuration du menu dans le footer */
-    &__menu {
-        padding-inline-start: 0px;
-    }
-
-    /*configuration des éléments de liste dans le menu du footer */
-    &__element {
-        list-style: none;
+        /*configuration des éléments de liste dans le menu du footer */
+        &__element {
+            list-style: none;
+        }
     }
 }
