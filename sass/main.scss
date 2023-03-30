@@ -206,6 +206,11 @@ a {
             &::after {
                 opacity: 1;
             }
+
+            &:hover>.process__icon {
+                color: $color-primary;
+            }
+
         }
     }
 
@@ -252,6 +257,22 @@ a {
     /* configuration de l'icone coeur dans la card */
     &__heart {
         color: $color-dark-grey;
+        padding: .2em;
+
+        &::before {
+            content: "\f004";
+            font-weight: bold;
+            color: linear-gradient($color-secondary, $color-primary);
+            transition: color 1s ease-out;
+        }
+
+        &:hover {
+            @extend %bg-gradient;
+
+            background: red;
+            border-radius: 50%;
+            padding: .2em;
+        }
     }
 
 
