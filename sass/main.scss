@@ -282,7 +282,17 @@ a {
 }
 
 
+@keyframes casquette {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
 
 
 /*mise en place du fond du menu */
@@ -308,16 +318,72 @@ a {
         }
     }
 
+    
+    /* correspond à escargot-container-->
+    /* stylisation de la disposition du container contenant toutes les cards de repas*/
+    &__principal-container {
+        @include tab-only {
+            display: flex;
+            flex-direction: column;
+            animation: casquette 600ms;
+        }
+    }
+
+    /* correspond à star-container */
+    /*                <!--contient tout ce que la card contient--> */
+    &__secondary-container {
+        /*@include tab-only {*/
+        display: flex;
+        flex-direction: row;
+        width: 500px;
+
+        &:active>.menu__dish-price {
+            transform: translateX(-250%);
+        }
+
+    }
+
+    /*correspond à shadow-bouton*/
     /* stylisation des plats du menu, avec le design de card */
     &__card {
         @extend %card_design;
+        width: 85vw;
+
+        /*&:active>.menu__dish_title {*/
+            /*width: 200px;}*/
+        
+
+        /*&:active>.menu__dish-description {*/
+            /*width: 200px;}*/
+        
+
+        &:active+.menu__third-container {
+            transform: translateX(-100%);
+            opacity: 1;
+        }
+
+        &:active+.menu__third-container>.menu__icon {
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+
+        &__dish-title {
+            /*width: 250px;*/
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: width 300ms ease-in;
+        }
+
+        &__dish-description {
+            /*width: 250px;*/
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: width 300ms ease-in;
+        }
     }
 
-    /* stylisation de la dernière ligne du menu : description + plat */
-    &__last-line-container {
-        @extend %display_flexrow;
-        @extend %justifycontent_spacebetween;
-    }
 
     /* stylisation du bouton du menu */
     &__button {
@@ -353,20 +419,31 @@ a {
         }
     }
 
-    /* stylisation de la disposition du container contenant toutes les cards de repas*/
-    &__principal-container {
-        @include tab-only {
-            display: flex;
-            flex-direction: column;
-        }
+    &__third-container {
+        opacity: 0;
+        background: #9988ff;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transform: translate(0%);
+        transition: all 600ms ease-in-out;
     }
 
-    /* stylisation de la disposition du container contenant : 2 repas par 2*/
-    &__secondary-container {
-        @include tab-only {
-            display: flex;
-            flex-direction: row;
-        }
+    &__icon {
+        color: white;
+        transform: rotate(-180deg);
+        transition: all 600ms ease-in 150ms;
+        opacity: 0;
+    }
+
+    &__dish-price {
+        position: relative;
+        left: -80px;
+        transform: translateX(0%);
+        transition: transform 400ms ease-in;
     }
 }
 

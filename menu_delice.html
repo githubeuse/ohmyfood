@@ -31,107 +31,291 @@
             <h2>Nom du restaurant</h2>
             <i class="fa-regular fa-heart menu__heart"></i>
         </div>
-        <!--CONTAINER AVEC 1 CATEGORIE DE REPAS : nom de la catégorie et choix proposés-->
-        <h3 class="menu__meal-category">Catégorie 1</h3>
-        <div class="menu__principal-container">
-            <div class="menu__secondary-container">
-                <article class="menu__card">
-                    <!--ajouter ici dans le scss le &::after-->
-                    <h4>Nom du plat</h4>
-                    <div class="menu__last-line-container">
-                        <span class="menu__dish-description">Description du plat</span>
-                        <span class="menu__dish-price">00€</span>
-                    </div>
-                </article>
-                <article class="menu__card">
-                    <!--ajouter ici dans le scss le &::after-->
-                    <h4>Nom du plat</h4>
-                    <div class="menu__last-line-container">
-                        <span class="menu__dish-description">Description du plat</span>
-                        <span class="menu__dish-price">00€</span>
-                    </div>
-                </article>
-            </div>
-            <article class="menu__card">
-                <!--ajouter ici dans le scss le &::after-->
-                <h4>Nom du plat</h4>
-                <div class="menu__last-line-container">
-                    <span class="menu__dish-description">Description du plat</span>
-                    <span class="menu__dish-price">00€</span>
-                </div>
-            </article>
 
 
-        </div>
-        <!--CONTAINER AVEC 1 CATEGORIE DE REPAS : nom de la catégorie et choix proposés-->
-        <h3 class="menu__meal-category">Catégorie 1</h3>
-        <div class="menu__principal-container">
-            <div class="menu__secondary-container">
-
-                <article class="menu__card">
-                    <!--ajouter ici dans le scss le &::after-->
-                    <h4>Nom du plat</h4>
-                    <div class="menu__last-line-container">
-                        <span class="menu__dish-description">Description du plat</span>
-                        <span class="menu__dish-price">00€</span>
-                    </div>
-                </article>
-                <article class="menu__card">
-                    <!--ajouter ici dans le scss le &::after-->
-                    <h4>Nom du plat</h4>
-                    <div class="menu__last-line-container">
-                        <span class="menu__dish-description">Description du plat</span>
-                        <span class="menu__dish-price">00€</span>
-                    </div>
-                </article>
-            </div>
-            <article class="menu__card">
-                <!--ajouter ici dans le scss le &::after-->
-                <h4>Nom du plat</h4>
-                <div class="menu__lastline-container">
-                    <span class="menu__dish-description">Description du plat</span>
-                    <span class="menu__dish-price">00€</span>
-                </div>
-            </article>
-
-        </div>
 
         <!--CONTAINER AVEC 1 CATEGORIE DE REPAS : nom de la catégorie et choix proposés-->
-
         <h3 class="menu__meal-category">Catégorie 1</h3>
+        <div class="menu__flexrow-container-for-2">
+        <!--début-->
         <div class="menu__principal-container">
+            <!--up correspond à escargot-container-->
+            <!--tous les plats sont contenus-->
             <div class="menu__secondary-container">
-
-                <article class="menu__card">
-                    <!--ajouter ici dans le scss le &::after-->
-                    <h4>Nom du plat</h4>
-                    <div class="menu__last-line-container">
-                        <span class="menu__dish-description">Description du plat</span>
-                        <span class="menu__dish-price">00€</span>
-                    </div>
-                </article>
-                <article class="menu__card">
-                    <!--ajouter ici dans le scss le &::after-->
-                    <h4>Nom du plat</h4>
-                    <div class="menu__last-line-container">
-                        <span class="menu__dish-description">Description du plat</span>
-                        <span class="menu__dish-price">00€</span>
-                    </div>
-                </article>
-            </div>
-
-            <article class="menu__card">
-                <!--ajouter ici dans le scss le &::after-->
-                <h4>Nom du plat</h4>
-                <div class="menu__last-line-container">
+                <!--up correspond à star-container-->
+                <!--contient tout ce que la card contient-->
+                <div class="menu__card">
+                    <!--up correspond à shadow-bouton-->
+                    <!--contient le titre et la description-->
+                    <h4 class="menu__dish-title">Nom du plat</h4>
                     <span class="menu__dish-description">Description du plat</span>
-                    <span class="menu__dish-price">00€</span>
                 </div>
-            </article>
-        </div>
-        <div class="menu__button">Bouton</div>
+                <div class="menu__third-container">
+                    <!--up container avec les éléments qui vont bouger-->
+                    <!--correspond à shark-moving-->
+                    <div class="menu__icon">
+                        <!--up correspond à kirikou-icon-->
+                        <i class="fa-sharp fa-solid fa-circle-check "></i>
+                        <!--up correspond à l'icone-->
+                    </div>
+                </div>
+                <div class="menu__dish-price">
+                    <!--up correspond à coffee-price-->
+                    <span>00€</span>
+                </div>
+            </div>
+            <!--fin-->
+
+            <!--début-->
+            <div class="menu__principal-container">
+                <!--up correspond à escargot-container-->
+                <!--tous les plats sont contenus-->
+                <div class="menu__secondary-container">
+                    <!--up correspond à star-container-->
+                    <!--contient tout ce que la card contient-->
+                    <div class="menu__card">
+                        <!--up correspond à shadow-bouton-->
+                        <!--contient le titre et la description-->
+                        <h4 class="menu__dish-title">Nom du plat</h4>
+                        <span class="menu__dish-description">Description du plat</span>
+                    </div>
+                    <div class="menu__third-container">
+                        <!--up container avec les éléments qui vont bouger-->
+                        <!--correspond à shark-moving-->
+                        <div class="menu__icon">
+                            <!--up correspond à kirikou-icon-->
+                            <i class="fa-sharp fa-solid fa-circle-check "></i>
+                            <!--up correspond à l'icone-->
+                        </div>
+                    </div>
+                    <div class="menu__dish-price">
+                        <!--up correspond à coffee-price-->
+                        <span>00€</span>
+                    </div>
+                </div>
+                <!--fin-->
+                
+
+                <!--début-->
+                <div class="menu__principal-container">
+                    <!--up correspond à escargot-container-->
+                    <!--tous les plats sont contenus-->
+                    <div class="menu__secondary-container">
+                        <!--up correspond à star-container-->
+                        <!--contient tout ce que la card contient-->
+                        <div class="menu__card">
+                            <!--up correspond à shadow-bouton-->
+                            <!--contient le titre et la description-->
+                            <h4 class="menu__dish-title">Nom du plat</h4>
+                            <span class="menu__dish-description">Description du plat</span>
+                        </div>
+                        <div class="menu__third-container">
+                            <!--up container avec les éléments qui vont bouger-->
+                            <!--correspond à shark-moving-->
+                            <div class="menu__icon">
+                                <!--up correspond à kirikou-icon-->
+                                <i class="fa-sharp fa-solid fa-circle-check "></i>
+                                <!--up correspond à l'icone-->
+                            </div>
+                        </div>
+                        <div class="menu__dish-price">
+                            <!--up correspond à coffee-price-->
+                            <span>00€</span>
+                        </div>
+                    </div>
+                </div>
+                <!--fin-->
+            </div>
+            <!--CONTAINER AVEC 1 CATEGORIE DE REPAS : nom de la catégorie et choix proposés-->
+            <h3 class="menu__meal-category">Catégorie 1</h3>
+
+            <!--début-->
+            <div class="menu__principal-container">
+                <!--up correspond à escargot-container-->
+                <!--tous les plats sont contenus-->
+                <div class="menu__secondary-container">
+                    <!--up correspond à star-container-->
+                    <!--contient tout ce que la card contient-->
+                    <div class="menu__card">
+                        <!--up correspond à shadow-bouton-->
+                        <!--contient le titre et la description-->
+                        <h4 class="menu__dish-title">Nom du plat</h4>
+                        <span class="menu__dish-description">Description du plat</span>
+                    </div>
+                    <div class="menu__third-container">
+                        <!--up container avec les éléments qui vont bouger-->
+                        <!--correspond à shark-moving-->
+                        <div class="menu__icon">
+                            <!--up correspond à kirikou-icon-->
+                            <i class="fa-sharp fa-solid fa-circle-check "></i>
+                            <!--up correspond à l'icone-->
+                        </div>
+                    </div>
+                    <div class="menu__dish-price">
+                        <!--up correspond à coffee-price-->
+                        <span>00€</span>
+                    </div>
+                </div>
+            </div>
+            <!--fin-->
+
+            <!--début-->
+            <div class="menu__principal-container">
+                <!--up correspond à escargot-container-->
+                <!--tous les plats sont contenus-->
+                <div class="menu__secondary-container">
+                    <!--up correspond à star-container-->
+                    <!--contient tout ce que la card contient-->
+                    <div class="menu__card">
+                        <!--up correspond à shadow-bouton-->
+                        <!--contient le titre et la description-->
+                        <h4 class="menu__dish-title">Nom du plat</h4>
+                        <span class="menu__dish-description">Description du plat</span>
+                    </div>
+                    <div class="menu__third-container">
+                        <!--up container avec les éléments qui vont bouger-->
+                        <!--correspond à shark-moving-->
+                        <div class="menu__icon">
+                            <!--up correspond à kirikou-icon-->
+                            <i class="fa-sharp fa-solid fa-circle-check "></i>
+                            <!--up correspond à l'icone-->
+                        </div>
+                    </div>
+                    <div class="menu__dish-price">
+                        <!--up correspond à coffee-price-->
+                        <span>00€</span>
+                    </div>
+                </div>
+            </div>
+            <!--fin-->
+
+            <!--début-->
+            <div class="menu__principal-container">
+                <!--up correspond à escargot-container-->
+                <!--tous les plats sont contenus-->
+                <div class="menu__secondary-container">
+                    <!--up correspond à star-container-->
+                    <!--contient tout ce que la card contient-->
+                    <div class="menu__card">
+                        <!--up correspond à shadow-bouton-->
+                        <!--contient le titre et la description-->
+                        <h4 class="menu__dish-title">Nom du plat</h4>
+                        <span class="menu__dish-description">Description du plat</span>
+                    </div>
+                    <div class="menu__third-container">
+                        <!--up container avec les éléments qui vont bouger-->
+                        <!--correspond à shark-moving-->
+                        <div class="menu__icon">
+                            <!--up correspond à kirikou-icon-->
+                            <i class="fa-sharp fa-solid fa-circle-check "></i>
+                            <!--up correspond à l'icone-->
+                        </div>
+                    </div>
+                    <div class="menu__dish-price">
+                        <!--up correspond à coffee-price-->
+                        <span>00€</span>
+                    </div>
+                </div>
+            </div>
+            <!--fin-->
+
+
+            <!--CONTAINER AVEC 1 CATEGORIE DE REPAS : nom de la catégorie et choix proposés-->
+            <h3 class="menu__meal-category">Catégorie 1</h3>
+
+            <!--début-->
+            <div class="menu__principal-container">
+                <!--up correspond à escargot-container-->
+                <!--tous les plats sont contenus-->
+                <div class="menu__secondary-container">
+                    <!--up correspond à star-container-->
+                    <!--contient tout ce que la card contient-->
+                    <div class="menu__card">
+                        <!--up correspond à shadow-bouton-->
+                        <!--contient le titre et la description-->
+                        <h4 class="menu__dish-title">Nom du plat</h4>
+                        <span class="menu__dish-description">Description du plat</span>
+                    </div>
+                    <div class="menu__third-container">
+                        <!--up container avec les éléments qui vont bouger-->
+                        <!--correspond à shark-moving-->
+                        <div class="menu__icon">
+                            <!--up correspond à kirikou-icon-->
+                            <i class="fa-sharp fa-solid fa-circle-check "></i>
+                            <!--up correspond à l'icone-->
+                        </div>
+                    </div>
+                    <div class="menu__dish-price">
+                        <!--up correspond à coffee-price-->
+                        <span>00€</span>
+                    </div>
+                </div>
+            </div>
+            <!--fin-->
+
+            <!--début-->
+            <div class="menu__principal-container">
+                <!--up correspond à escargot-container-->
+                <!--tous les plats sont contenus-->
+                <div class="menu__secondary-container">
+                    <!--up correspond à star-container-->
+                    <!--contient tout ce que la card contient-->
+                    <div class="menu__card">
+                        <!--up correspond à shadow-bouton-->
+                        <!--contient le titre et la description-->
+                        <h4 class="menu__dish-title">Nom du plat</h4>
+                        <span class="menu__dish-description">Description du plat</span>
+                    </div>
+                    <div class="menu__third-container">
+                        <!--up container avec les éléments qui vont bouger-->
+                        <!--correspond à shark-moving-->
+                        <div class="menu__icon">
+                            <!--up correspond à kirikou-icon-->
+                            <i class="fa-sharp fa-solid fa-circle-check "></i>
+                            <!--up correspond à l'icone-->
+                        </div>
+                    </div>
+                    <div class="menu__dish-price">
+                        <!--up correspond à coffee-price-->
+                        <span>00€</span>
+                    </div>
+                </div>
+            </div>
+            <!--fin-->
+
+            <!--début-->
+            <div class="menu__principal-container">
+                <!--up correspond à escargot-container-->
+                <!--tous les plats sont contenus-->
+                <div class="menu__secondary-container">
+                    <!--up correspond à star-container-->
+                    <!--contient tout ce que la card contient-->
+                    <div class="menu__card">
+                        <!--up correspond à shadow-bouton-->
+                        <!--contient le titre et la description-->
+                        <h4 class="menu__dish-title">Nom du plat</h4>
+                        <span class="menu__dish-description">Description du plat</span>
+                    </div>
+                    <div class="menu__third-container">
+                        <!--up container avec les éléments qui vont bouger-->
+                        <!--correspond à shark-moving-->
+                        <div class="menu__icon">
+                            <!--up correspond à kirikou-icon-->
+                            <i class="fa-sharp fa-solid fa-circle-check "></i>
+                            <!--up correspond à l'icone-->
+                        </div>
+                    </div>
+                    <div class="menu__dish-price">
+                        <!--up correspond à coffee-price-->
+                        <span>00€</span>
+                    </div>
+                </div>
+            </div>
+            <!--fin-->
+
+
+
     </section>
-
     <!--FOOTER-->
     <footer class="footer">
         <!--LOGO-->
