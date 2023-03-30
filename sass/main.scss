@@ -295,9 +295,18 @@ a {
 }
 
 
+
 /*mise en place du fond du menu */
 .menu {
     @extend %bg-light-grey;
+    width: 100%;
+
+    &__flex-column-2 {
+        @include tab-only {
+            display: flex;
+            flex-direction: row;
+        }
+    }
 
     /* stylisation de la disposition de l'entête du menu */
     &__header {
@@ -318,7 +327,7 @@ a {
         }
     }
 
-    
+
     /* correspond à escargot-container-->
     /* stylisation de la disposition du container contenant toutes les cards de repas*/
     &__principal-container {
@@ -350,12 +359,12 @@ a {
         width: 85vw;
 
         /*&:active>.menu__dish_title {*/
-            /*width: 200px;}*/
-        
+        /*width: 200px;}*/
+
 
         /*&:active>.menu__dish-description {*/
-            /*width: 200px;}*/
-        
+        /*width: 200px;}*/
+
 
         &:active+.menu__third-container {
             transform: translateX(-100%);

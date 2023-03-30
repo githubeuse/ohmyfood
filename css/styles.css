@@ -196,6 +196,7 @@ a {
 }
 /*mise en place du fond du menu */
 .menu {
+  width: 100%;
   /* stylisation de la disposition de l'entête du menu */
   /* configuration de l'icone coeur dans la card */
   /* correspond à escargot-container-->
@@ -205,6 +206,12 @@ a {
   /*correspond à shadow-bouton*/
   /* stylisation des plats du menu, avec le design de card */
   /* stylisation du bouton du menu */
+}
+@media screen and (min-width: 768px) {
+  .menu__flex-column-2 {
+    display: flex;
+    flex-direction: row;
+  }
 }
 .menu__heart {
   padding: 15px;
