@@ -151,6 +151,9 @@ a {
 .process__button:hover::after {
   opacity: 1;
 }
+.process__button:hover:hover > .process__icon {
+  color: #9356DC;
+}
 .process__icon {
   color: #7e7e7e;
   position: relative;
@@ -173,6 +176,7 @@ a {
 }
 .restaurant-card__heart {
   color: #353535;
+  padding: 0.2em;
 }
 
 /*mise en place du fond du menu */
