@@ -297,6 +297,8 @@ a {
 
     /* configuration de l'icone coeur dans la card */
     &__heart {
+        padding: 15px;
+
         &::before {
             @include heart-icon-before;
         }

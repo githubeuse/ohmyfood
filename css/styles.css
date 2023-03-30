@@ -16,7 +16,7 @@ body {
 }
 
 /* configuration de la police shrikhand pour tout logo */
-.restaurant-card .footer__logo, .header__logo {
+.footer__logo, .header__logo {
   font-family: Shrikhand;
 }
 
@@ -26,7 +26,7 @@ a {
 }
 
 /* extension display flex row */
-.restaurant-card .menu__last-line-container, .restaurant-card .menu__header, .restaurant-card__last-line-container, .process__button, .header__container, .header__input {
+.menu__last-line-container, .menu__header, .restaurant-card__last-line-container, .process__button, .header__container, .header__input {
   display: flex;
   flex-direction: row;
 }
@@ -38,32 +38,32 @@ a {
 }
 
 /* extension align items center */
-.restaurant-card .menu__header, .restaurant-card__last-line-container, .process__button, .header__container, .header__input {
+.menu__header, .restaurant-card__last-line-container, .process__button, .header__container, .header__input {
   align-items: center;
 }
 
 /* extension align items space-between */
-.restaurant-card .menu__last-line-container {
+.menu__last-line-container {
   justify-content: space-between;
 }
 
 /* extension fond en gris clair */
-.restaurant-card .menu, .restaurants, .process__button, .header {
-  background-color: #f7f7f7;
+.menu, .restaurants, .process__button, .header {
+  background: #f7f7f7;
 }
 
 /* extension fond en blanc */
 .header__container, .header__logo {
-  background-color: white;
+  background: white;
 }
 
 /* extension fond en dégradé */
-.restaurant-card .menu__button, .header__button {
+.menu__button, .header__button {
   background: linear-gradient(#FF79D4, #9356DC);
 }
 
 /* extension design de card */
-.restaurant-card .menu__card, .restaurant-card__elements-container {
+.menu__card, .restaurant-card__elements-container {
   background-color: white;
   padding: 5px;
   border-radius: 20px;
@@ -167,8 +167,6 @@ a {
   /* configuration du container qui contient : titre, texte, icone*/
   /* configuration du container qui contient text : titre, texte*/
   /* configuration de l'icone coeur dans la card */
-  /*mise en place du fond du menu */
-  /* configuration du footer */
 }
 @media screen and (min-width: 768px) {
   .restaurant-card__principal-container {
@@ -189,15 +187,34 @@ a {
   color: transparent;
   font-weight: bold;
 }
-.restaurant-card .menu {
+
+/*mise en place du fond du menu */
+.menu {
   /* stylisation de la disposition de l'entête du menu */
+  /* configuration de l'icone coeur dans la card */
   /* stylisation des plats du menu, avec le design de card */
   /* stylisation de la dernière ligne du menu : description + plat */
   /* stylisation du bouton du menu */
   /* stylisation de la disposition du container contenant toutes les cards de repas*/
   /* stylisation de la disposition du container contenant : 2 repas par 2*/
 }
-.restaurant-card .menu__button {
+.menu__heart {
+  padding: 15px;
+}
+.menu__heart::before {
+  color: #353535;
+  content: "\f004";
+  transition: color 100ms ease-in-out;
+}
+.menu__heart:hover::before {
+  cursor: pointer;
+  background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+.menu__button {
   align-self: center;
   opacity: 1;
   position: relative;
@@ -206,7 +223,7 @@ a {
   /* stylisation du pseudo élément after avec l'opacity 0*/
   /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
 }
-.restaurant-card .menu__button:after {
+.menu__button:after {
   content: "";
   background: linear-gradient(#ff88d9 0%, #9b63df 100%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
@@ -221,32 +238,34 @@ a {
   z-index: -1;
   transition: opacity 210ms;
 }
-.restaurant-card .menu__button:hover:after {
+.menu__button:hover:after {
   opacity: 1;
 }
 @media screen and (min-width: 768px) {
-  .restaurant-card .menu__principal-container {
+  .menu__principal-container {
     display: flex;
     flex-direction: column;
   }
 }
 @media screen and (min-width: 768px) {
-  .restaurant-card .menu__secondary-container {
+  .menu__secondary-container {
     display: flex;
     flex-direction: row;
   }
 }
-.restaurant-card .footer {
+
+/* configuration du footer */
+.footer {
   background: #353535;
   color: white;
   /* configuration du logo dans le footer */
   /* configuration du menu dans le footer */
   /*configuration des éléments de liste dans le menu du footer */
 }
-.restaurant-card .footer__menu {
+.footer__menu {
   padding-inline-start: 0px;
 }
-.restaurant-card .footer__element {
+.footer__element {
   list-style: none;
 }
 
