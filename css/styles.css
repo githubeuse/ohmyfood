@@ -280,6 +280,10 @@ a {
   right: 0;
   width: 50px;
 }
+.dish__ok-icon {
+  color: white;
+  font-size: 1.2em;
+}
 
 /* configuration du footer */
 .footer {

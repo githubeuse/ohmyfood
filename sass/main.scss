@@ -413,6 +413,11 @@ $width-slide: 50px;
         right: 0;
         width: $width-slide;
     }
+
+    &__ok-icon {
+        color: white;
+        font-size: 1.2em;
+    }
 }
 
 
