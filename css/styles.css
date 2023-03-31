@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 /* définition des breakpoints */
 /* responsive : création d'une mixin tablette */
-/* responsive :c réation d'une mixin desktop */
+/* responsive : création d'une mixin desktop */
 /* définition des couleurs */
 /* définition des ombres portées */
 /* configuration de la police roboto comme règle générale */
@@ -27,7 +27,7 @@ a {
 }
 
 /* extension display flex row */
-.menu__header, .restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
+.restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
   display: flex;
   flex-direction: row;
 }
@@ -39,13 +39,13 @@ a {
 }
 
 /* extension align items center */
-.menu__header, .restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
+.restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
   align-items: center;
 }
 
 /* extension align items space-between */
 /* extension fond en gris clair */
-.menu, .restaurants, .process__button, .header {
+.restaurants, .process__button, .header {
   background: #f7f7f7;
 }
 
@@ -60,7 +60,7 @@ a {
 }
 
 /* extension design de card */
-.menu__card, .restaurant-card__elements-container {
+.restaurant-card__elements-container {
   background-color: white;
   padding: 5px;
   border-radius: 20px;
@@ -75,8 +75,10 @@ a {
 .header {
   /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
   /* configuration du logo dans le header sur index.html */
-  /* configuration de l'input dans le header sur index.html*/
-  /* configuration du bouton dans le header sur la page index*/
+  /* configuration de l'input-container dans le header sur index.html*/
+  /* INDEX configuration de la zone input dans le header*/
+  /* INDEX configuration de l'icone à côté de la zone input */
+  /* INDEX configuration du bouton violet dans le header sur la page index*/
 }
 .header__input-container {
   background-color: #eaeaea;
@@ -125,7 +127,7 @@ a {
   opacity: 1;
 }
 
-/* configuration de la zone décrivant le fonctionnement */
+/* INDEX mise en place de la zone décrivant le fonctionnement */
 .process {
   /* mise en place du display en version tab */
   /* configuration des boutons dans la zone de fonctionnement */
@@ -173,8 +175,8 @@ a {
   position: relative;
 }
 
-/* configuration de la zone restaurants */
-/* configuration des cards dans la zone restaurants */
+/* INDEX configuration de la zone restaurants */
+/* INDEX configuration des cards dans la zone restaurants */
 .restaurant-card {
   /* configuration du container qui contient 2 cards de plats */
   /*configuration du container qui contient : l'image, le texte*/
@@ -202,103 +204,14 @@ a {
   font-weight: bold;
 }
 
-@keyframes casquette {
-  0%, 20% {
-    opacity: 0;
-    transform: translateY(20%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-/*mise en place du fond du menu */
-.menu {
-  width: 100%;
-  /* stylisation de la disposition de l'entête du menu */
-  /* configuration de l'icone coeur dans la card */
-  /* correspond à escargot-container-->
-  /* stylisation de la disposition du container contenant toutes les cards de repas*/
-  /* correspond à star-container */
-  /*                <!--contient tout ce que la card contient--> */
-  /*correspond à shadow-bouton*/
-  /* stylisation des plats du menu, avec le design de card */
-  /* stylisation du bouton du menu */
-}
-@media screen and (min-width: 768px) {
-  .menu__flex-column-2 {
-    display: flex;
-    flex-direction: row;
-  }
-}
-.menu__heart {
-  padding: 15px;
-}
-.menu__heart::before {
-  color: #353535;
-  content: "\f004";
-  transition: color 100ms ease-in-out;
-}
-.menu__heart:hover::before {
-  cursor: pointer;
-  background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: bold;
-}
-@media screen and (min-width: 768px) {
-  .menu__principal-container {
-    display: flex;
-    flex-direction: column;
-    animation: casquette 800ms;
-  }
-}
-.menu__secondary-container {
-  /*@include tab-only {*/
-  display: flex;
-  flex-direction: row;
-  width: 500px;
-}
-.menu__secondary-container:active > .menu__dish-price {
-  transform: translateX(-250%);
-}
-.menu__card {
-  width: 85vw;
-  /*&:active>.menu__dish_title {*/
-  /*width: 200px;}*/
-  /*&:active>.menu__dish-description {*/
-  /*width: 200px;}*/
-}
-.menu__card:active + .menu__third-container {
-  transform: translateX(-100%);
-  opacity: 1;
-}
-.menu__card:active + .menu__third-container > .menu__icon {
-  transform: rotate(0deg);
-  opacity: 1;
-}
-.menu__card__dish-title {
-  /*width: 250px;*/
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: width 300ms ease-in;
-}
-.menu__card__dish-description {
-  /*width: 250px;*/
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: width 300ms ease-in;
-}
+/* INDEX stylisation du bouton du menu (sur l'index uniquement) */
 .menu__button {
   align-self: center;
   opacity: 1;
   position: relative;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  /* stylisation du pseudo élément after avec l'opacity 0*/
+  /* stylisation du pseudo élément after avec l'opacity*/
   /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
 }
 .menu__button:after {
@@ -318,30 +231,6 @@ a {
 }
 .menu__button:hover:after {
   opacity: 1;
-}
-.menu__third-container {
-  opacity: 0;
-  background: #9988ff;
-  height: 50px;
-  width: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transform: translate(0%);
-  transition: all 600ms ease-in-out;
-}
-.menu__icon {
-  color: white;
-  transform: rotate(-180deg);
-  transition: all 600ms ease-in 150ms;
-  opacity: 0;
-}
-.menu__dish-price {
-  position: relative;
-  left: -80px;
-  transform: translateX(0%);
-  transition: transform 400ms ease-in;
 }
 
 /* configuration du footer */
