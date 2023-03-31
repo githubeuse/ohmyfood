@@ -198,310 +198,310 @@ a {
             }
         }
     }
+}
 
 
-    /* configuration de la zone décrivant le fonctionnement */
-    .process {
+/* configuration de la zone décrivant le fonctionnement */
+.process {
 
-        /* mise en place du display en version tab */
-        &__container {
-            @include tab-only {
-                display: flex;
-                flex-direction: row;
-            }
+    /* mise en place du display en version tab */
+    &__container {
+        @include tab-only {
+            display: flex;
+            flex-direction: row;
         }
+    }
 
-        /* configuration des boutons dans la zone de fonctionnement */
-        &__button {
-            @extend %display_flexrow;
-            @extend %alignitems_center;
-            @extend %bg-light-grey;
-            opacity: 1;
-            z-index: 1;
-            box-shadow: $default-box-shadow;
-            position: relative;
+    /* configuration des boutons dans la zone de fonctionnement */
+    &__button {
+        @extend %display_flexrow;
+        @extend %alignitems_center;
+        @extend %bg-light-grey;
+        opacity: 1;
+        z-index: 1;
+        box-shadow: $default-box-shadow;
+        position: relative;
+        border-radius: 20px;
+
+        /* insertion d'un pseudo élément pour le changement de couleur au survol*/
+        &::after {
+            content: "";
+            background: lighten($color-primary, 33);
+            box-shadow: $darker-box-shadow;
             border-radius: 20px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: opacity 210ms;
+        }
 
-            /* insertion d'un pseudo élément pour le changement de couleur au survol*/
+        /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
+        &:hover {
             &::after {
-                content: "";
-                background: lighten($color-primary, 33);
-                box-shadow: $darker-box-shadow;
-                border-radius: 20px;
-                opacity: 0;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                transition: opacity 210ms;
+                opacity: 1;
             }
 
-            /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
-            &:hover {
-                &::after {
-                    opacity: 1;
-                }
-
-                &:hover>.process__icon {
-                    color: $color-primary;
-                }
-
+            &:hover>.process__icon {
+                color: $color-primary;
             }
-        }
 
-        /* configuration des icônes dans la zone de fonctionnement */
-        &__icon {
-            color: $color-medium-grey;
-            position: relative;
         }
     }
 
-    /* configuration de la zone restaurants */
-    .restaurants {
-        @extend %bg-light-grey;
+    /* configuration des icônes dans la zone de fonctionnement */
+    &__icon {
+        color: $color-medium-grey;
+        position: relative;
     }
+}
 
-    /* configuration des cards dans la zone restaurants */
-    .restaurant-card {
+/* configuration de la zone restaurants */
+.restaurants {
+    @extend %bg-light-grey;
+}
 
-        /* configuration du container qui contient 2 cards de plats */
-        &__principal-container {
-            @include tab-only {
-                display: flex;
-                flex-direction: row;
-            }
-        }
+/* configuration des cards dans la zone restaurants */
+.restaurant-card {
 
-        /*configuration du container qui contient : l'image, le texte*/
-        &__elements-container {
-            @extend %card_design;
-        }
-
-
-        /* configuration du container qui contient : titre, texte, icone*/
-        &__last-line-container {
-            @extend %display_flexrow;
-            @extend %alignitems_center;
-        }
-
-        /* configuration du container qui contient text : titre, texte*/
-        &__text {
-            @extend %display_flexcolumn;
-        }
-
-        /* configuration de l'icone coeur dans la card */
-        &__heart {
-            &::before {
-                @include heart-icon-before;
-            }
-
-            &:hover::before {
-                @include heart-icon-hover-before;
-            }
+    /* configuration du container qui contient 2 cards de plats */
+    &__principal-container {
+        @include tab-only {
+            display: flex;
+            flex-direction: row;
         }
     }
 
+    /*configuration du container qui contient : l'image, le texte*/
+    &__elements-container {
+        @extend %card_design;
+    }
 
-    @keyframes casquette {
-        0% {
-            opacity: 0;
-            transform: translateY(20%);
+
+    /* configuration du container qui contient : titre, texte, icone*/
+    &__last-line-container {
+        @extend %display_flexrow;
+        @extend %alignitems_center;
+    }
+
+    /* configuration du container qui contient text : titre, texte*/
+    &__text {
+        @extend %display_flexcolumn;
+    }
+
+    /* configuration de l'icone coeur dans la card */
+    &__heart {
+        &::before {
+            @include heart-icon-before;
         }
 
-        100% {
-            opacity: 1;
-            transform: translateY(0%);
+        &:hover::before {
+            @include heart-icon-hover-before;
+        }
+    }
+}
+
+
+@keyframes casquette {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+
+
+/*mise en place du fond du menu */
+.menu {
+    @extend %bg-light-grey;
+    width: 100%;
+
+    &__flex-column-2 {
+        @include tab-only {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    /* stylisation de la disposition de l'entête du menu */
+    &__header {
+        @extend %display_flexrow;
+        @extend %alignitems_center;
+    }
+
+    /* configuration de l'icone coeur dans la card */
+    &__heart {
+        padding: 15px;
+
+        &::before {
+            @include heart-icon-before;
+        }
+
+        &:hover::before {
+            @include heart-icon-hover-before;
         }
     }
 
 
-
-    /*mise en place du fond du menu */
-    .menu {
-        @extend %bg-light-grey;
-        width: 100%;
-
-        &__flex-column-2 {
-            @include tab-only {
-                display: flex;
-                flex-direction: row;
-            }
-        }
-
-        /* stylisation de la disposition de l'entête du menu */
-        &__header {
-            @extend %display_flexrow;
-            @extend %alignitems_center;
-        }
-
-        /* configuration de l'icone coeur dans la card */
-        &__heart {
-            padding: 15px;
-
-            &::before {
-                @include heart-icon-before;
-            }
-
-            &:hover::before {
-                @include heart-icon-hover-before;
-            }
-        }
-
-
-        /* correspond à escargot-container-->
+    /* correspond à escargot-container-->
     /* stylisation de la disposition du container contenant toutes les cards de repas*/
-        &__principal-container {
-            @include tab-only {
-                display: flex;
-                flex-direction: column;
-                animation: casquette 600ms;
-            }
-        }
-
-        /* correspond à star-container */
-        /*                <!--contient tout ce que la card contient--> */
-        &__secondary-container {
-            /*@include tab-only {*/
+    &__principal-container {
+        @include tab-only {
             display: flex;
-            flex-direction: row;
-            width: 500px;
+            flex-direction: column;
+            animation: casquette 600ms;
+        }
+    }
 
-            &:active>.menu__dish-price {
-                transform: translateX(-250%);
-            }
+    /* correspond à star-container */
+    /*                <!--contient tout ce que la card contient--> */
+    &__secondary-container {
+        /*@include tab-only {*/
+        display: flex;
+        flex-direction: row;
+        width: 500px;
 
+        &:active>.menu__dish-price {
+            transform: translateX(-250%);
         }
 
-        /*correspond à shadow-bouton*/
-        /* stylisation des plats du menu, avec le design de card */
-        &__card {
-            @extend %card_design;
-            width: 85vw;
+    }
 
-            /*&:active>.menu__dish_title {*/
-            /*width: 200px;}*/
+    /*correspond à shadow-bouton*/
+    /* stylisation des plats du menu, avec le design de card */
+    &__card {
+        @extend %card_design;
+        width: 85vw;
 
-
-            /*&:active>.menu__dish-description {*/
-            /*width: 200px;}*/
+        /*&:active>.menu__dish_title {*/
+        /*width: 200px;}*/
 
 
-            &:active+.menu__third-container {
-                transform: translateX(-100%);
-                opacity: 1;
-            }
-
-            &:active+.menu__third-container>.menu__icon {
-                transform: rotate(0deg);
-                opacity: 1;
-            }
-
-            &__dish-title {
-                /*width: 250px;*/
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                transition: width 300ms ease-in;
-            }
-
-            &__dish-description {
-                /*width: 250px;*/
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                transition: width 300ms ease-in;
-            }
-        }
+        /*&:active>.menu__dish-description {*/
+        /*width: 200px;}*/
 
 
-        /* stylisation du bouton du menu */
-        &__button {
-            align-self: center;
-            @extend %bg-gradient;
+        &:active+.menu__third-container {
+            transform: translateX(-100%);
             opacity: 1;
-            position: relative;
-            z-index: 1;
-            box-shadow: $default-box-shadow;
-
-            /* stylisation du pseudo élément after avec l'opacity 0*/
-            &:after {
-                content: "";
-                background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
-                box-shadow: $darker-box-shadow;
-                opacity: 0;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                transition: opacity 210ms;
-            }
-
-            /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
-            &:hover {
-                &:after {
-                    opacity: 1;
-                }
-            }
         }
 
-        &__third-container {
-            opacity: 0;
-            background: #9988ff;
-            height: 50px;
-            width: 50px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            transform: translate(0%);
-            transition: all 600ms ease-in-out;
+        &:active+.menu__third-container>.menu__icon {
+            transform: rotate(0deg);
+            opacity: 1;
         }
 
-        &__icon {
-            color: white;
-            transform: rotate(-180deg);
-            transition: all 600ms ease-in 150ms;
-            opacity: 0;
+        &__dish-title {
+            /*width: 250px;*/
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: width 300ms ease-in;
         }
 
-        &__dish-price {
-            position: relative;
-            left: -80px;
-            transform: translateX(0%);
-            transition: transform 400ms ease-in;
+        &__dish-description {
+            /*width: 250px;*/
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: width 300ms ease-in;
         }
     }
 
 
+    /* stylisation du bouton du menu */
+    &__button {
+        align-self: center;
+        @extend %bg-gradient;
+        opacity: 1;
+        position: relative;
+        z-index: 1;
+        box-shadow: $default-box-shadow;
 
+        /* stylisation du pseudo élément after avec l'opacity 0*/
+        &:after {
+            content: "";
+            background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
+            box-shadow: $darker-box-shadow;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: opacity 210ms;
+        }
 
+        /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
 
-    /* configuration du footer */
-    .footer {
-        background: $color-dark-grey;
+    &__third-container {
+        opacity: 0;
+        background: #9988ff;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transform: translate(0%);
+        transition: all 600ms ease-in-out;
+    }
+
+    &__icon {
         color: white;
+        transform: rotate(-180deg);
+        transition: all 600ms ease-in 150ms;
+        opacity: 0;
+    }
 
-        /* configuration du logo dans le footer */
-        &__logo {
-            @extend %font_logo;
-        }
+    &__dish-price {
+        position: relative;
+        left: -80px;
+        transform: translateX(0%);
+        transition: transform 400ms ease-in;
+    }
+}
 
-        /* configuration du menu dans le footer */
-        &__menu {
-            padding-inline-start: 0px;
-        }
 
-        /*configuration des éléments de liste dans le menu du footer */
-        &__element {
-            list-style: none;
-        }
+
+
+
+/* configuration du footer */
+.footer {
+    background: $color-dark-grey;
+    color: white;
+
+    /* configuration du logo dans le footer */
+    &__logo {
+        @extend %font_logo;
+    }
+
+    /* configuration du menu dans le footer */
+    &__menu {
+        padding-inline-start: 0px;
+    }
+
+    /*configuration des éléments de liste dans le menu du footer */
+    &__element {
+        list-style: none;
     }
 }
