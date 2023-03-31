@@ -15,7 +15,7 @@ $breakpoints:(tab-only: 768px,
     }
 }
 
-/* responsive :c réation d'une mixin desktop */
+/* responsive : création d'une mixin desktop */
 @mixin desktop-only {
     @media screen and (min-width: map-get($breakpoints, desktop-only)) {
         @content;
@@ -140,7 +140,7 @@ a {
         @extend %bg-white;
     }
 
-    /* configuration de l'input dans le header sur index.html*/
+    /* configuration de l'input-container dans le header sur index.html*/
     &__input-container {
         @extend %display_flexrow;
         @extend %alignitems_center;
@@ -148,6 +148,7 @@ a {
         position: relative;
     }
 
+    /* INDEX configuration de la zone input dans le header*/
     &__input {
         color: $color-dark-grey;
         padding-left: 20px;
@@ -157,6 +158,7 @@ a {
         }
     }
 
+    /* INDEX configuration de l'icone à côté de la zone input */
     &__icone {
         position: absolute;
         top: 2.5px;
@@ -167,7 +169,7 @@ a {
         color: $color-dark-grey;
     }
 
-    /* configuration du bouton dans le header sur la page index*/
+    /* INDEX configuration du bouton violet dans le header sur la page index*/
     &__button {
         @extend %bg-gradient;
         opacity: 1;
@@ -202,7 +204,7 @@ a {
 }
 
 
-/* configuration de la zone décrivant le fonctionnement */
+/* INDEX mise en place de la zone décrivant le fonctionnement */
 .process {
 
     /* mise en place du display en version tab */
@@ -262,12 +264,12 @@ a {
     }
 }
 
-/* configuration de la zone restaurants */
+/* INDEX configuration de la zone restaurants */
 .restaurants {
     @extend %bg-light-grey;
 }
 
-/* configuration des cards dans la zone restaurants */
+/* INDEX configuration des cards dans la zone restaurants */
 .restaurant-card {
 
     /* configuration du container qui contient 2 cards de plats */
@@ -308,122 +310,14 @@ a {
 }
 
 
-@keyframes casquette {
-
-    0%,
-    20% {
-        opacity: 0;
-        transform: translateY(20%);
-    }
-
-
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
 
 
 
-/*mise en place du fond du menu */
+
+
 .menu {
-    @extend %bg-light-grey;
-    width: 100%;
 
-    &__flex-column-2 {
-        @include tab-only {
-            display: flex;
-            flex-direction: row;
-        }
-    }
-
-    /* stylisation de la disposition de l'entête du menu */
-    &__header {
-        @extend %display_flexrow;
-        @extend %alignitems_center;
-    }
-
-    /* configuration de l'icone coeur dans la card */
-    &__heart {
-        padding: 15px;
-
-        &::before {
-            @include heart-icon-before;
-        }
-
-        &:hover::before {
-            @include heart-icon-hover-before;
-        }
-    }
-
-
-    /* correspond à escargot-container-->
-    /* stylisation de la disposition du container contenant toutes les cards de repas*/
-    &__principal-container {
-        @include tab-only {
-            display: flex;
-            flex-direction: column;
-            animation: casquette 800ms;
-        }
-    }
-
-    /* correspond à star-container */
-    /*                <!--contient tout ce que la card contient--> */
-    &__secondary-container {
-        /*@include tab-only {*/
-        display: flex;
-        flex-direction: row;
-        width: 500px;
-
-        &:active>.menu__dish-price {
-            transform: translateX(-250%);
-        }
-
-    }
-
-    /*correspond à shadow-bouton*/
-    /* stylisation des plats du menu, avec le design de card */
-    &__card {
-        @extend %card_design;
-        width: 85vw;
-
-        /*&:active>.menu__dish_title {*/
-        /*width: 200px;}*/
-
-
-        /*&:active>.menu__dish-description {*/
-        /*width: 200px;}*/
-
-
-        &:active+.menu__third-container {
-            transform: translateX(-100%);
-            opacity: 1;
-        }
-
-        &:active+.menu__third-container>.menu__icon {
-            transform: rotate(0deg);
-            opacity: 1;
-        }
-
-        &__dish-title {
-            /*width: 250px;*/
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            transition: width 300ms ease-in;
-        }
-
-        &__dish-description {
-            /*width: 250px;*/
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            transition: width 300ms ease-in;
-        }
-    }
-
-
-    /* stylisation du bouton du menu */
+    /* INDEX stylisation du bouton du menu (sur l'index uniquement) */
     &__button {
         align-self: center;
         @extend %bg-gradient;
@@ -432,7 +326,7 @@ a {
         z-index: 1;
         box-shadow: $default-box-shadow;
 
-        /* stylisation du pseudo élément after avec l'opacity 0*/
+        /* stylisation du pseudo élément after avec l'opacity*/
         &:after {
             content: "";
             background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
@@ -456,34 +350,8 @@ a {
             }
         }
     }
-
-    &__third-container {
-        opacity: 0;
-        background: #9988ff;
-        height: 50px;
-        width: 50px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        transform: translate(0%);
-        transition: all 600ms ease-in-out;
-    }
-
-    &__icon {
-        color: white;
-        transform: rotate(-180deg);
-        transition: all 600ms ease-in 150ms;
-        opacity: 0;
-    }
-
-    &__dish-price {
-        position: relative;
-        left: -80px;
-        transform: translateX(0%);
-        transition: transform 400ms ease-in;
-    }
 }
+
 
 
 

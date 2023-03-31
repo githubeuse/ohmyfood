@@ -1,0 +1,262 @@
+@charset "UTF-8";
+/* import de la police shrikhand */
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/* import de la police roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+/* définition des breakpoints */
+/* responsive : création d'une mixin tablette */
+/* responsive : création d'une mixin desktop */
+/* définition des couleurs */
+/* définition des ombres portées */
+/* configuration de la police roboto comme règle générale */
+body {
+  font-family: roboto;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* configuration de la police shrikhand pour tout logo */
+.footer__logo, .header__logo {
+  font-family: Shrikhand;
+}
+
+/* suppression du soulignement des liens comme règle générale */
+a {
+  text-decoration: none;
+  color: #353535;
+}
+
+/* extension display flex row */
+.restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* extension display flex column */
+.restaurant-card__text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* extension align items center */
+.restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
+  align-items: center;
+}
+
+/* extension align items space-between */
+/* extension fond en gris clair */
+.restaurants, .process__button, .header {
+  background: #f7f7f7;
+}
+
+/* extension fond en blanc */
+.header__logo, .header__container {
+  background: white;
+}
+
+/* extension fond en dégradé */
+.menu__button, .header__button {
+  background: linear-gradient(#FF79D4, #9356DC);
+}
+
+/* extension design de card */
+.restaurant-card__elements-container {
+  background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  padding-bottom: 10px;
+}
+
+/* configuration du header */
+.header {
+  /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
+  /* configuration du logo dans le header sur index.html */
+  /* configuration de l'input-container dans le header sur index.html*/
+  /* INDEX configuration de la zone input dans le header*/
+  /* INDEX configuration de l'icone à côté de la zone input */
+  /* INDEX configuration du bouton violet dans le header sur la page index*/
+}
+.header__input-container {
+  background-color: #eaeaea;
+  position: relative;
+}
+.header__input {
+  color: #353535;
+  padding-left: 20px;
+}
+.header__input::-moz-placeholder {
+  color: #353535;
+}
+.header__input::placeholder {
+  color: #353535;
+}
+.header__icone {
+  position: absolute;
+  top: 2.5px;
+  bottom: 0;
+  left: 5px;
+  right: 0;
+  width: 30px;
+  color: #353535;
+}
+.header__button {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* insertion d'un pseudo élément pour le changement de couleur au survol*/
+  /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
+}
+.header__button:after {
+  content: "";
+  background: linear-gradient(#ff88d9 0%, #9b63df 100%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 210ms;
+}
+.header__button:hover:after {
+  opacity: 1;
+}
+
+/* INDEX mise en place de la zone décrivant le fonctionnement */
+.process {
+  /* mise en place du display en version tab */
+  /* configuration des boutons dans la zone de fonctionnement */
+  /* configuration des icônes dans la zone de fonctionnement */
+}
+@media screen and (min-width: 768px) {
+  .process__container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.process__button {
+  opacity: 1;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 20px;
+  /* insertion d'un pseudo élément pour le changement de couleur au survol*/
+  /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
+}
+.process__button::after {
+  content: "";
+  background: #ece1f9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
+  border-radius: 20px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 210ms;
+}
+.process__button:hover::after {
+  opacity: 1;
+}
+.process__button:hover:hover > .process__icon {
+  color: #9356DC;
+}
+.process__icon {
+  color: #7e7e7e;
+  position: relative;
+}
+
+/* INDEX configuration de la zone restaurants */
+/* INDEX configuration des cards dans la zone restaurants */
+.restaurant-card {
+  /* configuration du container qui contient 2 cards de plats */
+  /*configuration du container qui contient : l'image, le texte*/
+  /* configuration du container qui contient : titre, texte, icone*/
+  /* configuration du container qui contient text : titre, texte*/
+  /* configuration de l'icone coeur dans la card */
+}
+@media screen and (min-width: 768px) {
+  .restaurant-card__principal-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.restaurant-card__heart::before {
+  color: #353535;
+  content: "\f004";
+  transition: color 100ms ease-in-out;
+}
+.restaurant-card__heart:hover::before {
+  cursor: pointer;
+  background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+.menu {
+  /* INDEX stylisation du bouton du menu (sur l'index uniquement) */
+}
+.menu__button {
+  align-self: center;
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* stylisation du pseudo élément after avec l'opacity*/
+  /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
+}
+.menu__button:after {
+  content: "";
+  background: linear-gradient(#ff88d9 0%, #9b63df 100%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 210ms;
+}
+.menu__button:hover:after {
+  opacity: 1;
+}
+
+/* configuration du footer */
+.footer {
+  background: #353535;
+  color: white;
+  /* configuration du logo dans le footer */
+  /* configuration du menu dans le footer */
+  /*configuration des éléments de liste dans le menu du footer */
+}
+.footer__menu {
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+}
+.footer__element {
+  list-style: none;
+  color: white;
+}
+.footer__element a:link {
+  color: white;
+}
+.footer__element a:hover {
+  font-weight: 500;
+}/*# sourceMappingURL=main.css.map */
