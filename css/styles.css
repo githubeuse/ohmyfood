@@ -203,7 +203,7 @@ a {
 }
 
 @keyframes casquette {
-  0% {
+  0%, 20% {
     opacity: 0;
     transform: translateY(20%);
   }
@@ -251,7 +251,7 @@ a {
   .menu__principal-container {
     display: flex;
     flex-direction: column;
-    animation: casquette 600ms;
+    animation: casquette 800ms;
   }
 }
 .menu__secondary-container {

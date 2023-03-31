@@ -309,10 +309,13 @@ a {
 
 
 @keyframes casquette {
-    0% {
+
+    0%,
+    20% {
         opacity: 0;
         transform: translateY(20%);
     }
+
 
     100% {
         opacity: 1;
@@ -360,7 +363,7 @@ a {
         @include tab-only {
             display: flex;
             flex-direction: column;
-            animation: casquette 600ms;
+            animation: casquette 800ms;
         }
     }
 
