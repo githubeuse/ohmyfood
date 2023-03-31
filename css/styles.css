@@ -23,6 +23,7 @@ body {
 /* suppression du soulignement des liens comme règle générale */
 a {
   text-decoration: none;
+  color: #353535;
 }
 
 /* extension display flex row */
@@ -356,6 +357,13 @@ a {
 }
 .footer__element {
   list-style: none;
+  color: white;
+}
+.footer__element a:link {
+  color: white;
+}
+.footer__element a:hover {
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=styles.css.map */

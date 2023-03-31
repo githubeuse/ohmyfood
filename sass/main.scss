@@ -67,6 +67,7 @@ body {
 /* suppression du soulignement des liens comme règle générale */
 a {
     text-decoration: none;
+    color: $color-dark-grey;
 }
 
 /* extension display flex row */
@@ -503,5 +504,14 @@ a {
     /*configuration des éléments de liste dans le menu du footer */
     &__element {
         list-style: none;
+        color: white;
+
+        & a:link {
+            color: white;
+        }
+
+        & a:hover {
+            font-weight: 500;
+        }
     }
 }
