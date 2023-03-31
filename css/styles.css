@@ -86,8 +86,12 @@ a {
   background-color: #eaeaea;
   position: relative;
 }
+.header__input {
+  color: #353535;
+  padding-left: 20px;
+}
 .header__input::placeholder {
-  padding-left: 15px;
+  color: #353535;
 }
 .header__icone {
   position: absolute;
@@ -95,6 +99,8 @@ a {
   bottom: 0;
   left: 5px;
   right: 0;
+  width: 30px;
+  color: #353535;
 }
 .header__button {
   opacity: 1;
