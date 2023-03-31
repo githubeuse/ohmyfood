@@ -309,15 +309,8 @@ a {
     }
 }
 
-
-
-
-
-
-
+/* INDEX stylisation du bouton du menu (sur l'index uniquement) */
 .menu {
-
-    /* INDEX stylisation du bouton du menu (sur l'index uniquement) */
     &__button {
         align-self: center;
         @extend %bg-gradient;
