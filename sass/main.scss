@@ -346,6 +346,7 @@ a {
 }
 
 
+$width-slide: 50px;
 
 .dish {
     &__header {
@@ -370,6 +371,8 @@ a {
         @extend %display_flexrow;
         @extend %card_design;
         width: 98%;
+        height: 80px;
+        position: relative;
 
         @include tab-only {
             width: 44%;
@@ -379,25 +382,36 @@ a {
     &__visible-part {
         position: relative;
         @extend %display_flexcolumn;
-        width: 90%;
-
+        width: 100%;
     }
 
 
     &__title {
-        width: 100%;
         display: inline-block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        padding-right: $width-slide;
     }
 
     &__description {
-        width: 100%;
         display: inline-block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        padding-right: $width-slide;
+
+    }
+
+    &__sliding-part {
+        background: $color-tertiary;
+        border-radius: 0 20px 20px 0;
+        height: 95px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: $width-slide;
     }
 }
 

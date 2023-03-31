@@ -244,6 +244,8 @@ a {
 }
 .dish__card {
   width: 98%;
+  height: 80px;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .dish__card {
@@ -252,21 +254,31 @@ a {
 }
 .dish__visible-part {
   position: relative;
-  width: 90%;
+  width: 100%;
 }
 .dish__title {
-  width: 100%;
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-right: 50px;
 }
 .dish__description {
-  width: 100%;
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-right: 50px;
+}
+.dish__sliding-part {
+  background: #99E2DD;
+  border-radius: 0 20px 20px 0;
+  height: 95px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
 }
 
 /* configuration du footer */
