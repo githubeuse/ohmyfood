@@ -60,7 +60,7 @@ a {
 }
 
 /* extension design de card */
-.restaurant-card__elements-container {
+.dish__card, .restaurant-card__elements-container {
   background-color: white;
   padding: 5px;
   border-radius: 20px;
