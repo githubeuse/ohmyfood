@@ -33,7 +33,7 @@ a {
 }
 
 /* extension display flex column */
-.dish__2-cards-container, .restaurant-card__text {
+.dish__visible-part, .dish__2-cards-container, .restaurant-card__text {
   display: flex;
   flex-direction: column;
 }
@@ -233,12 +233,42 @@ a {
   opacity: 1;
 }
 
+.dish__category {
+  width: 100%;
+}
 @media screen and (min-width: 768px) {
   .dish__2-cards-container {
     display: flex;
     flex-direction: row;
   }
 }
+.dish__card {
+  width: 98%;
+}
+@media screen and (min-width: 768px) {
+  .dish__card {
+    width: 44%;
+  }
+}
+.dish__visible-part {
+  position: relative;
+  width: 90%;
+}
+.dish__title {
+  width: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dish__description {
+  width: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* configuration du footer */
 .footer {
   background: #353535;

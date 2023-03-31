@@ -345,10 +345,16 @@ a {
     }
 }
 
+
+
 .dish {
     &__header {
         @extend %display_flexrow;
         @extend %alignitems_center;
+    }
+
+    &__category {
+        width: 100%;
     }
 
     &__2-cards-container {
@@ -363,6 +369,35 @@ a {
     &__card {
         @extend %display_flexrow;
         @extend %card_design;
+        width: 98%;
+
+        @include tab-only {
+            width: 44%;
+        }
+    }
+
+    &__visible-part {
+        position: relative;
+        @extend %display_flexcolumn;
+        width: 90%;
+
+    }
+
+
+    &__title {
+        width: 100%;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__description {
+        width: 100%;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
