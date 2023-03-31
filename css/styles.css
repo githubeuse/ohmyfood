@@ -27,19 +27,19 @@ a {
 }
 
 /* extension display flex row */
-.restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
+.dish__card, .dish__header, .restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
   display: flex;
   flex-direction: row;
 }
 
 /* extension display flex column */
-.restaurant-card__text {
+.dish__2-cards-container, .restaurant-card__text {
   display: flex;
   flex-direction: column;
 }
 
 /* extension align items center */
-.restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
+.dish__header, .restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
   align-items: center;
 }
 
@@ -233,6 +233,12 @@ a {
   opacity: 1;
 }
 
+@media screen and (min-width: 768px) {
+  .dish__2-cards-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
 /* configuration du footer */
 .footer {
   background: #353535;

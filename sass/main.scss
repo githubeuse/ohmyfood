@@ -345,6 +345,27 @@ a {
     }
 }
 
+.dish {
+    &__header {
+        @extend %display_flexrow;
+        @extend %alignitems_center;
+    }
+
+    &__2-cards-container {
+        @extend %display_flexcolumn;
+
+        @include tab-only {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &__card {
+        @extend %display_flexrow;
+    }
+}
+
+
 
 
 
