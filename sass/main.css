@@ -255,23 +255,29 @@ a {
     width: 44%;
   }
 }
+.dish__card:active > .dish__sliding-part {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.dish__card:active > .dish__visible-part {
+  width: 80%;
+}
 .dish__visible-part {
   position: relative;
-  width: 100%;
+  width: 90%;
+  transition: width 200ms ease-in-out;
 }
 .dish__title {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-right: 50px;
 }
 .dish__description {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-right: 50px;
 }
 .dish__sliding-part {
   background: #99E2DD;
@@ -282,10 +288,22 @@ a {
   bottom: 0;
   right: 0;
   width: 50px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 200ms ease-in-out;
 }
 .dish__ok-icon {
   color: white;
   font-size: 1.2em;
+  display: flex;
+  flex-direction: row;
+  height: 95px;
+  justify-content: center;
+  align-items: center;
+}
+.dish__price {
+  margin: 10px;
+  padding-right: 10Px;
 }
 
 /* configuration du footer */

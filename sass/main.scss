@@ -348,6 +348,8 @@ a {
 
 $width-slide: 50px;
 
+
+
 .dish {
     &__header {
         @extend %display_flexrow;
@@ -377,12 +379,41 @@ $width-slide: 50px;
         @include tab-only {
             width: 44%;
         }
+
+        &:active>.dish__visible-part {
+            width: 80%;
+        }
+
+        &:active>.dish__sliding-part {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+
+    }
+
+    &__ok-icon {
+        color: white;
+        font-size: 1.2em;
+        display: flex;
+        flex-direction: row;
+        height: 95px;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-180deg);
+        transition: transform 400ms ease-in 50ms;
     }
 
     &__visible-part {
         position: relative;
         @extend %display_flexcolumn;
-        width: 100%;
+        width: 90%;
+        transition: width 200ms ease-in-out;
+
+        &:active+.dish__sliding-part>.dish__ok-icon {
+            transform: rotate(0deg);
+        }
+
+
     }
 
 
@@ -391,7 +422,6 @@ $width-slide: 50px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-right: $width-slide;
     }
 
     &__description {
@@ -399,8 +429,6 @@ $width-slide: 50px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-right: $width-slide;
-
     }
 
     &__sliding-part {
@@ -412,11 +440,16 @@ $width-slide: 50px;
         bottom: 0;
         right: 0;
         width: $width-slide;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 200ms ease-in-out;
     }
 
-    &__ok-icon {
-        color: white;
-        font-size: 1.2em;
+
+
+    &__price {
+        margin: 10px;
+        padding-right: 10Px;
     }
 }
 
