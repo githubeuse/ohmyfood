@@ -347,7 +347,9 @@ a {
 
 
 $width-slide: 50px;
-
+$cards-number: 3;
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur/$cards-number;
 
 
 .dish {
@@ -375,6 +377,14 @@ $width-slide: 50px;
         width: 98%;
         height: 80px;
         position: relative;
+        opacity: 0;
+        animation: progressive-appearance $anim-dur forwards;
+        @for $i from 1 through $cards-number {
+            &--#{$i} {
+                animation-delay: $anim-delay * $i;
+            }
+        }
+
 
         @include tab-only {
             width: 44%;
@@ -453,6 +463,20 @@ $width-slide: 50px;
     }
 }
 
+
+@keyframes progressive-appearance {
+
+    0%,
+    20% {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
 
 
 

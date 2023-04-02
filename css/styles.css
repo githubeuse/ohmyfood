@@ -246,6 +246,17 @@ a {
   width: 98%;
   height: 80px;
   position: relative;
+  opacity: 0;
+  animation: progressive-appearance 1000ms forwards;
+}
+.dish__card--1 {
+  animation-delay: 333.3333333333ms;
+}
+.dish__card--2 {
+  animation-delay: 666.6666666667ms;
+}
+.dish__card--3 {
+  animation-delay: 1000ms;
 }
 @media screen and (min-width: 768px) {
   .dish__card {
@@ -308,6 +319,16 @@ a {
   padding-right: 10Px;
 }
 
+@keyframes progressive-appearance {
+  0%, 20% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 /* configuration du footer */
 .footer {
   background: #353535;
