@@ -16,7 +16,7 @@ body {
 }
 
 /* configuration de la police shrikhand pour tout logo */
-.footer__logo, .header__logo {
+.footer__logo, .header__logo, .loader {
   font-family: Shrikhand;
 }
 
@@ -72,7 +72,7 @@ a {
 }
 
 .loader {
-  background: rgb(90, 141, 241);
+  background: #eaeaea;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -84,6 +84,9 @@ a {
   justify-content: center;
   align-items: center;
   z-index: 99;
+}
+.loader:nth-child(2) {
+  color: red;
 }
 .loader__verre {
   width: 100px;
@@ -118,9 +121,15 @@ a {
 @keyframes apparition-magique {
   0%, 80% {
     opacity: 1;
+    transform: scaleX(1);
+  }
+  99% {
+    opacity: 0;
+    transform: scaleX(1);
   }
   100% {
     opacity: 0;
+    transform: scaleX(0);
   }
 }
 @keyframes diminution-aboire {

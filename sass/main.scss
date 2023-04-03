@@ -125,7 +125,7 @@ a {
 
 
 .loader {
-    background: rgb(90, 141, 241);
+    background: $color-light-grey-2;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -137,6 +137,11 @@ a {
     justify-content: center;
     align-items: center;
     z-index: 99;
+    @extend %font_logo;
+
+    &:nth-child(2) {
+        color: red;
+    }
 
     &__verre {
         width: 100px;
@@ -177,11 +182,19 @@ a {
     0%,
     80% {
         opacity: 1;
+        transform: scaleX(1);
+    }
+
+    99% {
+        opacity: 0;
+        transform: scaleX(1);
     }
 
     100% {
         opacity: 0;
+        transform: scaleX(0);
     }
+
 
 }
 
