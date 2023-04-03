@@ -303,7 +303,7 @@ a {
             @include heart-icon-before;
         }
 
-        &:hover::before {
+        &:active::before {
             @include heart-icon-hover-before;
         }
     }

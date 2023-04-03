@@ -195,7 +195,7 @@ a {
   content: "\f004";
   transition: color 100ms ease-in-out;
 }
-.restaurant-card__heart:hover::before {
+.restaurant-card__heart:active::before {
   cursor: pointer;
   background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
   -webkit-background-clip: text;
