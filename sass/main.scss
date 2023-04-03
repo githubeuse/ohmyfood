@@ -123,6 +123,82 @@ a {
     padding-bottom: 10px;
 }
 
+
+.loader {
+    background: rgb(90, 141, 241);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: apparition-magique 3200ms forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+
+    &__verre {
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+
+    &__verre--mint {
+        position: relative;
+        top: -103px;
+        width: 100px;
+        height: 100px;
+        z-index: 99;
+        animation: diminution-aboire 700ms both;
+    }
+
+    &__verre--pink {
+        position: relative;
+        top: -203px;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        animation: diminution-aboire 700ms both 1000ms;
+    }
+
+    &__verre--purple {
+        position: relative;
+        top: -303px;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        animation: diminution-aboire 700ms both 2000ms;
+    }
+}
+
+@keyframes apparition-magique {
+
+    0%,
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes diminution-aboire {
+    0% {
+        transform: scaleY(0%) scaleX(0%);
+    }
+
+    50% {
+        transform: scaleY(70%) scaleX(80%);
+    }
+
+    100% {
+        transform: scaleY(0%) scaleX(0%);
+    }
+}
+
 /* configuration du header */
 .header {
     @extend %bg-light-grey;
@@ -379,9 +455,10 @@ $anim-delay: $anim-dur/$cards-number;
         position: relative;
         opacity: 0;
         animation: progressive-appearance $anim-dur forwards;
+
         @for $i from 1 through $cards-number {
             &--#{$i} {
-                animation-delay: $anim-delay * $i;
+                animation-delay: ($anim-delay * $i) + 2700ms;
             }
         }
 

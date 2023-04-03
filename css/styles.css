@@ -71,6 +71,69 @@ a {
   padding-bottom: 10px;
 }
 
+.loader {
+  background: rgb(90, 141, 241);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: apparition-magique 3200ms forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.loader__verre {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.loader__verre--mint {
+  position: relative;
+  top: -103px;
+  width: 100px;
+  height: 100px;
+  z-index: 99;
+  animation: diminution-aboire 700ms both;
+}
+.loader__verre--pink {
+  position: relative;
+  top: -203px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  animation: diminution-aboire 700ms both 1000ms;
+}
+.loader__verre--purple {
+  position: relative;
+  top: -303px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  animation: diminution-aboire 700ms both 2000ms;
+}
+
+@keyframes apparition-magique {
+  0%, 80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes diminution-aboire {
+  0% {
+    transform: scaleY(0%) scaleX(0%);
+  }
+  50% {
+    transform: scaleY(70%) scaleX(80%);
+  }
+  100% {
+    transform: scaleY(0%) scaleX(0%);
+  }
+}
 /* configuration du header */
 .header {
   /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
@@ -250,13 +313,13 @@ a {
   animation: progressive-appearance 1000ms forwards;
 }
 .dish__card--1 {
-  animation-delay: 333.3333333333ms;
+  animation-delay: 3033.3333333333ms;
 }
 .dish__card--2 {
-  animation-delay: 666.6666666667ms;
+  animation-delay: 3366.6666666667ms;
 }
 .dish__card--3 {
-  animation-delay: 1000ms;
+  animation-delay: 3700ms;
 }
 @media screen and (min-width: 768px) {
   .dish__card {
