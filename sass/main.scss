@@ -139,10 +139,6 @@ a {
     z-index: 99;
     @extend %font_logo;
 
-    &:nth-child(2) {
-        color: red;
-    }
-
     &__verre {
         width: 100px;
         height: 100px;
@@ -471,7 +467,7 @@ $anim-delay: $anim-dur/$cards-number;
 
         @for $i from 1 through $cards-number {
             &--#{$i} {
-                animation-delay: ($anim-delay * $i) + 2700ms;
+                animation-delay: ($anim-delay * $i);
             }
         }
 

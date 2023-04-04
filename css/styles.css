@@ -85,9 +85,6 @@ a {
   align-items: center;
   z-index: 99;
 }
-.loader:nth-child(2) {
-  color: red;
-}
 .loader__verre {
   width: 100px;
   height: 100px;
@@ -322,13 +319,13 @@ a {
   animation: progressive-appearance 1000ms forwards;
 }
 .dish__card--1 {
-  animation-delay: 3033.3333333333ms;
+  animation-delay: 333.3333333333ms;
 }
 .dish__card--2 {
-  animation-delay: 3366.6666666667ms;
+  animation-delay: 666.6666666667ms;
 }
 .dish__card--3 {
-  animation-delay: 3700ms;
+  animation-delay: 1000ms;
 }
 @media screen and (min-width: 768px) {
   .dish__card {
