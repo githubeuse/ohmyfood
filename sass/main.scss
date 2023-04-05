@@ -332,6 +332,7 @@ a {
         @include tab-only {
             display: flex;
             flex-direction: row;
+            justify-content: space-around;
         }
     }
 
@@ -347,7 +348,6 @@ a {
         border-radius: 20px;
         padding: 5px 20px;
         margin-bottom: 25px;
-
 
 
         /* insertion d'un pseudo élément pour le changement de couleur au survol*/
@@ -398,7 +398,8 @@ a {
         border-radius: 50%;
         font-size: 10px;
         height: 8px;
-        p{
+
+        p {
             position: relative;
             top: -11px;
         }
