@@ -67,7 +67,6 @@ body {
 /* suppression du soulignement des liens comme règle générale */
 a {
     text-decoration: none;
-    color: $color-dark-grey;
 }
 
 /* extension display flex row */
@@ -138,6 +137,7 @@ a {
     align-items: center;
     z-index: 99;
     @extend %font_logo;
+    display: none;
 
     &__verre {
         width: 100px;
@@ -210,7 +210,14 @@ a {
 
 /* configuration du header */
 .header {
-    @extend %bg-light-grey;
+
+
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: $color-dark-grey;
+    }
 
     /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
     &__container {
@@ -223,33 +230,46 @@ a {
     &__logo {
         @extend %font_logo;
         @extend %bg-white;
+        @extend %display_flexrow;
+        @extend %justifycontent_center;
     }
 
     /* configuration de l'input-container dans le header sur index.html*/
     &__input-container {
         @extend %display_flexrow;
         @extend %alignitems_center;
-        background-color: $color-light-grey-2;
         position: relative;
     }
 
-    /* INDEX configuration de la zone input dans le header*/
-    &__input {
-        color: $color-dark-grey;
-        padding-left: 20px;
+    &__greybg {
+        @extend %bg-light-grey;
+        @extend %display_flexcolumn;
+        @extend %alignitems_center;
+    }
 
-        &::placeholder {
-            color: $color-dark-grey;
+    /* INDEX configuration de la zone input dans le header*/
+    &__input-container {
+        color: $color-dark-grey;
+        background: $color-light-grey-2;
+        padding-left: 20px;
+        @extend %display_flexrow;
+        @extend %justifycontent_center;
+
+        input {
+            border: 0;
+            background: $color-light-grey-2;
+            padding: 10px;
+
+            &::placeholder {
+                color: $color-dark-grey;
+                font-family: Roboto;
+            }
         }
     }
 
     /* INDEX configuration de l'icone à côté de la zone input */
     &__icone {
-        position: absolute;
-        top: 2.5px;
-        bottom: 0;
-        left: 5px;
-        right: 0;
+        position: relative;
         width: 30px;
         color: $color-dark-grey;
     }
@@ -261,6 +281,10 @@ a {
         position: relative;
         z-index: 1;
         box-shadow: $default-box-shadow;
+        width: fit-content;
+        padding: 10px;
+        color: white;
+        border-radius: 20px;
 
         /* insertion d'un pseudo élément pour le changement de couleur au survol*/
         &:after {
@@ -277,6 +301,8 @@ a {
             height: 100%;
             z-index: -1;
             transition: opacity 210ms;
+            border-radius: 20px;
+
         }
 
         /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
@@ -291,6 +317,15 @@ a {
 
 /* INDEX mise en place de la zone décrivant le fonctionnement */
 .process {
+    padding: 1em;
+
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: $color-dark-grey;
+
+    }
 
     /* mise en place du display en version tab */
     &__container {
@@ -310,6 +345,10 @@ a {
         box-shadow: $default-box-shadow;
         position: relative;
         border-radius: 20px;
+        padding: 5px 20px;
+        margin-bottom: 25px;
+
+
 
         /* insertion d'un pseudo élément pour le changement de couleur au survol*/
         &::after {
@@ -346,16 +385,42 @@ a {
     &__icon {
         color: $color-medium-grey;
         position: relative;
+        margin-left: 30px;
+        margin-right: 20px;
+        font-size: 1.1em;
+    }
+
+    &__number {
+        background: $color-primary;
+        padding: 8px;
+        position: absolute;
+        color: white;
+        border-radius: 50%;
+        font-size: 10px;
+        height: 8px;
+        p{
+            position: relative;
+            top: -11px;
+        }
     }
 }
 
 /* INDEX configuration de la zone restaurants */
 .restaurants {
     @extend %bg-light-grey;
+    padding: 1em;
 }
 
 /* INDEX configuration des cards dans la zone restaurants */
 .restaurant-card {
+
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: $color-dark-grey;
+
+    }
 
     /* configuration du container qui contient 2 cards de plats */
     &__principal-container {
@@ -396,6 +461,15 @@ a {
 
 /* INDEX stylisation du bouton du menu (sur l'index uniquement) */
 .menu {
+
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: $color-dark-grey;
+
+    }
+
     &__button {
         align-self: center;
         @extend %bg-gradient;
@@ -438,6 +512,15 @@ $anim-delay: $anim-dur/$cards-number;
 
 
 .dish {
+
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: $color-dark-grey;
+
+    }
+
     &__header {
         @extend %display_flexrow;
         @extend %alignitems_center;
@@ -571,6 +654,15 @@ $anim-delay: $anim-dur/$cards-number;
 .footer {
     background: $color-dark-grey;
     color: white;
+    padding: 1em;
+
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: white;
+
+    }
 
     /* configuration du logo dans le footer */
     &__logo {
@@ -580,6 +672,13 @@ $anim-delay: $anim-dur/$cards-number;
     /* configuration du menu dans le footer */
     &__menu {
         padding-inline-start: 0px;
+
+        & a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            color: white;
+        }
     }
 
     /*configuration des éléments de liste dans le menu du footer */
@@ -587,7 +686,10 @@ $anim-delay: $anim-dur/$cards-number;
         list-style: none;
         color: white;
 
-        & a:link {
+        & a:link,
+        a:visited,
+        a:hover,
+        a:active {
             color: white;
         }
 

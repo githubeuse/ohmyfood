@@ -23,29 +23,32 @@ body {
 /* suppression du soulignement des liens comme règle générale */
 a {
   text-decoration: none;
-  color: #353535;
 }
 
 /* extension display flex row */
-.dish__card, .dish__header, .restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
+.dish__card, .dish__header, .restaurant-card__last-line-container, .process__button, .header__input-container, .header__logo, .header__container {
   display: flex;
   flex-direction: row;
 }
 
 /* extension display flex column */
-.dish__visible-part, .dish__2-cards-container, .restaurant-card__text {
+.dish__visible-part, .dish__2-cards-container, .restaurant-card__text, .header__greybg {
   display: flex;
   flex-direction: column;
 }
 
 /* extension align items center */
-.dish__header, .restaurant-card__last-line-container, .process__button, .header__input-container, .header__container {
+.dish__header, .restaurant-card__last-line-container, .process__button, .header__greybg, .header__input-container, .header__container {
   align-items: center;
 }
 
 /* extension align items space-between */
+.header__input-container, .header__logo {
+  justify-content: center;
+}
+
 /* extension fond en gris clair */
-.restaurants, .process__button, .header {
+.restaurants, .process__button, .header__greybg {
   background: #f7f7f7;
 }
 
@@ -84,6 +87,7 @@ a {
   justify-content: center;
   align-items: center;
   z-index: 99;
+  display: none;
 }
 .loader__verre {
   width: 100px;
@@ -149,23 +153,31 @@ a {
   /* INDEX configuration de l'icone à côté de la zone input */
   /* INDEX configuration du bouton violet dans le header sur la page index*/
 }
+.header a:link,
+.header a:visited,
+.header a:hover,
+.header a:active {
+  color: #353535;
+}
 .header__input-container {
-  background-color: #eaeaea;
   position: relative;
 }
-.header__input {
+.header__input-container {
   color: #353535;
+  background: #eaeaea;
   padding-left: 20px;
 }
-.header__input::placeholder {
+.header__input-container input {
+  border: 0;
+  background: #eaeaea;
+  padding: 10px;
+}
+.header__input-container input::placeholder {
   color: #353535;
+  font-family: Roboto;
 }
 .header__icone {
-  position: absolute;
-  top: 2.5px;
-  bottom: 0;
-  left: 5px;
-  right: 0;
+  position: relative;
   width: 30px;
   color: #353535;
 }
@@ -174,6 +186,10 @@ a {
   position: relative;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
   /* insertion d'un pseudo élément pour le changement de couleur au survol*/
   /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
 }
@@ -191,6 +207,7 @@ a {
   height: 100%;
   z-index: -1;
   transition: opacity 210ms;
+  border-radius: 20px;
 }
 .header__button:hover:after {
   opacity: 1;
@@ -198,9 +215,16 @@ a {
 
 /* INDEX mise en place de la zone décrivant le fonctionnement */
 .process {
+  padding: 1em;
   /* mise en place du display en version tab */
   /* configuration des boutons dans la zone de fonctionnement */
   /* configuration des icônes dans la zone de fonctionnement */
+}
+.process a:link,
+.process a:visited,
+.process a:hover,
+.process a:active {
+  color: #353535;
 }
 @media screen and (min-width: 768px) {
   .process__container {
@@ -214,6 +238,8 @@ a {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 20px;
+  padding: 5px 20px;
+  margin-bottom: 25px;
   /* insertion d'un pseudo élément pour le changement de couleur au survol*/
   /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
 }
@@ -242,9 +268,29 @@ a {
 .process__icon {
   color: #7e7e7e;
   position: relative;
+  margin-left: 30px;
+  margin-right: 20px;
+  font-size: 1.1em;
+}
+.process__number {
+  background: #9356DC;
+  padding: 8px;
+  position: absolute;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  height: 8px;
+}
+.process__number p {
+  position: relative;
+  top: -11px;
 }
 
 /* INDEX configuration de la zone restaurants */
+.restaurants {
+  padding: 1em;
+}
+
 /* INDEX configuration des cards dans la zone restaurants */
 .restaurant-card {
   /* configuration du container qui contient 2 cards de plats */
@@ -252,6 +298,12 @@ a {
   /* configuration du container qui contient : titre, texte, icone*/
   /* configuration du container qui contient text : titre, texte*/
   /* configuration de l'icone coeur dans la card */
+}
+.restaurant-card a:link,
+.restaurant-card a:visited,
+.restaurant-card a:hover,
+.restaurant-card a:active {
+  color: #353535;
 }
 @media screen and (min-width: 768px) {
   .restaurant-card__principal-container {
@@ -274,6 +326,12 @@ a {
 }
 
 /* INDEX stylisation du bouton du menu (sur l'index uniquement) */
+.menu a:link,
+.menu a:visited,
+.menu a:hover,
+.menu a:active {
+  color: #353535;
+}
 .menu__button {
   align-self: center;
   opacity: 1;
@@ -302,6 +360,12 @@ a {
   opacity: 1;
 }
 
+.dish a:link,
+.dish a:visited,
+.dish a:hover,
+.dish a:active {
+  color: #353535;
+}
 .dish__category {
   width: 100%;
 }
@@ -402,18 +466,34 @@ a {
 .footer {
   background: #353535;
   color: white;
+  padding: 1em;
   /* configuration du logo dans le footer */
   /* configuration du menu dans le footer */
   /*configuration des éléments de liste dans le menu du footer */
 }
+.footer a:link,
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
+  color: white;
+}
 .footer__menu {
   padding-inline-start: 0px;
+}
+.footer__menu a:link,
+.footer__menu a:visited,
+.footer__menu a:hover,
+.footer__menu a:active {
+  color: white;
 }
 .footer__element {
   list-style: none;
   color: white;
 }
-.footer__element a:link {
+.footer__element a:link,
+.footer__element a:visited,
+.footer__element a:hover,
+.footer__element a:active {
   color: white;
 }
 .footer__element a:hover {
