@@ -110,6 +110,15 @@ a {
     background: linear-gradient($color-secondary, $color-primary);
 }
 
+%border-radius-all {
+    border-radius: 20px;
+}
+
+%border-radius-top {
+    border-radius: 20px 20px 0 0;
+}
+
+
 /* extension design de card */
 %card_design {
     background-color: white;
@@ -117,10 +126,12 @@ a {
     border-radius: 20px;
     box-shadow: $default-box-shadow;
     transition: 0.3s;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     margin-right: 5px;
     padding-bottom: 10px;
+    position: relative;
 }
+
 
 
 .loader {
@@ -428,19 +439,40 @@ a {
         @include tab-only {
             display: flex;
             flex-direction: row;
+            justify-content: space-around;
         }
     }
 
     /*configuration du container qui contient : l'image, le texte*/
     &__elements-container {
         @extend %card_design;
+        @extend %display_flexcolumn;
+        & p{
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+        }
     }
 
+    &__picture {
+        width: 102.5%;
+        height: 23vh;
+        object-fit: cover;
+        @extend %border-radius-top;
+        position: relative;
+        top: -5px;
+        left: -5px;
+
+        @include tab-only {
+            width: 104%;
+        }
+    }
 
     /* configuration du container qui contient : titre, texte, icone*/
     &__last-line-container {
         @extend %display_flexrow;
         @extend %alignitems_center;
+        justify-content: space-between;
+
     }
 
     /* configuration du container qui contient text : titre, texte*/
@@ -450,6 +482,10 @@ a {
 
     /* configuration de l'icone coeur dans la card */
     &__heart {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        font-size: 22px;
         &::before {
             @include heart-icon-before;
         }
@@ -458,6 +494,8 @@ a {
             @include heart-icon-hover-before;
         }
     }
+
+
 }
 
 /* INDEX stylisation du bouton du menu (sur l'index uniquement) */
