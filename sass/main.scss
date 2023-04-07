@@ -59,6 +59,8 @@ body {
     font-family: roboto;
     max-width: 1000px;
     margin: auto;
+    width: 100%;
+    position: relative;
 }
 
 
@@ -227,6 +229,9 @@ a {
 /* configuration du header */
 .header {
     width: 100%;
+    height: 100%;
+    position: relative;
+    background: pink;
 
     & a:link,
     a:visited,
@@ -239,31 +244,34 @@ a {
     /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
     &__container {
         display: flex;
-        flex-direction: row;
         align-items: center;
         width: 100%;
-        background: white;
+        height: 100%;
+        position: relative;
     }
 
     &__arrow-back {
-        width: 8vw;
         padding: 0 15px 0 15px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        background: red;
+        position: relative;
+        width: 30%;
+    }
+
+    &__logo-container{
+        width: 80%;
     }
 
     /* configuration du logo dans le header sur index.html */
     &__logo {
         @extend %font_logo;
-        width: 80vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        background: blue;
+        position: relative;
+        width: 100%;
+        text-align: center;
 
-        @include tab-only {
+        /*@include tab-only {
             max-width: 45vw;
-        }
+        }*/
     }
 
     /* configuration de l'input-container dans le header sur index.html*/
@@ -703,7 +711,7 @@ $anim-delay: $anim-dur/$cards-number;
         height: 50px;
         justify-content: center;
         align-items: center;
-        padding: 5px;
+        padding: 10px;
         transform: rotate(-180deg);
         transition: transform 400ms ease-in 50ms;
     }

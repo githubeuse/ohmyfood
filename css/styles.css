@@ -13,6 +13,8 @@ body {
   font-family: roboto;
   max-width: 1000px;
   margin: auto;
+  width: 100%;
+  position: relative;
 }
 
 /* configuration de la police shrikhand pour tout logo */
@@ -153,6 +155,9 @@ a {
 /* configuration du header */
 .header {
   width: 100%;
+  height: 100%;
+  position: relative;
+  background: pink;
   /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
   /* configuration du logo dans le header sur index.html */
   /* configuration de l'input-container dans le header sur index.html*/
@@ -168,28 +173,28 @@ a {
 }
 .header__container {
   display: flex;
-  flex-direction: row;
   align-items: center;
   width: 100%;
-  background: white;
+  height: 100%;
+  position: relative;
 }
 .header__arrow-back {
-  width: 8vw;
   padding: 0 15px 0 15px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  background: red;
+  position: relative;
+  width: 30%;
+}
+.header__logo-container {
+  width: 80%;
 }
 .header__logo {
-  width: 80vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-@media screen and (min-width: 768px) {
-  .header__logo {
-    max-width: 45vw;
-  }
+  background: blue;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  /*@include tab-only {
+      max-width: 45vw;
+  }*/
 }
 .header__input-container {
   position: relative;
@@ -527,7 +532,7 @@ a {
   height: 50px;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 10px;
   transform: rotate(-180deg);
   transition: transform 400ms ease-in 50ms;
 }
