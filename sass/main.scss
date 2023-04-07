@@ -26,6 +26,7 @@ $breakpoints:(tab-only: 768px,
     color: $color-dark-grey;
     content: "\f004";
     transition: color 100ms ease-in-out;
+    cursor: pointer;
 }
 
 @mixin heart-icon-hover-before {
@@ -35,6 +36,7 @@ $breakpoints:(tab-only: 768px,
     background-clip: text;
     color: transparent;
     font-weight: bold;
+    cursor: pointer;
 }
 
 /* définition des couleurs */
@@ -59,6 +61,7 @@ body {
     margin: auto;
 }
 
+
 /* configuration de la police shrikhand pour tout logo */
 %font_logo {
     font-family: Shrikhand;
@@ -67,6 +70,8 @@ body {
 /* suppression du soulignement des liens comme règle générale */
 a {
     text-decoration: none;
+    cursor: pointer;
+
 }
 
 /* extension display flex row */
@@ -319,6 +324,7 @@ a {
         padding: 10px;
         color: white;
         border-radius: 20px;
+        cursor: pointer;
 
         /* insertion d'un pseudo élément pour le changement de couleur au survol*/
         &:after {
@@ -382,6 +388,7 @@ a {
         border-radius: 20px;
         padding: 5px 20px;
         margin-bottom: 25px;
+        cursor: pointer;
 
 
         /* insertion d'un pseudo élément pour le changement de couleur au survol*/
@@ -510,6 +517,7 @@ a {
         justify-content: flex-end;
         padding: 10px;
         font-size: 22px;
+
         &::before {
             @include heart-icon-before;
         }
@@ -524,14 +532,6 @@ a {
 
 /* INDEX stylisation du bouton du menu (sur l'index uniquement) */
 .menu {
-
-    & a:link,
-    a:visited,
-    a:hover,
-    a:active {
-        color: $color-dark-grey;
-
-    }
 
     &__button-container {
         display: flex;
@@ -550,8 +550,7 @@ a {
         box-shadow: $default-box-shadow;
         margin-bottom: 40px;
         margin-top: 20px;
-
-
+        cursor: pointer;
 
 
         /* stylisation du pseudo élément after avec l'opacity*/
@@ -571,6 +570,7 @@ a {
             z-index: -1;
             transition: opacity 210ms;
         }
+
 
         /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
         &:hover {
@@ -594,23 +594,27 @@ $anim-delay: $anim-dur/$cards-number;
     a:visited,
     a:hover,
     a:active {
-        color: $color-dark-grey;
+        color: white;
 
+    }
+    & h3 {
+        margin-block-start: 0em;
     }
 
     background: $color-light-grey-2;
     position: relative;
     top: -30px;
-    padding: 10px;
+    padding: 0 20px 0 20px;
     margin-bottom: -45px;
     @extend %border-radius-top;
 
     &__header {
         @extend %display_flexrow;
         @extend %alignitems_center;
+        @extend %justifycontent_spacebetween;
     }
 
-    &__restaurant-name{
+    &__restaurant-name {
         @extend %font_logo;
         font-size: 1.8em;
         font-weight: 400;
@@ -638,6 +642,10 @@ $anim-delay: $anim-dur/$cards-number;
         opacity: 0;
         animation: progressive-appearance $anim-dur forwards;
 
+        &:hover {
+            cursor: pointer;
+        }
+
         @for $i from 1 through $cards-number {
             &--#{$i} {
                 animation-delay: ($anim-delay * $i);
@@ -662,7 +670,7 @@ $anim-delay: $anim-dur/$cards-number;
 
     &__ok-icon {
         color: white;
-        font-size: 1.2em;
+        font-size: 1.5em;
         display: flex;
         flex-direction: row;
         height: 50px;
