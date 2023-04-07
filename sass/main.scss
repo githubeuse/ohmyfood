@@ -227,13 +227,13 @@ a {
 /* configuration du header */
 .header {
     width: 100%;
-
     & a:link,
     a:visited,
     a:hover,
     a:active {
         color: $color-dark-grey;
     }
+
 
     /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
     &__container {
@@ -276,6 +276,7 @@ a {
         @extend %bg-light-grey;
         @extend %display_flexcolumn;
         @extend %alignitems_center;
+        padding-bottom: 50Px;
     }
 
     &__picture {
@@ -358,6 +359,7 @@ a {
 /* INDEX mise en place de la zone décrivant le fonctionnement */
 .process {
     padding: 1em;
+    padding-bottom: 30px;
 
     & a:link,
     a:visited,
@@ -365,6 +367,11 @@ a {
     a:active {
         color: $color-dark-grey;
 
+    }
+
+    &__heading{
+        padding-top: 10px;
+        padding-bottom: 5px;
     }
 
     /* mise en place du display en version tab */
@@ -389,6 +396,8 @@ a {
         padding: 5px 20px;
         margin-bottom: 25px;
         cursor: pointer;
+        font-weight: 600;
+        color: $color-dark-grey;
 
 
         /* insertion d'un pseudo élément pour le changement de couleur au survol*/
@@ -428,7 +437,7 @@ a {
         position: relative;
         margin-left: 30px;
         margin-right: 20px;
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     &__number {
