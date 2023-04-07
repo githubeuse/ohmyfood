@@ -221,7 +221,7 @@ a {
 
 /* configuration du header */
 .header {
-
+    width: 100%;
 
     & a:link,
     a:visited,
@@ -232,17 +232,31 @@ a {
 
     /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
     &__container {
-        @extend %bg-white;
-        @extend %display_flexrow;
-        @extend %alignitems_center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        background: white;
+    }
+
+    &__arrow-back {
+        width: 8vw;
+        padding: 0 15px 0 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 
     /* configuration du logo dans le header sur index.html */
     &__logo {
         @extend %font_logo;
-        @extend %bg-white;
-        @extend %display_flexrow;
-        @extend %justifycontent_center;
+        width: 80vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        @include tab-only {
+        max-width: 45vw;
+        }
     }
 
     /* configuration de l'input-container dans le header sur index.html*/
@@ -256,6 +270,14 @@ a {
         @extend %bg-light-grey;
         @extend %display_flexcolumn;
         @extend %alignitems_center;
+    }
+
+    &__picture{
+        & img{
+            width: 100%;
+            height: 35vh;
+            object-fit: cover;
+        }
     }
 
     /* INDEX configuration de la zone input dans le header*/
@@ -447,7 +469,8 @@ a {
     &__elements-container {
         @extend %card_design;
         @extend %display_flexcolumn;
-        & p{
+
+        & p {
             margin-block-start: 0em;
             margin-block-end: 0em;
         }
@@ -455,7 +478,7 @@ a {
 
     &__picture {
         width: 102.5%;
-        height: 23vh;
+        height: 25vh;
         object-fit: cover;
         @extend %border-radius-top;
         position: relative;
@@ -486,6 +509,7 @@ a {
         justify-content: flex-end;
         padding: 10px;
         font-size: 22px;
+
         &::before {
             @include heart-icon-before;
         }
@@ -544,14 +568,13 @@ a {
 }
 
 
-$width-slide: 50px;
+$width-slide: 60px;
 $cards-number: 3;
 $anim-dur: 1000ms;
 $anim-delay: $anim-dur/$cards-number;
 
 
 .dish {
-
     & a:link,
     a:visited,
     a:hover,
@@ -560,13 +583,14 @@ $anim-delay: $anim-dur/$cards-number;
 
     }
 
+    background: $color-light-grey-2;
+    position: relative;
+    top: -30px;
+    padding: 10px;
+    @extend %border-radius-top;
     &__header {
         @extend %display_flexrow;
         @extend %alignitems_center;
-    }
-
-    &__category {
-        width: 100%;
     }
 
     &__2-cards-container {
@@ -581,8 +605,12 @@ $anim-delay: $anim-dur/$cards-number;
     &__card {
         @extend %display_flexrow;
         @extend %card_design;
-        width: 98%;
-        height: 80px;
+        align-items: flex-end;
+        width: 95%;
+        height: 50px;
+        padding-bottom: 15px;
+        padding-right: 10px;
+        gap: 15px;
         position: relative;
         opacity: 0;
         animation: progressive-appearance $anim-dur forwards;
@@ -599,7 +627,7 @@ $anim-delay: $anim-dur/$cards-number;
         }
 
         &:active>.dish__visible-part {
-            width: 80%;
+            width: 70%;
         }
 
         &:active>.dish__sliding-part {
@@ -614,9 +642,10 @@ $anim-delay: $anim-dur/$cards-number;
         font-size: 1.2em;
         display: flex;
         flex-direction: row;
-        height: 95px;
+        height: 50px;
         justify-content: center;
         align-items: center;
+        padding: 5px;
         transform: rotate(-180deg);
         transition: transform 400ms ease-in 50ms;
     }
@@ -626,12 +655,11 @@ $anim-delay: $anim-dur/$cards-number;
         @extend %display_flexcolumn;
         width: 90%;
         transition: width 200ms ease-in-out;
+        padding-left: 8px;
 
         &:active+.dish__sliding-part>.dish__ok-icon {
             transform: rotate(0deg);
         }
-
-
     }
 
 
@@ -640,6 +668,7 @@ $anim-delay: $anim-dur/$cards-number;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        padding-top: 8px;
     }
 
     &__description {
@@ -652,7 +681,7 @@ $anim-delay: $anim-dur/$cards-number;
     &__sliding-part {
         background: $color-tertiary;
         border-radius: 0 20px 20px 0;
-        height: 95px;
+        height: 70px;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -666,8 +695,17 @@ $anim-delay: $anim-dur/$cards-number;
 
 
     &__price {
-        margin: 10px;
-        padding-right: 10Px;
+        display: flex;
+        align-items: flex-end;
+        font-weight: 600;
+        padding-right: 10px;
+    }
+}
+
+.dish-category{
+    &__name{
+        text-transform: uppercase;
+        font-weight: 300;
     }
 }
 

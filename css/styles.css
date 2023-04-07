@@ -26,7 +26,7 @@ a {
 }
 
 /* extension display flex row */
-.dish__card, .dish__header, .restaurant-card__last-line-container, .process__button, .header__input-container, .header__logo, .header__container {
+.dish__card, .dish__header, .restaurant-card__last-line-container, .process__button, .header__input-container {
   display: flex;
   flex-direction: row;
 }
@@ -38,12 +38,12 @@ a {
 }
 
 /* extension align items center */
-.dish__header, .restaurant-card__last-line-container, .process__button, .header__greybg, .header__input-container, .header__container {
+.dish__header, .restaurant-card__last-line-container, .process__button, .header__greybg, .header__input-container {
   align-items: center;
 }
 
 /* extension align items space-between */
-.header__input-container, .header__logo {
+.header__input-container {
   justify-content: center;
 }
 
@@ -53,16 +53,12 @@ a {
 }
 
 /* extension fond en blanc */
-.header__logo, .header__container {
-  background: white;
-}
-
 /* extension fond en dégradé */
 .menu__button, .header__button {
   background: linear-gradient(#FF79D4, #9356DC);
 }
 
-.restaurant-card__picture {
+.dish, .restaurant-card__picture {
   border-radius: 20px 20px 0 0;
 }
 
@@ -151,6 +147,7 @@ a {
 }
 /* configuration du header */
 .header {
+  width: 100%;
   /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
   /* configuration du logo dans le header sur index.html */
   /* configuration de l'input-container dans le header sur index.html*/
@@ -164,8 +161,38 @@ a {
 .header a:active {
   color: #353535;
 }
+.header__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background: white;
+}
+.header__arrow-back {
+  width: 8vw;
+  padding: 0 15px 0 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.header__logo {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    max-width: 45vw;
+  }
+}
 .header__input-container {
   position: relative;
+}
+.header__picture img {
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
 }
 .header__input-container {
   color: #353535;
@@ -318,22 +345,13 @@ a {
     justify-content: space-around;
   }
 }
-.restaurant-card__new-tag {
-  color: #008766;
-  background: #99e2d0;
-  width: fit-content;
-  position: relative;
-  top: 15px;
-  align-self: flex-start;
-  z-index: 99;
-}
 .restaurant-card__elements-container p {
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
 .restaurant-card__picture {
   width: 102.5%;
-  height: 23vh;
+  height: 25vh;
   object-fit: cover;
   position: relative;
   top: -5px;
@@ -402,14 +420,17 @@ a {
   opacity: 1;
 }
 
+.dish {
+  background: #eaeaea;
+  position: relative;
+  top: -30px;
+  padding: 10px;
+}
 .dish a:link,
 .dish a:visited,
 .dish a:hover,
 .dish a:active {
   color: #353535;
-}
-.dish__category {
-  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .dish__2-cards-container {
@@ -418,8 +439,12 @@ a {
   }
 }
 .dish__card {
-  width: 98%;
-  height: 80px;
+  align-items: flex-end;
+  width: 95%;
+  height: 50px;
+  padding-bottom: 15px;
+  padding-right: 10px;
+  gap: 15px;
   position: relative;
   opacity: 0;
   animation: progressive-appearance 1000ms forwards;
@@ -439,7 +464,7 @@ a {
   }
 }
 .dish__card:active > .dish__visible-part {
-  width: 80%;
+  width: 70%;
 }
 .dish__card:active > .dish__sliding-part {
   opacity: 1;
@@ -450,9 +475,10 @@ a {
   font-size: 1.2em;
   display: flex;
   flex-direction: row;
-  height: 95px;
+  height: 50px;
   justify-content: center;
   align-items: center;
+  padding: 5px;
   transform: rotate(-180deg);
   transition: transform 400ms ease-in 50ms;
 }
@@ -460,6 +486,7 @@ a {
   position: relative;
   width: 90%;
   transition: width 200ms ease-in-out;
+  padding-left: 8px;
 }
 .dish__visible-part:active + .dish__sliding-part > .dish__ok-icon {
   transform: rotate(0deg);
@@ -469,6 +496,7 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-top: 8px;
 }
 .dish__description {
   display: inline-block;
@@ -479,19 +507,26 @@ a {
 .dish__sliding-part {
   background: #99E2DD;
   border-radius: 0 20px 20px 0;
-  height: 95px;
+  height: 70px;
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
-  width: 50px;
+  width: 60px;
   opacity: 0;
   transform: translateX(100%);
   transition: all 200ms ease-in-out;
 }
 .dish__price {
-  margin: 10px;
-  padding-right: 10Px;
+  display: flex;
+  align-items: flex-end;
+  font-weight: 600;
+  padding-right: 10px;
+}
+
+.dish-category__name {
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 @keyframes progressive-appearance {
