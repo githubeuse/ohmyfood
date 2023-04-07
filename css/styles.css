@@ -16,7 +16,7 @@ body {
 }
 
 /* configuration de la police shrikhand pour tout logo */
-.footer__logo, .header__logo, .loader {
+.footer__logo, .dish__restaurant-name, .header__logo, .loader {
   font-family: Shrikhand;
 }
 
@@ -392,12 +392,21 @@ a {
 .menu a:active {
   color: #353535;
 }
+.menu__button-container {
+  display: flex;
+  justify-content: center;
+}
 .menu__button {
-  align-self: center;
-  opacity: 1;
+  width: fit-content;
   position: relative;
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
+  opacity: 1;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+  margin-top: 20px;
   /* stylisation du pseudo élément after avec l'opacity*/
   /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
 }
@@ -413,6 +422,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 20px;
   z-index: -1;
   transition: opacity 210ms;
 }
@@ -425,12 +435,17 @@ a {
   position: relative;
   top: -30px;
   padding: 10px;
+  margin-bottom: -45px;
 }
 .dish a:link,
 .dish a:visited,
 .dish a:hover,
 .dish a:active {
   color: #353535;
+}
+.dish__restaurant-name {
+  font-size: 1.8em;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .dish__2-cards-container {
@@ -444,7 +459,7 @@ a {
   height: 50px;
   padding-bottom: 15px;
   padding-right: 10px;
-  gap: 15px;
+  margin-bottom: 0.5em;
   position: relative;
   opacity: 0;
   animation: progressive-appearance 1000ms forwards;
@@ -497,12 +512,15 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   padding-top: 8px;
+  font-weight: 500;
+  font-size: 1.2em;
 }
 .dish__description {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 0.9em;
 }
 .dish__sliding-part {
   background: #99E2DD;
@@ -522,11 +540,22 @@ a {
   align-items: flex-end;
   font-weight: 600;
   padding-right: 10px;
+  font-size: 0.9em;
 }
 
+.dish-category {
+  position: relative;
+}
 .dish-category__name {
+  padding-top: 1em;
   text-transform: uppercase;
   font-weight: 300;
+}
+.dish-category__underline {
+  border-top: 3px solid #99E2DD;
+  width: 45px;
+  position: relative;
+  top: -15px;
 }
 
 @keyframes progressive-appearance {
@@ -543,6 +572,7 @@ a {
 .footer {
   background: #353535;
   color: white;
+  position: relative;
   padding: 1em;
   /* configuration du logo dans le footer */
   /* configuration du menu dans le footer */
