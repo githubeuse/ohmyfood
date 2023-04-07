@@ -335,14 +335,14 @@ a {
 }
 .process__number {
   background: #9356DC;
-  padding: 8px;
+  padding: 8px 10px 10px 10px;
   color: white;
   border-radius: 50%;
   font-size: 10px;
   height: 8px;
   position: absolute;
   top: 25%;
-  left: -13px;
+  left: -10px;
 }
 .process__number p {
   position: relative;
