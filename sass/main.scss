@@ -255,7 +255,7 @@ a {
         height: 100%;
     }
 
-    &__logo-container{
+    &__logo-container {
         position: relative;
         width: 90%;
         display: flex;
@@ -507,7 +507,7 @@ a {
         }
     }
 
-    /*configuration du container qui contient : l'image, le texte*/
+    /*configuration du container qui contient : l'image, le texte (et parfois le tag new)*/
     &__elements-container {
         @extend %card_design;
         @extend %display_flexcolumn;
@@ -530,6 +530,16 @@ a {
         @include tab-only {
             width: 104%;
         }
+    }
+
+    &__new-tag{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: fit-content;
+        background: #99e2d0;
+        color: #008766;
+        padding: 5px;
     }
 
     /* configuration du container qui contient : titre, texte, icone*/

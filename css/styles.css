@@ -363,7 +363,7 @@ a {
 /* INDEX configuration des cards dans la zone restaurants */
 .restaurant-card {
   /* configuration du container qui contient 2 cards de plats */
-  /*configuration du container qui contient : l'image, le texte*/
+  /*configuration du container qui contient : l'image, le texte (et parfois le tag new)*/
   /* configuration du container qui contient : titre, texte, icone*/
   /* configuration du container qui contient text : titre, texte*/
   /* configuration de l'icone coeur dans la card */
@@ -397,6 +397,15 @@ a {
   .restaurant-card__picture {
     width: 104%;
   }
+}
+.restaurant-card__new-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: fit-content;
+  background: #99e2d0;
+  color: #008766;
+  padding: 5px;
 }
 .restaurant-card__last-line-container {
   justify-content: space-between;

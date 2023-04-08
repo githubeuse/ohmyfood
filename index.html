@@ -14,7 +14,7 @@
 
 <body>
     <div class="loader">
-        oh my food
+        <p>oh my food</p>
         <div class="loader__verre">
             <svg height="100%" stroke-miterlimit="10"
                 style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1"
@@ -93,7 +93,9 @@
     </header>
     <!--SECTION FONCTIONNEMENT-->
     <section class="process">
-        <div class="process__heading"><h2>Titre de section 1</h2></div>
+        <div class="process__heading">
+            <h2>Titre de section 1</h2>
+        </div>
         <div class="process__container">
             <div class="process__button">
                 <i class="fa-solid fa-list-ul process__icon"></i>
@@ -127,13 +129,17 @@
         <h2 class="restaurants__header">Titre 2</h2>
         <div class="restaurant-card__principal-container">
 
-            
+
             <!--RESTAURANT LA PALETTE DU GOUT-->
             <a href="menu_palette.html">
                 <div class="restaurant-card__elements-container">
-                    <p class="restaurant-card__new-tag" style="display:none;">Badge nouveau</p>
-
-                    <img src="/images/restaurants/palette.jpg" alt="image restau 1" class="restaurant-card__picture">
+                    <div class="restaurant-card__image-container">
+                        <img src="/images/restaurants/palette.jpg" alt="image restau 1"
+                            class="restaurant-card__picture">
+                    </div>
+                    <div class="restaurant-card__new-tag-container">
+                        <p class="restaurant-card__new-tag">Badge nouveau</p>
+                    </div>
                     <div class="restaurant-card__last-line-container">
                         <div class="restaurant-card__text">
                             <p>Nom du restau 1 Palette</p>
@@ -144,20 +150,25 @@
                 </div>
             </a>
             <!--RESTAURANT LA NOTE ENCHANTEE-->
+
             <a href="menu_note.html">
                 <div class="restaurant-card__elements-container">
-                    <img src="/images/restaurants/note2.jpg" alt="image restau 2" class="restaurant-card__picture">
+                    <div class="restaurant-card__image-container">
+                        <img src="/images/restaurants/note2.jpg" alt="image restau 1"
+                            class="restaurant-card__picture">
+                    </div>
+                    <div class="restaurant-card__new-tag-container">
+                        <p class="restaurant-card__new-tag">Badge nouveau</p>
+                    </div>
                     <div class="restaurant-card__last-line-container">
                         <div class="restaurant-card__text">
                             <p>Nom du restau 2 Note</p>
-                            <p>Lieu du restau 2</p>
+                            <p>Lieu du restau 1</p>
                         </div>
                         <i class="fa-regular fa-heart restaurant-card__heart"></i>
                     </div>
-                    <p class="restaurant-card__new-tag" style="display:none;">Badge nouveau</p>
                 </div>
             </a>
-
         </div>
 
         <div class="restaurant-card__principal-container">
