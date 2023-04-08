@@ -157,7 +157,6 @@ a {
   width: 100%;
   height: 100%;
   position: relative;
-  background: pink;
   /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
   /* configuration du logo dans le header sur index.html */
   /* configuration de l'input-container dans le header sur index.html*/
@@ -174,21 +173,22 @@ a {
 .header__container {
   display: flex;
   align-items: center;
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
 }
 .header__arrow-back {
-  padding: 0 15px 0 15px;
-  background: red;
+  padding: 0px 25px 0 25px;
   position: relative;
-  width: 30%;
+  height: 100%;
 }
 .header__logo-container {
-  width: 80%;
+  position: relative;
+  width: 90%;
+  display: flex;
+  justify-content: center;
 }
 .header__logo {
-  background: blue;
   position: relative;
   width: 100%;
   text-align: center;
