@@ -731,12 +731,15 @@ $anim-delay: $anim-dur/$cards-number;
         }
 
         &:active>.dish__visible-part {
-            width: 70%;
+            width: 73%;
+            @include tab-only{
+                width: 78%;
+            }
         }
 
         &:active>.dish__sliding-part {
-            opacity: 1;
-            transform: translateX(0%);
+            /*opacity: 1;
+            transform: translateX(0%);*/
         }
 
 
@@ -758,6 +761,7 @@ $anim-delay: $anim-dur/$cards-number;
         position: relative;
         @extend %display_flexcolumn;
         width: 90%;
+        background:blue;
         transition: width 400ms ease-in-out;
         padding-left: 8px;
 
@@ -797,8 +801,8 @@ $anim-delay: $anim-dur/$cards-number;
         right: 0;
         width: $width-slide;
         opacity: 0;
-        transform: translateX(100%);
-        transition: all 500ms ease-in-out;
+        /*transform: translateX(100%);
+        transition: all 500ms ease-in-out;*/
     }
 
 
@@ -845,7 +849,7 @@ $anim-delay: $anim-dur/$cards-number;
     }
 }
 
-@keyframes progressive-appearance {
+/*@keyframes progressive-appearance {
 
     0%,
     20% {
@@ -857,7 +861,9 @@ $anim-delay: $anim-dur/$cards-number;
         transform: translateY(0%);
         opacity: 1;
     }
-}
+}*/
+
+
 
 
 
