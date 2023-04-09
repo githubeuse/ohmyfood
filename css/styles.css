@@ -552,7 +552,12 @@ a {
   }
 }
 .dish__card:active > .dish__visible-part {
-  width: 70%;
+  width: 73%;
+}
+@media screen and (min-width: 768px) {
+  .dish__card:active > .dish__visible-part {
+    width: 78%;
+  }
 }
 .dish__card:active > .dish__sliding-part {
   opacity: 1;
@@ -572,6 +577,7 @@ a {
 .dish__visible-part {
   position: relative;
   width: 90%;
+  background: blue;
   transition: width 400ms ease-in-out;
   padding-left: 8px;
 }
