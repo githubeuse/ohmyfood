@@ -182,12 +182,11 @@ a {
   padding: 0px 25px 0 25px;
   position: relative;
   height: 100%;
+  font-size: 1.5em;
 }
 .header__logo-container {
   position: relative;
   width: 90%;
-  display: flex;
-  justify-content: center;
 }
 .header__logo {
   position: relative;
@@ -196,6 +195,10 @@ a {
   /*@include tab-only {
       max-width: 45vw;
   }*/
+}
+.header h1 {
+  margin-block-start: 0.25em;
+  margin-block-end: 0.25em;
 }
 .header__input-container {
   position: relative;
