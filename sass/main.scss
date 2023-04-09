@@ -340,9 +340,9 @@ a {
         z-index: 1;
         box-shadow: $default-box-shadow;
         width: fit-content;
-        padding: 10px;
+        padding: 20px 40px;
         color: white;
-        border-radius: 20px;
+        border-radius: 40px;
         cursor: pointer;
 
         /* insertion d'un pseudo élément pour le changement de couleur au survol*/
@@ -423,6 +423,7 @@ a {
         z-index: 1;
         box-shadow: $default-box-shadow;
 
+        
         border-radius: 20px;
         padding: 5px 20px;
         margin-bottom: 25px;
@@ -594,9 +595,10 @@ a {
     &__button {
         width: fit-content;
         position: relative;
-        padding: 10px;
+        padding: 20px 40px;
         color: white;
-        border-radius: 20px;
+        border-radius: 40px;
+        color: white;
         @extend %bg-gradient;
         opacity: 1;
         z-index: 1;
