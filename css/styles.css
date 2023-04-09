@@ -43,7 +43,7 @@ a {
 }
 
 /* extension align items center */
-.dish__header, .restaurant-card__last-line-container, .process__button, .header__greybg, .header__input-container {
+.restaurant-card__last-line-container, .process__button, .header__greybg, .header__input-container {
   align-items: center;
 }
 
@@ -193,7 +193,6 @@ a {
 .header__logo-container {
   position: relative;
   width: 90%;
-  background: blue;
 }
 .header__logo {
   position: relative;
@@ -500,6 +499,9 @@ a {
 }
 .dish h3 {
   margin-block-start: 0em;
+}
+.dish__header {
+  align-items: baseline;
 }
 @media screen and (min-width: 768px) {
   .dish__header {

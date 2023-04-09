@@ -269,7 +269,6 @@ a {
     &__logo-container {
         position: relative;
         width: 90%;
-        background: blue;
 
     }
 
@@ -674,8 +673,8 @@ $anim-delay: $anim-dur/$cards-number;
 
     &__header {
         @extend %display_flexrow;
-        @extend %alignitems_center;
         @extend %justifycontent_spacebetween;
+        align-items: baseline;
 
         @include tab-only {
             justify-content: flex-start;
