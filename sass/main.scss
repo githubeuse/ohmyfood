@@ -863,11 +863,15 @@ $anim-delay: $anim-dur/$cards-number;
     /* configuration du logo dans le footer */
     &__logo {
         @extend %font_logo;
+        font-size: 1.1em;
+        margin-block-end: 0.5em;
+        margin-block-start: 0.5em;
     }
 
     /* configuration du menu dans le footer */
     &__menu {
         padding-inline-start: 0px;
+        line-height: 1.8em;
 
         & a:link,
         a:visited,
