@@ -15,6 +15,7 @@ body {
   margin: auto;
   width: 100%;
   position: relative;
+  box-sizing: content-box;
 }
 
 /* configuration de la police shrikhand pour tout logo */
@@ -478,6 +479,7 @@ a {
   top: -30px;
   padding: 0 20px 0 20px;
   margin-bottom: -45px;
+  box-sizing: content-box;
 }
 .dish a:link,
 .dish a:visited,
@@ -496,11 +498,12 @@ a {
   .dish__2-cards-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
 }
 .dish__card {
   align-items: flex-end;
-  width: 95%;
+  width: 98%;
   height: 50px;
   padding-bottom: 15px;
   padding-right: 10px;
@@ -523,7 +526,7 @@ a {
 }
 @media screen and (min-width: 768px) {
   .dish__card {
-    width: 44%;
+    width: 48%;
   }
 }
 .dish__card:active > .dish__visible-part {
