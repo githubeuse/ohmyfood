@@ -490,6 +490,12 @@ a {
 .dish h3 {
   margin-block-start: 0em;
 }
+@media screen and (min-width: 768px) {
+  .dish__header {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}
 .dish__restaurant-name {
   font-size: 1.8em;
   font-weight: 400;
