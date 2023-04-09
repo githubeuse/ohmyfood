@@ -752,19 +752,18 @@ $anim-delay: $anim-dur/$cards-number;
         justify-content: center;
         align-items: center;
         padding: 10px;
-        transform: rotate(-180deg);
-        transition: transform 606ms ease-in-out 150ms;
+        transform: rotate(360deg);
     }
 
     &__visible-part {
         position: relative;
         @extend %display_flexcolumn;
         width: 90%;
-        transition: width 500ms ease-in-out;
+        transition: width 400ms ease-in-out;
         padding-left: 8px;
 
         &:active+.dish__sliding-part>.dish__ok-icon {
-            transform: rotate(0deg);
+            animation: rotate 400ms ease-in-out 200ms forwards;
         }
 
     }
@@ -837,6 +836,15 @@ $anim-delay: $anim-dur/$cards-number;
     }
 }
 
+
+@keyframes rotate{
+    0%, 20%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 @keyframes progressive-appearance {
 
