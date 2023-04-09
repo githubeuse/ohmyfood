@@ -62,6 +62,7 @@ body {
     width: 100%;
     position: relative;
     box-sizing: content-box;
+    overflow-x: hidden;
 }
 
 
@@ -253,16 +254,22 @@ a {
     }
 
     &__arrow-back {
-        padding: 0px 25px 0 25px;
+        padding: 0px 12px;
         position: relative;
         height: 100%;
         font-size: 1.5em;
+
+        @include tab-only {
+            padding: 0px 25px 0 25px;
+
+        }
     }
 
 
     &__logo-container {
         position: relative;
         width: 90%;
+        background: blue;
 
     }
 
@@ -423,7 +430,7 @@ a {
         z-index: 1;
         box-shadow: $default-box-shadow;
 
-        
+
         border-radius: 20px;
         padding: 5px 20px;
         margin-bottom: 25px;
@@ -674,6 +681,7 @@ $anim-delay: $anim-dur/$cards-number;
             justify-content: flex-start;
             gap: 10px;
         }
+
         & h2 {
             margin-block-end: 0em;
         }
@@ -745,14 +753,14 @@ $anim-delay: $anim-dur/$cards-number;
         align-items: center;
         padding: 10px;
         transform: rotate(-180deg);
-        transition: transform 400ms ease-in 50ms;
+        transition: transform 606ms ease-in-out 150ms;
     }
 
     &__visible-part {
         position: relative;
         @extend %display_flexcolumn;
         width: 90%;
-        transition: width 200ms ease-in-out;
+        transition: width 500ms ease-in-out;
         padding-left: 8px;
 
         &:active+.dish__sliding-part>.dish__ok-icon {
@@ -792,7 +800,7 @@ $anim-delay: $anim-dur/$cards-number;
         width: $width-slide;
         opacity: 0;
         transform: translateX(100%);
-        transition: all 200ms ease-in-out;
+        transition: all 500ms ease-in-out;
     }
 
 
@@ -860,6 +868,11 @@ $anim-delay: $anim-dur/$cards-number;
     a:active {
         color: white;
 
+    }
+
+    & i {
+        font-size: 0.8em;
+        padding-right: 3px;
     }
 
     /* configuration du logo dans le footer */
