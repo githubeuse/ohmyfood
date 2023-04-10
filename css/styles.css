@@ -159,6 +159,7 @@ a {
   width: 100%;
   height: 100%;
   position: relative;
+  text-align: center;
   /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
   /* configuration du logo dans le header sur index.html */
   /* configuration de l'input-container dans le header sur index.html*/
@@ -212,6 +213,15 @@ a {
 .header__greybg {
   padding-bottom: 50Px;
 }
+.header__heading {
+  width: 60%;
+  padding-top: 1em;
+}
+.header__subtitle {
+  width: 80%;
+  font-weight: 300;
+  padding-bottom: 1em;
+}
 .header__picture img {
   width: 100%;
   height: 35vh;
@@ -242,7 +252,7 @@ a {
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: fit-content;
-  padding: 20px 40px;
+  padding: 15px 30px;
   color: white;
   border-radius: 40px;
   cursor: pointer;
@@ -263,7 +273,7 @@ a {
   height: 100%;
   z-index: -1;
   transition: opacity 210ms;
-  border-radius: 20px;
+  border-radius: 40px;
 }
 .header__button:hover:after {
   opacity: 1;
@@ -277,7 +287,6 @@ a {
   width: 95%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   /* mise en place du display en version tab */
   /* configuration des boutons dans la zone de fonctionnement */
   /* configuration des icônes dans la zone de fonctionnement */
@@ -291,8 +300,11 @@ a {
 .process__heading {
   padding-top: 10px;
   padding-bottom: 5px;
+}
+.process__all-buttons-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .process__container {
   display: flex;
@@ -321,7 +333,7 @@ a {
 }
 .process__button::after {
   content: "";
-  background: #ece1f9;
+  background: #f2eafb;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
   border-radius: 20px;
   opacity: 0;
@@ -350,24 +362,27 @@ a {
 }
 .process__number {
   background: #9356DC;
-  padding: 8px 10px 10px 10px;
+  padding: 8px 10px 13px 10px;
   color: white;
   border-radius: 50%;
-  font-size: 10px;
+  font-size: 12px;
   height: 8px;
   position: absolute;
-  top: 25%;
+  top: 23%;
   left: -10px;
 }
 .process__number p {
   position: relative;
-  top: -10px;
+  top: -12px;
   color: white;
 }
 
 /* INDEX configuration de la zone restaurants */
 .restaurants {
   padding: 1em;
+}
+.restaurants__header {
+  margin-top: 2em;
 }
 
 /* INDEX configuration des cards dans la zone restaurants */
@@ -415,10 +430,20 @@ a {
   width: fit-content;
   background: #99e2d0;
   color: #008766;
-  padding: 5px;
+  padding: 5px 10px;
 }
 .restaurant-card__last-line-container {
   justify-content: space-between;
+}
+.restaurant-card__text {
+  padding-top: 6px;
+  padding-left: 10px;
+  line-height: 1.3em;
+  padding-bottom: 6px;
+  color: black;
+}
+.restaurant-card__text p:first-child {
+  font-weight: 600;
 }
 .restaurant-card__heart {
   display: flex;
@@ -475,7 +500,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 40px;
   z-index: -1;
   transition: opacity 210ms;
 }
@@ -577,7 +602,6 @@ a {
 .dish__visible-part {
   position: relative;
   width: 90%;
-  background: blue;
   transition: width 400ms ease-in-out;
   padding-left: 8px;
 }
