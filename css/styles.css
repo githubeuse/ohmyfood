@@ -306,6 +306,12 @@ a {
   flex-direction: column;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .process__all-buttons-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
 .process__container {
   display: flex;
   flex-direction: column;
@@ -321,13 +327,14 @@ a {
   opacity: 1;
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 5px 20px;
   margin-bottom: 25px;
   cursor: pointer;
   font-weight: 600;
   color: #353535;
   position: relative;
+  width: 90%;
   /* insertion d'un pseudo élément pour le changement de couleur au survol*/
   /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
 }
@@ -335,7 +342,7 @@ a {
   content: "";
   background: #f2eafb;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
-  border-radius: 20px;
+  border-radius: 30px;
   opacity: 0;
   position: absolute;
   top: 0;
@@ -352,6 +359,11 @@ a {
 }
 .process__button:hover:hover > .process__icon {
   color: #9356DC;
+}
+@media screen and (min-width: 768px) {
+  .process__button {
+    padding: 2.5px 10px;
+  }
 }
 .process__icon {
   color: #7e7e7e;
