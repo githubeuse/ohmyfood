@@ -563,12 +563,15 @@ a {
   cursor: pointer;
 }
 .dish__card--1 {
-  animation-delay: 333.3333333333ms;
+  animation-delay: 250ms;
 }
 .dish__card--2 {
-  animation-delay: 666.6666666667ms;
+  animation-delay: 500ms;
 }
 .dish__card--3 {
+  animation-delay: 750ms;
+}
+.dish__card--4 {
   animation-delay: 1000ms;
 }
 @media screen and (min-width: 768px) {
