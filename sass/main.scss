@@ -791,9 +791,7 @@ $anim-delay: $anim-dur/$cards-number;
         &:active+.dish__sliding-part>.dish__ok-icon {
             animation: rotate 400ms ease-in-out 200ms forwards;
         }
-
     }
-
 
     &__title {
         display: inline-block;
@@ -803,7 +801,6 @@ $anim-delay: $anim-dur/$cards-number;
         padding-top: 8px;
         font-weight: 500;
         font-size: 1.2em;
-
     }
 
     &__description {
