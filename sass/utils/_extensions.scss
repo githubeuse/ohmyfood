@@ -1,0 +1,65 @@
+
+/* extension display flex row */
+%display_flexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+/* extension display flex column */
+%display_flexcolumn {
+    display: flex;
+    flex-direction: column;
+}
+
+/* extension align items center */
+%alignitems_center {
+    align-items: center;
+}
+
+/* extension align items space-between */
+%justifycontent_spacebetween {
+    justify-content: space-between;
+}
+
+%justifycontent_center {
+    justify-content: center;
+}
+
+/* extension fond en gris clair */
+%bg-light-grey {
+    background: $color-light-grey;
+}
+
+/* extension fond en blanc */
+%bg-white {
+    background: white;
+}
+
+/* extension fond en dégradé */
+%bg-gradient {
+    background: linear-gradient($color-secondary, $color-primary);
+}
+
+%border-radius-all {
+    border-radius: 20px;
+}
+
+%border-radius-top {
+    border-radius: 20px 20px 0 0;
+}
+
+
+/* extension design de card */
+%card_design {
+    background-color: white;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: $default-box-shadow;
+    transition: 0.3s;
+    margin-bottom: 25px;
+    margin-right: 5px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+

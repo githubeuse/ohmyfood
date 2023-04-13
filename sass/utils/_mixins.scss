@@ -1,0 +1,30 @@
+/* responsive : création d'une mixin tablette */
+@mixin tab-only {
+    @media screen and (min-width: map-get($breakpoints, tab-only)) {
+        @content;
+    }
+}
+
+/* responsive : création d'une mixin desktop */
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop-only)) {
+        @content;
+    }
+}
+
+@mixin heart-icon-before {
+    color: $color-dark-grey;
+    content: "\f004";
+    transition: color 100ms ease-in-out;
+    cursor: pointer;
+}
+
+@mixin heart-icon-hover-before {
+    cursor: pointer;
+    background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -1,0 +1,18 @@
+/* configuration de la police roboto comme règle générale */
+body {
+    max-width: 1000px;
+    margin: auto;
+    width: 100%;
+    position: relative;
+    box-sizing: content-box;
+    overflow-x: hidden;
+}
+
+
+
+/* suppression du soulignement des liens comme règle générale */
+a {
+    text-decoration: none;
+    cursor: pointer;
+
+}

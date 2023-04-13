@@ -1,0 +1,14 @@
+/* import de la police shrikhand */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+/* import de la police roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+body {
+    font-family: roboto;
+}
+
+/* configuration de la police shrikhand pour tout logo */
+%font_logo {
+    font-family: Shrikhand;
+}

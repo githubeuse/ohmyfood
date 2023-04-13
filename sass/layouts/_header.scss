@@ -1,0 +1,161 @@
+/* configuration du header */
+.header {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+
+
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: $color-dark-grey;
+    }
+
+    /*configuration de la flèche arrière dans le header sur page restaurant : uniquement en version mobile */
+    &__container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    &__arrow-back {
+        padding: 0px 12px;
+        position: relative;
+        height: 100%;
+        font-size: 1.5em;
+
+        @include tab-only {
+            padding: 0px 25px 0 25px;
+
+        }
+    }
+
+
+    &__logo-container {
+        position: relative;
+        width: 90%;
+
+    }
+
+    /* configuration du logo dans le header sur index.html */
+    &__logo {
+        @extend %font_logo;
+        position: relative;
+        width: 100%;
+        text-align: center;
+
+        /*@include tab-only {
+            max-width: 45vw;
+        }*/
+    }
+
+    & h1 {
+        margin-block-start: 0.25em;
+        margin-block-end: 0.25em;
+    }
+
+    /* configuration de l'input-container dans le header sur index.html*/
+    &__input-container {
+        @extend %display_flexrow;
+        @extend %alignitems_center;
+        position: relative;
+    }
+
+    &__greybg {
+        @extend %bg-light-grey;
+        @extend %display_flexcolumn;
+        @extend %alignitems_center;
+        padding-bottom: 50Px;
+    }
+
+    &__heading{
+        width: 60%;
+        padding-top: 1em;
+    }
+
+    &__subtitle{
+        width: 80%;
+        font-weight: 300;
+        padding-bottom: 1em;
+    }
+
+    &__picture {
+        & img {
+            width: 100%;
+            height: 35vh;
+            object-fit: cover;
+        }
+    }
+
+    /* INDEX configuration de la zone input dans le header*/
+    &__input-container {
+        color: $color-dark-grey;
+        background: $color-light-grey-2;
+        padding-left: 20px;
+        @extend %display_flexrow;
+        @extend %justifycontent_center;
+
+        input {
+            border: 0;
+            background: $color-light-grey-2;
+            padding: 10px;
+
+            &::placeholder {
+                color: $color-dark-grey;
+                font-family: Roboto;
+            }
+        }
+    }
+
+    /* INDEX configuration de l'icone à côté de la zone input */
+    &__icone {
+        position: relative;
+        width: 30px;
+        color: $color-dark-grey;
+    }
+
+    /* INDEX configuration du bouton violet dans le header sur la page index*/
+    &__button {
+        @extend %bg-gradient;
+        opacity: 1;
+        position: relative;
+        z-index: 1;
+        box-shadow: $default-box-shadow;
+        width: fit-content;
+        padding: 15px 30px;
+        color: white;
+        border-radius: 40px;
+        cursor: pointer;
+
+        /* insertion d'un pseudo élément pour le changement de couleur au survol*/
+        &:after {
+            content: "";
+            background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
+            box-shadow: $darker-box-shadow;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: opacity 210ms;
+            border-radius: 40px;
+
+        }
+
+        /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,338 @@
+
+.loader {
+    background: $color-light-grey-2;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: apparition-magique 3200ms forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    @extend %font_logo;
+    display: none;
+
+    &__verre {
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+
+    &__verre--mint {
+        position: relative;
+        top: -103px;
+        width: 100px;
+        height: 100px;
+        z-index: 99;
+        animation: diminution-aboire 700ms both;
+    }
+
+    &__verre--pink {
+        position: relative;
+        top: -203px;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        animation: diminution-aboire 700ms both 1000ms;
+    }
+
+    &__verre--purple {
+        position: relative;
+        top: -303px;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        animation: diminution-aboire 700ms both 2000ms;
+    }
+}
+
+
+
+
+/* INDEX mise en place de la zone décrivant le fonctionnement */
+.process {
+    padding: 1em;
+    padding-bottom: 30px;
+    position: relative;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: $color-dark-grey;
+
+    }
+
+    &__heading {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    &__all-buttons-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include tab-only(){
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+
+    /* mise en place du display en version tab */
+    &__container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        position: relative;
+        /*@include tab-only {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }*/
+    }
+
+    /* configuration des boutons dans la zone de fonctionnement */
+    &__button {
+        @extend %display_flexrow;
+        @extend %alignitems_center;
+        @extend %bg-light-grey;
+        opacity: 1;
+        z-index: 1;
+        box-shadow: $default-box-shadow;
+
+        border-radius: 30px;
+        padding: 5px 20px;
+        margin-bottom: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        color: $color-dark-grey;
+        position: relative;
+        width: 90%;
+
+        /* insertion d'un pseudo élément pour le changement de couleur au survol*/
+        &::after {
+            content: "";
+            background: lighten($color-primary, 35);
+            box-shadow: $darker-box-shadow;
+            border-radius: 30px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: opacity 210ms;
+        }
+
+        /* passage de l'opacité de 0 à 1, pour le pseudo élément ci-dessus */
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+
+            &:hover>.process__icon {
+                color: $color-primary;
+            }
+
+        }
+        @include tab-only(){
+            padding: 2.5px 10px;
+        }
+    }
+
+    /* configuration des icônes dans la zone de fonctionnement */
+    &__icon {
+        color: $color-medium-grey;
+        position: relative;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 1em;
+    }
+
+    &__number {
+        background: $color-primary;
+        padding: 8px 10px 13px 10px;
+        color: white;
+        border-radius: 50%;
+        font-size: 12px;
+        height: 8px;
+        position: absolute;
+        top: 23%;
+        left: -10px;
+
+        & p {
+            position: relative;
+            top: -12px;
+            color: white;
+        }
+    }
+}
+
+
+/* INDEX stylisation du bouton du menu (sur l'index uniquement) */
+.menu {
+
+    &__button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button {
+        width: fit-content;
+        position: relative;
+        padding: 20px 40px;
+        color: white;
+        border-radius: 40px;
+        color: white;
+        @extend %bg-gradient;
+        opacity: 1;
+        z-index: 1;
+        box-shadow: $default-box-shadow;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        cursor: pointer;
+
+
+        /* stylisation du pseudo élément after avec l'opacity*/
+        &:after {
+            content: "";
+            background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
+            box-shadow: $darker-box-shadow;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 40px;
+            z-index: -1;
+            transition: opacity 210ms;
+        }
+
+
+        /* stylisation du pseudo élément lors du hover avec une opacité à 1*/
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+/* INDEX configuration de la zone restaurants */
+.restaurants {
+    @extend %bg-light-grey;
+    padding: 1em;
+    &__header{
+        margin-top: 2em;
+    }
+}
+
+/* INDEX configuration des cards dans la zone restaurants */
+.restaurant-card {
+
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: $color-dark-grey;
+
+    }
+
+    /* configuration du container qui contient 2 cards de plats */
+    &__principal-container {
+        @include tab-only {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+    /*configuration du container qui contient : l'image, le texte (et parfois le tag new)*/
+    &__elements-container {
+        @extend %card_design;
+        @extend %display_flexcolumn;
+
+        & p {
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+        }
+    }
+
+    &__picture {
+        width: 102.5%;
+        height: 25vh;
+        object-fit: cover;
+        @extend %border-radius-top;
+        position: relative;
+        top: -5px;
+        left: -5px;
+
+        @include tab-only {
+            width: 104%;
+        }
+    }
+
+    &__new-tag {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: fit-content;
+        background: #99e2d0;
+        color: #008766;
+        padding: 5px 10px;
+    }
+
+    /* configuration du container qui contient : titre, texte, icone*/
+    &__last-line-container {
+        @extend %display_flexrow;
+        @extend %alignitems_center;
+        justify-content: space-between;
+
+    }
+
+    /* configuration du container qui contient text : titre, texte*/
+    &__text {
+        @extend %display_flexcolumn;
+        padding-top: 6px;
+        padding-left: 10px;
+        line-height: 1.3em;
+        padding-bottom: 6px;
+        color: black;
+        & p:first-child{
+            font-weight: 600;
+        }
+        
+    }
+
+    /* configuration de l'icone coeur dans la card */
+    &__heart {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        font-size: 22px;
+
+        &::before {
+            @include heart-icon-before;
+        }
+
+        &:active::before {
+            @include heart-icon-hover-before;
+        }
+    }
+
+
+}

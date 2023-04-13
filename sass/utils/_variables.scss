@@ -1,0 +1,23 @@
+/* définition des breakpoints */
+$breakpoints:(tab-only: 768px,
+    desktop-only: 992px);
+
+
+/* définition des couleurs */
+$color-primary: #9356DC;
+$color-secondary: #FF79D4;
+$color-tertiary: #99E2DD;
+$color-light-grey: #f7f7f7;
+$color-light-grey-2: #eaeaea;
+$color-medium-grey: #7e7e7e;
+$color-dark-grey: #353535;
+
+
+/* définition des ombres portées */
+$default-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+$darker-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
+
+$width-slide: 60px;
+$cards-number: 4;
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur/$cards-number;
