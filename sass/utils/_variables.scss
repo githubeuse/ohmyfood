@@ -1,6 +1,5 @@
 /* définition des breakpoints */
-$breakpoints:(tab-only: 768px,
-    desktop-only: 992px);
+$breakpoints:(tab-only: 768px, desktop-only: 992px);
 
 
 /* définition des couleurs */
@@ -16,7 +15,6 @@ $color-dark-grey: #353535;
 /* définition des ombres portées */
 $default-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 $darker-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
-
 $width-slide: 60px;
 $cards-number: 4;
 $anim-dur: 1000ms;
