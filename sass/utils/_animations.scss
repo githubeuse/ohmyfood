@@ -22,15 +22,15 @@
 
 @keyframes diminution-aboire {
     0% {
-        transform: scaleY(0%) scaleX(0%);
+        transform: scaleY(0) scaleX(0);
     }
 
     50% {
-        transform: scaleY(70%) scaleX(80%);
+        transform: scaleY(0.7) scaleX(0.8);
     }
 
     100% {
-        transform: scaleY(0%) scaleX(0%);
+        transform: scaleY(0) scaleX(0);
     }
 }
 

@@ -60,6 +60,31 @@
   position: relative;
 }
 
+@keyframes apparition-magique {
+  0%, 80% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  99% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+@keyframes diminution-aboire {
+  0% {
+    transform: scaleY(0) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.7) scaleX(0.8);
+  }
+  100% {
+    transform: scaleY(0) scaleX(0);
+  }
+}
 @keyframes rotate {
   0%, 20% {
     transform: rotate(90deg);
@@ -85,7 +110,7 @@ body {
 }
 
 /* configuration de la police shrikhand pour tout logo */
-.loader, .dish__restaurant-name, .footer__logo, .header__logo {
+.dish__restaurant-name, .footer__logo, .header__logo {
   font-family: Shrikhand;
 }
 
@@ -678,75 +703,6 @@ a {
   width: 45px;
   position: relative;
   top: -15px;
-}
-
-@keyframes apparition-magique {
-  0%, 80% {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-  99% {
-    opacity: 0;
-    transform: scaleX(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-}
-@keyframes diminution-aboire {
-  0% {
-    transform: scaleY(0%) scaleX(0%);
-  }
-  50% {
-    transform: scaleY(70%) scaleX(80%);
-  }
-  100% {
-    transform: scaleY(0%) scaleX(0%);
-  }
-}
-.loader {
-  background: #eaeaea;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  animation: apparition-magique 3200ms forwards;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 99;
-}
-.loader__verre {
-  width: 100px;
-  height: 100px;
-  position: relative;
-}
-.loader__verre--mint {
-  position: relative;
-  top: -103px;
-  width: 100px;
-  height: 100px;
-  z-index: 99;
-  animation: diminution-aboire 700ms both;
-}
-.loader__verre--pink {
-  position: relative;
-  top: -203px;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  animation: diminution-aboire 700ms both 1000ms;
-}
-.loader__verre--purple {
-  position: relative;
-  top: -303px;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  animation: diminution-aboire 700ms both 2000ms;
 }
 
 /*# sourceMappingURL=styles.css.map */
