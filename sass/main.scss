@@ -5,8 +5,96 @@
 @import "./utils/animations";
 @import "./base/typography";
 @import "./base/base";
+@import "./components/buttons";
 @import "./layouts/header";
 @import "./layouts/footer";
-@import "./components/buttons";
 @import "./pages/index";
 @import "./pages/restaurants";
+
+@keyframes apparition-magique {
+
+    0%,
+    80% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    99% {
+        opacity: 0;
+        transform: scaleX(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+}
+
+
+@keyframes diminution-aboire {
+    0% {
+        transform: scaleY(0%) scaleX(0%);
+    }
+
+    50% {
+        transform: scaleY(70%) scaleX(80%);
+    }
+
+    100% {
+        transform: scaleY(0%) scaleX(0%);
+    }
+}
+
+
+
+.loader {
+    background: $color-light-grey-2;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: apparition-magique 3200ms forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    @extend %font_logo;
+
+    &__verre {
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+
+    &__verre--mint {
+        position: relative;
+        top: -103px;
+        width: 100px;
+        height: 100px;
+        z-index: 99;
+        animation: diminution-aboire 700ms both;
+    }
+
+    &__verre--pink {
+        position: relative;
+        top: -203px;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        animation: diminution-aboire 700ms both 1000ms;
+    }
+
+    &__verre--purple {
+        position: relative;
+        top: -303px;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        animation: diminution-aboire 700ms both 2000ms;
+    }
+}
+
+
