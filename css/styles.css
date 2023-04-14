@@ -110,7 +110,7 @@ body {
 }
 
 /* configuration de la police shrikhand pour tout logo */
-.dish__restaurant-name, .footer__logo, .header__logo {
+.dish__restaurant-name, .loader, .footer__logo, .header__logo {
   font-family: Shrikhand;
 }
 
@@ -385,6 +385,50 @@ a {
 }
 .footer__element a:hover {
   font-weight: 500;
+}
+
+.loader {
+  background: #eaeaea;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: apparition-magique 3200ms forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.loader__verre {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.loader__verre--mint {
+  position: relative;
+  top: -103px;
+  width: 100px;
+  height: 100px;
+  z-index: 99;
+  animation: diminution-aboire 700ms both;
+}
+.loader__verre--pink {
+  position: relative;
+  top: -203px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  animation: diminution-aboire 700ms both 1000ms;
+}
+.loader__verre--purple {
+  position: relative;
+  top: -303px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  animation: diminution-aboire 700ms both 2000ms;
 }
 
 /* INDEX mise en place de la zone décrivant le fonctionnement */
