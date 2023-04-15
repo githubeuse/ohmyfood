@@ -63,15 +63,15 @@
 @keyframes apparition-magique {
   0%, 80% {
     opacity: 1;
-    transform: scaleX(1);
+    transform: rotateX(0) scaleX(1);
   }
   99% {
     opacity: 0;
-    transform: scaleX(1);
+    transform: rotateX(0.5) scaleX(1);
   }
   100% {
     opacity: 0;
-    transform: scaleX(0);
+    transform: rotateX(1) scaleX(0);
   }
 }
 @keyframes diminution-aboire {
@@ -381,6 +381,7 @@ a {
   font-weight: 500;
 }
 
+/* Mise en place du style pour le loading-spinner de la page*/
 .loader {
   background: #eaeaea;
   position: fixed;
