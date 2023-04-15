@@ -60,7 +60,8 @@
   position: relative;
 }
 
-@keyframes apparition-magique {
+/* Mise en place de keyframes pour faire disparaitre le spinning-loader sur la page index*/
+@keyframes disparition-magique {
   0%, 80% {
     opacity: 1;
     transform: scaleX(1);
@@ -74,6 +75,7 @@
     transform: scaleX(0);
   }
 }
+/* Mise en place de keyframes pour faire varier les hauteurs de quantité de liquide dans le verre présent dans le loading-spinner sur la page index*/
 @keyframes diminution-aboire {
   0% {
     transform: scaleY(0) scaleX(0);
@@ -85,6 +87,7 @@
     transform: scaleY(0) scaleX(0);
   }
 }
+/* Mise en place de keyframes pour faire tourner l'icône ok lors du clic sur une card de plats sur les pages de restaurants et pour faire tourner le verre du loading spinner sur l'index*/
 @keyframes rotate {
   0%, 20% {
     transform: rotate(90deg);
@@ -93,6 +96,7 @@
     transform: rotate(360deg);
   }
 }
+/* Mise en place de keyframes pour faire apparaître les cards de repas de façon progressive sur les pages de restaurants*/
 @keyframes progressive-appearance {
   0%, 20% {
     transform: translateY(20%);
@@ -389,7 +393,7 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  animation: apparition-magique 2500ms forwards;
+  animation: disparition-magique 2500ms forwards;
   display: flex;
   flex-direction: column;
   justify-content: center;
