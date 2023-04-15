@@ -184,3 +184,13 @@
         top: -15px;
     }
 }
+
+
+    /* Mise en place du style pour le container des boutons dans la zone de fonctionnement*/
+    .menu {
+        &__button-container {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    

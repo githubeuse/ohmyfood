@@ -1,4 +1,4 @@
-/* Mise en place du style pour le loading-spinner de la page*/
+/* Mise en place du style pour le loading-spinner de la page + parametre animation*/
 .loader {
     background: $color-light-grey-2;
     position: fixed;
@@ -6,7 +6,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    animation: apparition-magique 3200ms forwards;
+    animation: apparition-magique 2500ms forwards;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,42 +14,47 @@
     z-index: 99;
     @extend %font_logo;
 
+    /* Mise en place du style pour l'élément verre du loading-spinner de la page + parametre animation */
     &__verre {
         width: 100px;
         height: 100px;
         position: relative;
+        animation: rotate 500ms;
     }
 
+    /* Mise en place du style pour le remplissage VERT du verre du loading-spinner de la page + parametre animation*/
     &__verre--mint {
         position: relative;
         top: -103px;
         width: 100px;
         height: 100px;
         z-index: 99;
-        animation: diminution-aboire 700ms both;
+        animation: diminution-aboire 500ms both 500ms;
     }
 
+    /* Mise en place du style pour le remplissage ROSE du verre du loading-spinner de la page + parametre animation*/
     &__verre--pink {
         position: relative;
         top: -203px;
         left: 0;
         width: 100px;
         height: 100px;
-        animation: diminution-aboire 700ms both 1000ms;
+        animation: diminution-aboire 500ms both 1000ms;
     }
 
+    /* Mise en place du style pour le remplissage VIOLET du rose du loading-spinner de la page + parametre animation*/
     &__verre--purple {
         position: relative;
         top: -303px;
         left: 0;
         width: 100px;
         height: 100px;
-        animation: diminution-aboire 700ms both 2000ms;
+        animation: diminution-aboire 500ms both 1500ms;
     }
 }
 
 
-/* INDEX mise en place de la zone décrivant le fonctionnement */
+/* Mise en place du style pour la zone de fonctionnement*/
 .process {
     padding: 1em;
     padding-bottom: 30px;
@@ -58,6 +63,7 @@
     display: flex;
     flex-direction: column;
 
+    /* Mise en place du style pour les liens dans la zone de fonctionnement*/
     & a:link,
     a:visited,
     a:hover,
@@ -66,23 +72,27 @@
 
     }
 
+    /* Mise en place du style pour l'entête la zone de fonctionnement*/
     &__heading {
         padding-top: 10px;
         padding-bottom: 5px;
     }
 
-    &__all-buttons-container{
+    /* Mise en place du style pour le container des boutons dans la zone de fonctionnement*/
+    &__all-buttons-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        @include tab-only(){
+
+        /* Media queries : à partir de tab, Mise en place du style pour le container des boutons dans la zone de fonctionnement*/
+        @include tab-only() {
             flex-direction: row;
             justify-content: space-around;
         }
     }
 
 
-    /* mise en place du display en version tab */
+    /* Mise en place du style pour le container du contenu de chaque bouton dans la zone de fonctionnement*/
     &__container {
         display: flex;
         flex-direction: column;
@@ -95,7 +105,7 @@
         }*/
     }
 
-    /* configuration des icônes dans la zone de fonctionnement */
+    /* Mise en place du style pour les icones dans la zone de fonctionnement*/
     &__icon {
         color: $color-medium-grey;
         position: relative;
@@ -104,6 +114,7 @@
         font-size: 1em;
     }
 
+    /* Mise en place du style pour les numéros sur la gauche des boutons dans la zone de fonctionnement*/
     &__number {
         background: $color-primary;
         padding: 8px 10px 13px 10px;
@@ -115,6 +126,7 @@
         top: 23%;
         left: -10px;
 
+        /* Mise en place du style pour les paragraphes des numéros sur la gauche des boutons dans la zone de fonctionnement*/
         & p {
             position: relative;
             top: -12px;
@@ -123,29 +135,21 @@
     }
 }
 
-
-/* INDEX stylisation du bouton du menu (sur l'index uniquement) */
-.menu {
-
-    &__button-container {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-
-/* INDEX configuration de la zone restaurants */
+/* Mise en place du style pour la zone de présentation de restaurants*/
 .restaurants {
     @extend %bg-light-grey;
     padding: 1em;
-    &__header{
+
+    /* Mise en place du style pour le titre de zone de présentation de restaurants*/
+    &__header {
         margin-top: 2em;
     }
 }
 
-/* INDEX configuration des cards dans la zone restaurants */
+/* Mise en place du style pour chaque card de restaurants*/
 .restaurant-card {
 
+    /* Mise en place du style pour les liens dans chaque card de restaurants*/
     & a:link,
     a:visited,
     a:hover,
@@ -154,8 +158,11 @@
 
     }
 
-    /* configuration du container qui contient 2 cards de plats */
+    /* Mise en place du style pour le conteneur de toutes les cards restaurants*/
     &__principal-container {
+
+        /* Media queries : à partir de tab, mise en place du style pour le conteneur de toutes les cards restaurants*/
+
         @include tab-only {
             display: flex;
             flex-direction: row;
@@ -163,19 +170,22 @@
         }
     }
 
-    /*configuration du container qui contient : l'image, le texte (et parfois le tag new)*/
+    /* Mise en place du style pour les éléments du container des cards de restaurants : image, texte ou/et tag "nouveau"*/
     &__elements-container {
         @extend %card_design;
         @extend %display_flexcolumn;
 
+        /* Mise en place du style pour les p à l'interieur du container des cards de restaurants : image, texte ou/et tag "nouveau"*/
         & p {
             margin-block-start: 0em;
             margin-block-end: 0em;
         }
     }
 
+    /* Mise en place du style pour les photos à l'intérieur des cards de restaurants*/
+
     &__picture {
-        width: 102.5%;
+        width: 103%;
         height: 25vh;
         object-fit: cover;
         @extend %border-radius-top;
@@ -183,11 +193,13 @@
         top: -5px;
         left: -5px;
 
+        /* Media queries : à partir de tab, Mise en place du style pour les photos à l'intérieur des cards de restaurants */
         @include tab-only {
-            width: 104%;
+            width: 103%;
         }
     }
 
+    /* Mise en place du style pour le tag "nouveau"*/
     &__new-tag {
         position: absolute;
         top: 10px;
@@ -198,7 +210,7 @@
         padding: 5px 10px;
     }
 
-    /* configuration du container qui contient : titre, texte, icone*/
+    /*Mise en place du style pour la dernière ligne à l'intérieur des cards de restaurants : titre, texte, icone*/
     &__last-line-container {
         @extend %display_flexrow;
         @extend %alignitems_center;
@@ -206,7 +218,7 @@
 
     }
 
-    /* configuration du container qui contient text : titre, texte*/
+    /*Mise en place du style pour uniquement le texte de la dernière ligne à l'intérieur des cards de restaurants : titre, texte*/
     &__text {
         @extend %display_flexcolumn;
         padding-top: 6px;
@@ -214,23 +226,27 @@
         line-height: 1.3em;
         padding-bottom: 6px;
         color: black;
-        & p:first-child{
+
+        /*Mise en place du style pour uniquement le titre de la dernière ligne à l'intérieur des cards de restaurants*/
+        & p:first-child {
             font-weight: 600;
         }
-        
+
     }
 
-    /* configuration de l'icone coeur dans la card */
+    /*Mise en place du style pour l'icone dans la dernière ligne à l'intérieur des cards de restaurants : titre, texte*/
     &__heart {
         display: flex;
         justify-content: flex-end;
         padding: 10px;
         font-size: 22px;
 
+        /*Mise en place du style du pseudo-élément before pour l'icone dans la dernière ligne à l'intérieur des cards de restaurants*/
         &::before {
             @include heart-icon-before;
         }
 
+        /*Lors du clic : mise en place du style du pseudo-élément after pour l'icone dans la dernière ligne à l'intérieur des cards de restaurants*/
         &:active::before {
             @include heart-icon-hover-before;
         }

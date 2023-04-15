@@ -76,13 +76,13 @@
 }
 @keyframes diminution-aboire {
   0% {
-    transform: rotateX(0) scaleY(0) scaleX(0);
+    transform: scaleY(0) scaleX(0);
   }
   50% {
-    transform: rotateX(0.5) scaleY(0.7) scaleX(0.8);
+    transform: scaleY(0.7) scaleX(0.8);
   }
   100% {
-    transform: rotateX(1) scaleY(0) scaleX(0);
+    transform: scaleY(0) scaleX(0);
   }
 }
 @keyframes rotate {
@@ -381,7 +381,7 @@ a {
   font-weight: 500;
 }
 
-/* Mise en place du style pour le loading-spinner de la page*/
+/* Mise en place du style pour le loading-spinner de la page + parametre animation*/
 .loader {
   background: #eaeaea;
   position: fixed;
@@ -389,17 +389,22 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  animation: apparition-magique 3200ms forwards;
+  animation: apparition-magique 2500ms forwards;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 99;
+  /* Mise en place du style pour l'élément verre du loading-spinner de la page + parametre animation */
+  /* Mise en place du style pour le remplissage VERT du verre du loading-spinner de la page + parametre animation*/
+  /* Mise en place du style pour le remplissage ROSE du verre du loading-spinner de la page + parametre animation*/
+  /* Mise en place du style pour le remplissage VIOLET du rose du loading-spinner de la page + parametre animation*/
 }
 .loader__verre {
   width: 100px;
   height: 100px;
   position: relative;
+  animation: rotate 500ms;
 }
 .loader__verre--mint {
   position: relative;
@@ -407,7 +412,7 @@ a {
   width: 100px;
   height: 100px;
   z-index: 99;
-  animation: diminution-aboire 700ms both;
+  animation: diminution-aboire 500ms both 500ms;
 }
 .loader__verre--pink {
   position: relative;
@@ -415,7 +420,7 @@ a {
   left: 0;
   width: 100px;
   height: 100px;
-  animation: diminution-aboire 700ms both 1000ms;
+  animation: diminution-aboire 500ms both 1000ms;
 }
 .loader__verre--purple {
   position: relative;
@@ -423,10 +428,10 @@ a {
   left: 0;
   width: 100px;
   height: 100px;
-  animation: diminution-aboire 700ms both 2000ms;
+  animation: diminution-aboire 500ms both 1500ms;
 }
 
-/* INDEX mise en place de la zone décrivant le fonctionnement */
+/* Mise en place du style pour la zone de fonctionnement*/
 .process {
   padding: 1em;
   padding-bottom: 30px;
@@ -434,8 +439,12 @@ a {
   width: 95%;
   display: flex;
   flex-direction: column;
-  /* mise en place du display en version tab */
-  /* configuration des icônes dans la zone de fonctionnement */
+  /* Mise en place du style pour les liens dans la zone de fonctionnement*/
+  /* Mise en place du style pour l'entête la zone de fonctionnement*/
+  /* Mise en place du style pour le container des boutons dans la zone de fonctionnement*/
+  /* Mise en place du style pour le container du contenu de chaque bouton dans la zone de fonctionnement*/
+  /* Mise en place du style pour les icones dans la zone de fonctionnement*/
+  /* Mise en place du style pour les numéros sur la gauche des boutons dans la zone de fonctionnement*/
 }
 .process a:link,
 .process a:visited,
@@ -451,6 +460,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* Media queries : à partir de tab, Mise en place du style pour le container des boutons dans la zone de fonctionnement*/
 }
 @media screen and (min-width: 768px) {
   .process__all-buttons-container {
@@ -486,6 +496,7 @@ a {
   position: absolute;
   top: 23%;
   left: -10px;
+  /* Mise en place du style pour les paragraphes des numéros sur la gauche des boutons dans la zone de fonctionnement*/
 }
 .process__number p {
   position: relative;
@@ -493,33 +504,34 @@ a {
   color: white;
 }
 
-/* INDEX stylisation du bouton du menu (sur l'index uniquement) */
-.menu__button-container {
-  display: flex;
-  justify-content: center;
-}
-
-/* INDEX configuration de la zone restaurants */
+/* Mise en place du style pour la zone de présentation de restaurants*/
 .restaurants {
   padding: 1em;
+  /* Mise en place du style pour le titre de zone de présentation de restaurants*/
 }
 .restaurants__header {
   margin-top: 2em;
 }
 
-/* INDEX configuration des cards dans la zone restaurants */
+/* Mise en place du style pour chaque card de restaurants*/
 .restaurant-card {
-  /* configuration du container qui contient 2 cards de plats */
-  /*configuration du container qui contient : l'image, le texte (et parfois le tag new)*/
-  /* configuration du container qui contient : titre, texte, icone*/
-  /* configuration du container qui contient text : titre, texte*/
-  /* configuration de l'icone coeur dans la card */
+  /* Mise en place du style pour les liens dans chaque card de restaurants*/
+  /* Mise en place du style pour le conteneur de toutes les cards restaurants*/
+  /* Mise en place du style pour les éléments du container des cards de restaurants : image, texte ou/et tag "nouveau"*/
+  /* Mise en place du style pour les photos à l'intérieur des cards de restaurants*/
+  /* Mise en place du style pour le tag "nouveau"*/
+  /*Mise en place du style pour la dernière ligne à l'intérieur des cards de restaurants : titre, texte, icone*/
+  /*Mise en place du style pour uniquement le texte de la dernière ligne à l'intérieur des cards de restaurants : titre, texte*/
+  /*Mise en place du style pour l'icone dans la dernière ligne à l'intérieur des cards de restaurants : titre, texte*/
 }
 .restaurant-card a:link,
 .restaurant-card a:visited,
 .restaurant-card a:hover,
 .restaurant-card a:active {
   color: #353535;
+}
+.restaurant-card__principal-container {
+  /* Media queries : à partir de tab, mise en place du style pour le conteneur de toutes les cards restaurants*/
 }
 @media screen and (min-width: 768px) {
   .restaurant-card__principal-container {
@@ -528,21 +540,25 @@ a {
     justify-content: space-around;
   }
 }
+.restaurant-card__elements-container {
+  /* Mise en place du style pour les p à l'interieur du container des cards de restaurants : image, texte ou/et tag "nouveau"*/
+}
 .restaurant-card__elements-container p {
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
 .restaurant-card__picture {
-  width: 102.5%;
+  width: 103%;
   height: 25vh;
   object-fit: cover;
   position: relative;
   top: -5px;
   left: -5px;
+  /* Media queries : à partir de tab, Mise en place du style pour les photos à l'intérieur des cards de restaurants */
 }
 @media screen and (min-width: 768px) {
   .restaurant-card__picture {
-    width: 104%;
+    width: 103%;
   }
 }
 .restaurant-card__new-tag {
@@ -563,6 +579,7 @@ a {
   line-height: 1.3em;
   padding-bottom: 6px;
   color: black;
+  /*Mise en place du style pour uniquement le titre de la dernière ligne à l'intérieur des cards de restaurants*/
 }
 .restaurant-card__text p:first-child {
   font-weight: 600;
@@ -572,6 +589,8 @@ a {
   justify-content: flex-end;
   padding: 10px;
   font-size: 22px;
+  /*Mise en place du style du pseudo-élément before pour l'icone dans la dernière ligne à l'intérieur des cards de restaurants*/
+  /*Lors du clic : mise en place du style du pseudo-élément after pour l'icone dans la dernière ligne à l'intérieur des cards de restaurants*/
 }
 .restaurant-card__heart::before {
   color: #353535;
@@ -742,6 +761,12 @@ a {
   width: 45px;
   position: relative;
   top: -15px;
+}
+
+/* Mise en place du style pour le container des boutons dans la zone de fonctionnement*/
+.menu__button-container {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
