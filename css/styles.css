@@ -3,9 +3,13 @@
 /* Création d'une mixin pour l'utilisation de media queries desktop*/
 /* Création d'une mixin pour le pseudo élément before de l'icone coeur*/
 /* Lors du survol : création d'une mixin pour le pseudo élément before de l'icone coeur*/
-/* définition des breakpoints */
-/* définition des couleurs */
-/* définition des ombres portées */
+/* définition d'une map pour les breakpoints */
+/* définition de variables pour les couleurs */
+/* définition de variables pour les ombres portées */
+/* définition d'une variable pour la largeur pour le recouvrement de la card de plats*/
+/* définition d'une variable pour le nombre de cartes de plats*/
+/* définition d'une variable pour la durée d'animation totale pour l'apparition progressive des cards de plats'*/
+/* définition d'une variables pour le délai pour les animations d'apparition progressive pour les cartes de plats*/
 /* extension display flex row */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");

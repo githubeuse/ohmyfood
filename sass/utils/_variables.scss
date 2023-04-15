@@ -1,8 +1,8 @@
-/* définition des breakpoints */
+/* définition d'une map pour les breakpoints */
 $breakpoints:(tab-only: 768px, desktop-only: 992px);
 
 
-/* définition des couleurs */
+/* définition de variables pour les couleurs */
 $color-primary: #9356DC;
 $color-secondary: #FF79D4;
 $color-tertiary: #99E2DD;
@@ -12,10 +12,18 @@ $color-medium-grey: #7e7e7e;
 $color-dark-grey: #353535;
 
 
-/* définition des ombres portées */
+/* définition de variables pour les ombres portées */
 $default-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 $darker-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.302);
+
+/* définition d'une variable pour la largeur pour le recouvrement de la card de plats*/
 $width-slide: 60px;
+
+/* définition d'une variable pour le nombre de cartes de plats*/
 $cards-number: 4;
+
+/* définition d'une variable pour la durée d'animation totale pour l'apparition progressive des cards de plats'*/
 $anim-dur: 1000ms;
+
+/* définition d'une variables pour le délai pour les animations d'apparition progressive pour les cartes de plats*/
 $anim-delay: $anim-dur/$cards-number;
