@@ -608,6 +608,27 @@ a {
   cursor: pointer;
 }
 
+/*Mise en place du style pour chaque catégorie de plats sur les pages de restaurants*/
+.dish-category {
+  position: relative;
+  /*Media queries : à partir de tablette, Mise en place du style pour chaque catégorie de plats sur les pages de restaurants*/
+  /*Mise en place du style pour les titres de catégorie des plats sur les pages de restaurants*/
+  /*Mise en place du style pour le soulignement des titres de catégorie des plats sur les pages de restaurants*/
+}
+.dish-category__name {
+  margin-block-start: 0em;
+  padding-top: 2em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.dish-category__underline {
+  border-top: 3px solid #99E2DD;
+  width: 45px;
+  position: relative;
+  top: -15px;
+}
+
+/*Mise en place du style pour la section des plats sur les pages de restaurants*/
 .dish {
   background: #eaeaea;
   position: relative;
@@ -615,6 +636,17 @@ a {
   padding: 0 20px 0 20px;
   margin-bottom: -45px;
   box-sizing: content-box;
+  /*Mise en place du style pour les liens de la section des plats sur les pages de restaurants*/
+  /*Mise en place du style pour l'entête dans la section des plats sur les pages de restaurants*/
+  /*Mise en place du style pour le nom du restaurant sur les pages de restaurants*/
+  /*Mise en place du style pour un conteneur contenant uniquement 2 cards sur les pages de restaurants*/
+  /*Mise en place du style pour les cards de plats, sur les pages de restaurants + animation progressive des cartes de plats*/
+  /*Mise en place du style pour l'icone dans la partie qui se déplace pour recouvrir la card du plat*/
+  /*Mise en place du style de la partie qui se déplace pour recouvrir la card du plat + parametre transition*/
+  /*Mise en place du style du titre de plat dans la card de plat*/
+  /*Mise en place du style de la description du plat dans la card de plat*/
+  /*Mise en place du style de la partie qui se déplace pour recouvrir la card de plat*/
+  /*Mise en place du style de la description du prix dans la card de plat*/
 }
 .dish a:link,
 .dish a:visited,
@@ -622,11 +654,9 @@ a {
 .dish a:active {
   color: white;
 }
-.dish h3 {
-  margin-block-start: 0em;
-}
 .dish__header {
   align-items: baseline;
+  /*Media queries : à partir de tab, Mise en place du style pour l'entête dans la section des plats sur les pages de restaurants*/
 }
 @media screen and (min-width: 768px) {
   .dish__header {
@@ -634,12 +664,13 @@ a {
     gap: 10px;
   }
 }
-.dish__header h2 {
-  margin-block-end: 0em;
-}
 .dish__restaurant-name {
   font-size: 1.8em;
   font-weight: 400;
+  margin-block-end: 0em;
+}
+.dish__2-cards-container {
+  /*Media queries : à partir de tab, mise en place du style pour un conteneur contenant uniquement 2 cards sur les pages de restaurants*/
 }
 @media screen and (min-width: 768px) {
   .dish__2-cards-container {
@@ -658,6 +689,16 @@ a {
   position: relative;
   opacity: 0;
   animation: progressive-appearance 1000ms forwards;
+  /*Media queries: à partir de tab, Mise en place du style pour les cards de plats, sur les pages de restaurants*/
+  /*Lors du survol : Mise en place du style pour les cards de plats, sur les pages de restaurants*/
+  /*Création d'une fonction pour créer un délai d'animation en fonction d'un délai d'animation de base et du nombre de carte*/
+  /*Lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
+  /*Lors du clic : mise en place du style de la partie qui se déplace pour recouvrir la card du plat + parametre de transition*/
+}
+@media screen and (min-width: 768px) {
+  .dish__card {
+    width: 48%;
+  }
 }
 .dish__card:hover {
   cursor: pointer;
@@ -674,13 +715,9 @@ a {
 .dish__card--4 {
   animation-delay: 1000ms;
 }
-@media screen and (min-width: 768px) {
-  .dish__card {
-    width: 48%;
-  }
-}
 .dish__card:active > .dish__visible-part {
   width: 73%;
+  /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
 }
 @media screen and (min-width: 768px) {
   .dish__card:active > .dish__visible-part {
@@ -707,6 +744,7 @@ a {
   width: 90%;
   transition: width 400ms ease-in-out;
   padding-left: 8px;
+  /*Lors du clic : Mise en place du style de l'icpone dans la partie qui se déplace pour recouvrir la card du plat + parametre animation*/
 }
 .dish__visible-part:active + .dish__sliding-part > .dish__ok-icon {
   animation: rotate 400ms ease-in-out 200ms forwards;
@@ -748,22 +786,7 @@ a {
   font-size: 0.9em;
 }
 
-.dish-category {
-  position: relative;
-}
-.dish-category__name {
-  padding-top: 2em;
-  text-transform: uppercase;
-  font-weight: 300;
-}
-.dish-category__underline {
-  border-top: 3px solid #99E2DD;
-  width: 45px;
-  position: relative;
-  top: -15px;
-}
-
-/* Mise en place du style pour le container des boutons dans la zone de fonctionnement*/
+/* Mise en place du style du container de bouton "commander" en bas de page */
 .menu__button-container {
   display: flex;
   justify-content: center;

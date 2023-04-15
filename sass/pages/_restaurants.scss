@@ -1,18 +1,34 @@
+/*Mise en place du style pour chaque catégorie de plats sur les pages de restaurants*/
+.dish-category {
+    position: relative;
 
-.dish {
-
-    & a:link,
-    a:visited,
-    a:hover,
-    a:active {
-        color: white;
-
+    /*Media queries : à partir de tablette, Mise en place du style pour chaque catégorie de plats sur les pages de restaurants*/
+    @mixin tab-only {
+        width: 100vw;
     }
 
-    & h3 {
+    /*Mise en place du style pour les titres de catégorie des plats sur les pages de restaurants*/
+    &__name {
         margin-block-start: 0em;
+        padding-top: 2em;
+        text-transform: uppercase;
+        font-weight: 300;
+
     }
 
+    /*Mise en place du style pour le soulignement des titres de catégorie des plats sur les pages de restaurants*/
+    &__underline {
+        border-top: 3px solid $color-tertiary;
+        width: 45px;
+        position: relative;
+        top: -15px;
+    }
+}
+
+
+
+/*Mise en place du style pour la section des plats sur les pages de restaurants*/
+.dish {
     background: $color-light-grey-2;
     position: relative;
     top: -30px;
@@ -21,30 +37,45 @@
     @extend %border-radius-top;
     box-sizing: content-box;
 
+    /*Mise en place du style pour les liens de la section des plats sur les pages de restaurants*/
+    & a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: white;
+
+    }
+
+
+
+
+    /*Mise en place du style pour l'entête dans la section des plats sur les pages de restaurants*/
     &__header {
         @extend %display_flexrow;
         @extend %justifycontent_spacebetween;
         align-items: baseline;
 
+        /*Media queries : à partir de tab, Mise en place du style pour l'entête dans la section des plats sur les pages de restaurants*/
         @include tab-only {
             justify-content: flex-start;
             gap: 10px;
         }
-
-        & h2 {
-            margin-block-end: 0em;
-        }
     }
 
+    /*Mise en place du style pour le nom du restaurant sur les pages de restaurants*/
     &__restaurant-name {
         @extend %font_logo;
         font-size: 1.8em;
         font-weight: 400;
+        margin-block-end: 0em;
+
     }
 
+    /*Mise en place du style pour un conteneur contenant uniquement 2 cards sur les pages de restaurants*/
     &__2-cards-container {
         @extend %display_flexcolumn;
 
+        /*Media queries : à partir de tab, mise en place du style pour un conteneur contenant uniquement 2 cards sur les pages de restaurants*/
         @include tab-only {
             display: flex;
             flex-direction: row;
@@ -52,6 +83,7 @@
         }
     }
 
+    /*Mise en place du style pour les cards de plats, sur les pages de restaurants + animation progressive des cartes de plats*/
     &__card {
         @extend %display_flexrow;
         @extend %card_design;
@@ -65,28 +97,34 @@
         opacity: 0;
         animation: progressive-appearance $anim-dur forwards;
 
+        /*Media queries: à partir de tab, Mise en place du style pour les cards de plats, sur les pages de restaurants*/
+        @include tab-only {
+            width: 48%;
+        }
+
+        /*Lors du survol : Mise en place du style pour les cards de plats, sur les pages de restaurants*/
         &:hover {
             cursor: pointer;
         }
 
+        /*Création d'une fonction pour créer un délai d'animation en fonction d'un délai d'animation de base et du nombre de carte*/
         @for $i from 1 through $cards-number {
             &--#{$i} {
                 animation-delay: ($anim-delay * $i);
             }
         }
 
-
-        @include tab-only {
-            width: 48%;
-        }
-
+        /*Lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
         &:active>.dish__visible-part {
             width: 73%;
-            @include tab-only{
+
+            /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
+            @include tab-only {
                 width: 78%;
             }
         }
 
+        /*Lors du clic : mise en place du style de la partie qui se déplace pour recouvrir la card du plat + parametre de transition*/
         &:active>.dish__sliding-part {
             opacity: 1;
             transform: translateX(0%);
@@ -95,6 +133,7 @@
 
     }
 
+    /*Mise en place du style pour l'icone dans la partie qui se déplace pour recouvrir la card du plat*/
     &__ok-icon {
         color: white;
         font-size: 1.5em;
@@ -107,6 +146,7 @@
         transform: rotate(360deg);
     }
 
+    /*Mise en place du style de la partie qui se déplace pour recouvrir la card du plat + parametre transition*/
     &__visible-part {
         position: relative;
         @extend %display_flexcolumn;
@@ -114,11 +154,13 @@
         transition: width 400ms ease-in-out;
         padding-left: 8px;
 
+        /*Lors du clic : Mise en place du style de l'icpone dans la partie qui se déplace pour recouvrir la card du plat + parametre animation*/
         &:active+.dish__sliding-part>.dish__ok-icon {
             animation: rotate 400ms ease-in-out 200ms forwards;
         }
     }
 
+    /*Mise en place du style du titre de plat dans la card de plat*/
     &__title {
         display: inline-block;
         white-space: nowrap;
@@ -129,6 +171,7 @@
         font-size: 1.2em;
     }
 
+    /*Mise en place du style de la description du plat dans la card de plat*/
     &__description {
         display: inline-block;
         white-space: nowrap;
@@ -137,6 +180,7 @@
         font-size: 0.9em;
     }
 
+    /*Mise en place du style de la partie qui se déplace pour recouvrir la card de plat*/
     &__sliding-part {
         background: $color-tertiary;
         border-radius: 0 20px 20px 0;
@@ -152,7 +196,7 @@
     }
 
 
-
+    /*Mise en place du style de la description du prix dans la card de plat*/
     &__price {
         display: flex;
         align-items: flex-end;
@@ -162,35 +206,12 @@
     }
 }
 
-.dish-category {
-    position: relative;
-
-    @mixin tab-only {
-        width: 100vw;
-    }
 
 
-    &__name {
-        padding-top: 2em;
-        text-transform: uppercase;
-        font-weight: 300;
-
-    }
-
-    &__underline {
-        border-top: 3px solid $color-tertiary;
-        width: 45px;
-        position: relative;
-        top: -15px;
+/* Mise en place du style du container de bouton "commander" en bas de page */
+.menu {
+    &__button-container {
+        display: flex;
+        justify-content: center;
     }
 }
-
-
-    /* Mise en place du style pour le container des boutons dans la zone de fonctionnement*/
-    .menu {
-        &__button-container {
-            display: flex;
-            justify-content: center;
-        }
-    }
-    
