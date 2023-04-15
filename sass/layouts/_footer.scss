@@ -1,24 +1,25 @@
-/* configuration du footer */
+/* Mise en place du style pour le footer*/
 .footer {
     background: $color-dark-grey;
     color: white;
     position: relative;
     padding: 1em;
 
+    /* Mise en place du style pour les liens du footer*/
     & a:link,
     a:visited,
     a:hover,
     a:active {
         color: white;
-
     }
 
+    /* Mise en place du style pour les icones du footer*/
     & i {
         font-size: 0.8em;
         padding-right: 3px;
     }
 
-    /* configuration du logo dans le footer */
+    /* Mise en place du style pour le logo du footer*/
     &__logo {
         @extend %font_logo;
         font-size: 1.1em;
@@ -26,30 +27,17 @@
         margin-block-start: 0.5em;
     }
 
-    /* configuration du menu dans le footer */
+    /* Mise en place du style pour le menu dans le footer*/
     &__menu {
         padding-inline-start: 0px;
         line-height: 1.8em;
 
-        & a:link,
-        a:visited,
-        a:hover,
-        a:active {
-            color: white;
-        }
     }
 
-    /*configuration des éléments de liste dans le menu du footer */
+    /* Mise en place du style pour les éléments de liste du footer*/
     &__element {
         list-style: none;
         color: white;
-
-        & a:link,
-        a:visited,
-        a:hover,
-        a:active {
-            color: white;
-        }
 
         & a:hover {
             font-weight: 500;
