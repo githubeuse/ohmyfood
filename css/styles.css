@@ -1,6 +1,8 @@
 @charset "UTF-8";
-/* responsive : création d'une mixin tablette */
-/* responsive : création d'une mixin desktop */
+/* Création d'une mixin pour l'utilisation de media queries tab*/
+/* Création d'une mixin pour l'utilisation de media queries desktop*/
+/* Création d'une mixin pour le pseudo élément before de l'icone coeur*/
+/* Lors du survol : création d'une mixin pour le pseudo élément before de l'icone coeur*/
 /* définition des breakpoints */
 /* définition des couleurs */
 /* définition des ombres portées */

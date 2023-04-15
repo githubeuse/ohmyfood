@@ -1,17 +1,18 @@
-/* responsive : création d'une mixin tablette */
+/* Création d'une mixin pour l'utilisation de media queries tab*/
 @mixin tab-only {
     @media screen and (min-width: map-get($breakpoints, tab-only)) {
         @content;
     }
 }
 
-/* responsive : création d'une mixin desktop */
+/* Création d'une mixin pour l'utilisation de media queries desktop*/
 @mixin desktop-only {
     @media screen and (min-width: map-get($breakpoints, desktop-only)) {
         @content;
     }
 }
 
+/* Création d'une mixin pour le pseudo élément before de l'icone coeur*/
 @mixin heart-icon-before {
     color: $color-dark-grey;
     content: "\f004";
@@ -19,6 +20,7 @@
     cursor: pointer;
 }
 
+/* Lors du survol : création d'une mixin pour le pseudo élément before de l'icone coeur*/
 @mixin heart-icon-hover-before {
     cursor: pointer;
     background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
