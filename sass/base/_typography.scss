@@ -4,11 +4,12 @@
 /* import de la police roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
+/* mise en place de la police générale sur le site*/
 body {
     font-family: roboto;
 }
 
-/* configuration de la police shrikhand pour tout logo */
+/*mise en place d'une extension pour la police de logo */
 %font_logo {
     font-family: Shrikhand;
 }
