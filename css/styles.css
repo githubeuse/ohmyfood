@@ -23,11 +23,12 @@
   align-items: center;
 }
 
-/* extension align items space-between */
+/* extension justify content space-between */
 .dish__header {
   justify-content: space-between;
 }
 
+/* extension justify content center */
 .header__input-container {
   justify-content: center;
 }
@@ -43,6 +44,8 @@
   background: linear-gradient(#FF79D4, #9356DC);
 }
 
+/* extension border radius : 20px partout */
+/* extension border radius : 20px uniquement pour le haut */
 .dish, .restaurant-card__picture {
   border-radius: 20px 20px 0 0;
 }
