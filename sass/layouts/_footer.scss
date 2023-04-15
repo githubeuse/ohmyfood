@@ -34,11 +34,12 @@
 
     }
 
-    /* Mise en place du style pour les éléments de liste du footer*/
+    /* Mise en place du style pour les éléments de liste (du menu) du footer*/
     &__element {
         list-style: none;
         color: white;
 
+        /* Lors du survol : Mise en place du style pour les éléments de liste (du menu) du footer*/
         & a:hover {
             font-weight: 500;
         }

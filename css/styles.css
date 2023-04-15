@@ -351,7 +351,7 @@ a {
   /* Mise en place du style pour les icones du footer*/
   /* Mise en place du style pour le logo du footer*/
   /* Mise en place du style pour le menu dans le footer*/
-  /* Mise en place du style pour les éléments de liste du footer*/
+  /* Mise en place du style pour les éléments de liste (du menu) du footer*/
 }
 .footer a:link,
 .footer a:visited,
@@ -375,6 +375,7 @@ a {
 .footer__element {
   list-style: none;
   color: white;
+  /* Lors du survol : Mise en place du style pour les éléments de liste (du menu) du footer*/
 }
 .footer__element a:hover {
   font-weight: 500;
