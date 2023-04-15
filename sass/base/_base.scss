@@ -1,4 +1,4 @@
-/* configuration de la police roboto comme règle générale */
+/* Mise en place de règles de stylisation pour le body*/
 body {
     max-width: 1000px;
     margin: auto;
@@ -10,9 +10,8 @@ body {
 
 
 
-/* suppression du soulignement des liens comme règle générale */
+/* Mise en place de règles de stylisation pour les liens */
 a {
     text-decoration: none;
     cursor: pointer;
-
 }
