@@ -80,7 +80,7 @@
     /* Mise en place du style pour l'entête la zone de fonctionnement*/
     &__heading {
         padding-top: 10px;
-        padding-bottom: 5px;
+        margin-block-end: 0.83em;
     }
 
     /* Mise en place du style pour le container des boutons dans la zone de fonctionnement*/
@@ -101,8 +101,9 @@
     &__container {
         display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 85%;
         position: relative;
+        white-space: nowrap;
         /*@include tab-only {
             display: flex;
             flex-direction: row;
@@ -144,10 +145,10 @@
 .restaurants {
     @extend %bg-light-grey;
     padding: 1em;
-
+    padding-bottom: 50px;
     /* Mise en place du style pour le titre de zone de présentation de restaurants*/
     &__heading {
-        margin-top: 2em;
+        margin-top: 1.2em;
     }
 }
 
@@ -178,20 +179,24 @@
     /* Mise en place du style pour les éléments du container des cards de restaurants : image, texte ou/et tag "nouveau"*/
     &__elements-container {
         @extend %card_design;
+        margin-bottom: 16px;
         @extend %display_flexcolumn;
+
 
         /* Mise en place du style pour les p à l'interieur du container des cards de restaurants : image, texte ou/et tag "nouveau"*/
         & p {
             margin-block-start: 0em;
             margin-block-end: 0em;
+
         }
+
     }
 
     /* Mise en place du style pour les photos à l'intérieur des cards de restaurants*/
 
     &__picture {
-        width: 102.5%;
-        height: 25vh;
+        width: 103.1%;
+        height: 19vh;
         object-fit: cover;
         @extend %border-radius-top;
         position: relative;
