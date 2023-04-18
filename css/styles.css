@@ -315,6 +315,7 @@ a {
 .header__input-container input::placeholder {
   color: #353535;
   font-family: Roboto;
+  font-size: 1.2em;
 }
 .header__icone {
   position: relative;
@@ -567,7 +568,7 @@ a {
   margin-block-end: 0em;
 }
 .restaurant-card__picture {
-  width: 103%;
+  width: 102.5%;
   height: 25vh;
   object-fit: cover;
   position: relative;
