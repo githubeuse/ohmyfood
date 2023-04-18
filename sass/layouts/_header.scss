@@ -121,7 +121,8 @@
 
     /* INDEX configuration du bouton violet dans le header sur la page index*/
     &__button {
-        @extend %bg-gradient;
+        @extend %bg-gradient ;
+        border: 0px solid transparent; 
         opacity: 1;
         position: relative;
         z-index: 1;
@@ -131,6 +132,7 @@
         color: white;
         border-radius: 40px;
         cursor: pointer;
+        
 
         /* insertion d'un pseudo élément pour le changement de couleur au survol*/
         &:after {

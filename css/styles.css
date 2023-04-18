@@ -322,6 +322,7 @@ a {
   color: #353535;
 }
 .header__button {
+  border: 0px solid transparent;
   opacity: 1;
   position: relative;
   z-index: 1;
@@ -418,14 +419,17 @@ a {
   height: 100px;
   position: relative;
   animation: rotate 500ms;
+  z-index: 99;
+  overflow: hidden;
 }
 .loader__verre--mint {
   position: relative;
   top: -103px;
   width: 100px;
   height: 100px;
-  z-index: 99;
+  z-index: 100;
   animation: diminution-aboire 500ms both 500ms;
+  overflow: hidden;
 }
 .loader__verre--pink {
   position: relative;
@@ -434,6 +438,7 @@ a {
   width: 100px;
   height: 100px;
   animation: diminution-aboire 500ms both 1000ms;
+  overflow: hidden;
 }
 .loader__verre--purple {
   position: relative;
@@ -442,6 +447,7 @@ a {
   width: 100px;
   height: 100px;
   animation: diminution-aboire 500ms both 1500ms;
+  overflow: hidden;
 }
 
 /* Mise en place du style pour la zone de fonctionnement*/
@@ -522,7 +528,7 @@ a {
   padding: 1em;
   /* Mise en place du style pour le titre de zone de présentation de restaurants*/
 }
-.restaurants__header {
+.restaurants__heading {
   margin-top: 2em;
 }
 
@@ -728,16 +734,16 @@ a {
 .dish__card--4 {
   animation-delay: 1000ms;
 }
-.dish__card:active > .dish__visible-part {
+.dish__card:onclick > .dish__visible-part {
   width: 73%;
   /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
 }
 @media screen and (min-width: 768px) {
-  .dish__card:active > .dish__visible-part {
+  .dish__card:onclick > .dish__visible-part {
     width: 78%;
   }
 }
-.dish__card:active > .dish__sliding-part {
+.dish__card:onclick > .dish__sliding-part {
   opacity: 1;
   transform: translateX(0%);
 }
