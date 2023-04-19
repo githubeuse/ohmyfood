@@ -115,7 +115,7 @@
         }
 
         /*Lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
-        &:onclick>.dish__visible-part {
+        &:active>.dish__visible-part {
             width: 73%;
 
             /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
@@ -125,7 +125,7 @@
         }
 
         /*Lors du clic : mise en place du style de la partie qui se déplace pour recouvrir la card du plat + parametre de transition*/
-        &:onclick>.dish__sliding-part {
+        &:active>.dish__sliding-part {
             opacity: 1;
             transform: translateX(0%);
         }

@@ -92,7 +92,8 @@
         /* Media queries : à partir de tab, Mise en place du style pour le container des boutons dans la zone de fonctionnement*/
         @include tab-only() {
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-evenly;
+
         }
     }
 

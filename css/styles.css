@@ -492,7 +492,7 @@ a {
 @media screen and (min-width: 768px) {
   .process__all-buttons-container {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 }
 .process__container {
@@ -745,16 +745,16 @@ a {
 .dish__card--4 {
   animation-delay: 1000ms;
 }
-.dish__card:onclick > .dish__visible-part {
+.dish__card:active > .dish__visible-part {
   width: 73%;
   /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
 }
 @media screen and (min-width: 768px) {
-  .dish__card:onclick > .dish__visible-part {
+  .dish__card:active > .dish__visible-part {
     width: 78%;
   }
 }
-.dish__card:onclick > .dish__sliding-part {
+.dish__card:active > .dish__sliding-part {
   opacity: 1;
   transform: translateX(0%);
 }
