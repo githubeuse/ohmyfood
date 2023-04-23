@@ -575,10 +575,12 @@ a {
   color: #353535;
 }
 .restaurant-card__principal-container {
+  width: 100%;
   /* Media queries : à partir de tab, mise en place du style pour le conteneur de toutes les cards restaurants*/
 }
 @media screen and (min-width: 768px) {
   .restaurant-card__principal-container {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -586,14 +588,21 @@ a {
 }
 .restaurant-card__elements-container {
   margin-bottom: 16px;
+  width: 100%;
   /* Mise en place du style pour les p à l'interieur du container des cards de restaurants : image, texte ou/et tag "nouveau"*/
+}
+@media screen and (min-width: 768px) {
+  .restaurant-card__elements-container {
+    width: 35vw;
+  }
 }
 .restaurant-card__elements-container p {
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
 .restaurant-card__picture {
-  width: 103.1%;
+  width: 101.8%;
+  min-width: 102%;
   height: 19vh;
   object-fit: cover;
   position: relative;

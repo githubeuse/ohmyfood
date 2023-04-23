@@ -172,10 +172,12 @@
 
     /* Mise en place du style pour le conteneur de toutes les cards restaurants*/
     &__principal-container {
+        width: 100%;
 
         /* Media queries : à partir de tab, mise en place du style pour le conteneur de toutes les cards restaurants*/
 
         @include tab-only {
+            width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -187,6 +189,10 @@
         @extend %card_design;
         margin-bottom: 16px;
         @extend %display_flexcolumn;
+        width: 100%;
+        @include tab-only{
+            width: 35vw;
+        }
 
 
         /* Mise en place du style pour les p à l'interieur du container des cards de restaurants : image, texte ou/et tag "nouveau"*/
@@ -201,7 +207,8 @@
     /* Mise en place du style pour les photos à l'intérieur des cards de restaurants*/
 
     &__picture {
-        width: 103.1%;
+        width: 101.8%;
+        min-width: 102%;
         height: 19vh;
         object-fit: cover;
         @extend %border-radius-top;
