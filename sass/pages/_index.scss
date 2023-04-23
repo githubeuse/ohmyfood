@@ -13,6 +13,9 @@
     align-items: center;
     z-index: 99;
     @extend %font_logo;
+    & > p {
+        font-size: 1.8em;
+    }
 
     /* Mise en place du style pour l'élément verre du loading-spinner de la page + parametre animation */
     &__verre {
@@ -67,6 +70,9 @@
     width: 95%;
     display: flex;
     flex-direction: column;
+    @include tab-only{
+        width: 100%;
+    }
 
     /* Mise en place du style pour les liens dans la zone de fonctionnement*/
     & a:link,
@@ -102,7 +108,6 @@
     &__container {
         display: flex;
         flex-direction: column;
-        width: 85%;
         position: relative;
         white-space: nowrap;
         /*@include tab-only {

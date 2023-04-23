@@ -165,6 +165,11 @@ a {
   /* Lors du survol : mise en place du style du pseudo élément des 3 boutons de processus sur l'index + paramètre de transition */
   /* Media queries, à partir de tab : mise en place du style des 3 boutons de processus sur l'index  */
 }
+@media screen and (min-width: 768px) {
+  .process__button > p:first-of-type {
+    padding-right: 15px;
+  }
+}
 .process__button::after {
   content: "";
   background: #f2eafb;
@@ -425,6 +430,9 @@ a {
   /* Mise en place du style pour le remplissage ROSE du verre du loading-spinner de la page + parametre animation*/
   /* Mise en place du style pour le remplissage VIOLET du rose du loading-spinner de la page + parametre animation*/
 }
+.loader > p {
+  font-size: 1.8em;
+}
 .loader__verre {
   width: 100px;
   height: 100px;
@@ -476,6 +484,11 @@ a {
   /* Mise en place du style pour les icones dans la zone de fonctionnement*/
   /* Mise en place du style pour les numéros sur la gauche des boutons dans la zone de fonctionnement*/
 }
+@media screen and (min-width: 768px) {
+  .process {
+    width: 100%;
+  }
+}
 .process a:link,
 .process a:visited,
 .process a:hover,
@@ -501,7 +514,6 @@ a {
 .process__container {
   display: flex;
   flex-direction: column;
-  width: 85%;
   position: relative;
   white-space: nowrap;
   /*@include tab-only {
