@@ -64,3 +64,55 @@
         opacity: 1;
     }
 }
+
+@keyframes plane{
+    0%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes ny{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes paris-tab{
+    0%{
+        opacity: 0;
+        transform: scale(100%) translateX(0%);
+
+    }
+    50%{
+        opacity: 1;
+        transform: scale(100%) translateX(0%);
+    }
+    100%{
+        transform: scale(200%) translateX(-50%);
+        opacity: 1;
+    }
+}
+
+@keyframes paris{
+    0%{
+        opacity: 0;
+        transform: scale(100%) translateX(0%);
+
+    }
+    50%{
+        opacity: 1;
+        transform: scale(100%) translateX(0%);
+    }
+    100%{
+        transform: scale(200%) translateX(-30%);
+        opacity: 1;
+    }
+}

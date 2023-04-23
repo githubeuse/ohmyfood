@@ -61,7 +61,7 @@
         overflow: hidden;
     }
 
-    &__plane{
+    &__plane {
         position: relative;
         top: -290px;
         width: 20%;
@@ -83,48 +83,18 @@
         opacity: 1;
         animation: ny 1000ms ease-in-out forwards;
     }
+
     &__paris {
         opacity: 0;
         animation: paris 2000ms ease-out forwards;
 
+        @include tab-only {
+            animation: paris-tab 2000ms ease-out forwards;
+
+        }
     }
 }
 
-@keyframes plane{
-    0%{
-        transform: translateX(0%);
-        opacity: 1;
-    }
-    100%{
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
-
-@keyframes ny{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-
-@keyframes paris{
-    0%{
-        opacity: 0;
-        transform: scale(100%) translateX(0%);
-
-    }
-    50%{
-        opacity: 1;
-        transform: scale(100%) translateX(0%);
-    }
-    100%{
-        transform: scale(200%) translateX(-50%);
-        opacity: 1;
-    }
-}
 
 
 /* Mise en place du style pour la zone de fonctionnement*/
