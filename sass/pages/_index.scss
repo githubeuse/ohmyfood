@@ -13,7 +13,8 @@
     align-items: center;
     z-index: 99;
     @extend %font_logo;
-    & > p {
+
+    &>p {
         font-size: 1.8em;
     }
 
@@ -59,6 +60,70 @@
         animation: diminution-aboire 500ms both 1500ms;
         overflow: hidden;
     }
+
+    &__plane{
+        position: relative;
+        top: -290px;
+        width: 20%;
+        opacity: 1;
+        transform: translateX(0%);
+        animation: plane 1000ms forwards;
+    }
+
+    &__towns-container {
+        position: relative;
+        width: 20%;
+        top: -280px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    &__ny {
+        opacity: 1;
+        animation: ny 1000ms ease-in-out forwards;
+    }
+    &__paris {
+        opacity: 0;
+        animation: paris 2000ms ease-out forwards;
+
+    }
+}
+
+@keyframes plane{
+    0%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes ny{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes paris{
+    0%{
+        opacity: 0;
+        transform: scale(100%) translateX(0%);
+
+    }
+    50%{
+        opacity: 1;
+        transform: scale(100%) translateX(0%);
+    }
+    100%{
+        transform: scale(200%) translateX(-50%);
+        opacity: 1;
+    }
 }
 
 
@@ -70,7 +135,8 @@
     width: 95%;
     display: flex;
     flex-direction: column;
-    @include tab-only{
+
+    @include tab-only {
         width: 100%;
     }
 
@@ -152,6 +218,7 @@
     @extend %bg-light-grey;
     padding: 1em;
     padding-bottom: 50px;
+
     /* Mise en place du style pour le titre de zone de présentation de restaurants*/
     &__heading {
         margin-top: 1.2em;
@@ -190,8 +257,10 @@
         margin-bottom: 16px;
         @extend %display_flexcolumn;
         width: 100%;
-        @include tab-only{
-            width: 35vw;
+
+        @include tab-only {
+            min-width: 28vw;
+            max-width: 35vw;
         }
 
 
@@ -217,9 +286,7 @@
 
 
         /* Media queries : à partir de tab, Mise en place du style pour les photos à l'intérieur des cards de restaurants */
-        @include tab-only {
-            width: 100%;
-        }
+        @include tab-only {}
     }
 
     /* Mise en place du style pour le tag "nouveau"*/

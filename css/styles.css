@@ -468,7 +468,63 @@ a {
   animation: diminution-aboire 500ms both 1500ms;
   overflow: hidden;
 }
+.loader__plane {
+  position: relative;
+  top: -290px;
+  width: 20%;
+  opacity: 1;
+  transform: translateX(0%);
+  animation: plane 1000ms forwards;
+}
+.loader__towns-container {
+  position: relative;
+  width: 20%;
+  top: -280px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.loader__ny {
+  opacity: 1;
+  animation: ny 1000ms ease-in-out forwards;
+}
+.loader__paris {
+  opacity: 0;
+  animation: paris 2000ms ease-out forwards;
+}
 
+@keyframes plane {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+@keyframes ny {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes paris {
+  0% {
+    opacity: 0;
+    transform: scale(100%) translateX(0%);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(100%) translateX(0%);
+  }
+  100% {
+    transform: scale(200%) translateX(-50%);
+    opacity: 1;
+  }
+}
 /* Mise en place du style pour la zone de fonctionnement*/
 .process {
   padding: 1em;
@@ -593,7 +649,8 @@ a {
 }
 @media screen and (min-width: 768px) {
   .restaurant-card__elements-container {
-    width: 35vw;
+    min-width: 28vw;
+    max-width: 35vw;
   }
 }
 .restaurant-card__elements-container p {
@@ -609,11 +666,6 @@ a {
   left: 0;
   right: 0;
   /* Media queries : à partir de tab, Mise en place du style pour les photos à l'intérieur des cards de restaurants */
-}
-@media screen and (min-width: 768px) {
-  .restaurant-card__picture {
-    width: 100%;
-  }
 }
 .restaurant-card__new-tag {
   position: absolute;
