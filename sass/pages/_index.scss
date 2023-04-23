@@ -205,20 +205,20 @@
     }
 
     /* Mise en place du style pour les photos à l'intérieur des cards de restaurants*/
-
     &__picture {
-        width: 101.8%;
-        min-width: 102%;
-        height: 19vh;
+        height: 180px;
+        width: 100%;
         object-fit: cover;
         @extend %border-radius-top;
-        position: relative;
-        top: -5px;
-        left: -5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
 
         /* Media queries : à partir de tab, Mise en place du style pour les photos à l'intérieur des cards de restaurants */
         @include tab-only {
-            width: 103%;
+            width: 100%;
         }
     }
 
@@ -235,6 +235,7 @@
 
     /*Mise en place du style pour la dernière ligne à l'intérieur des cards de restaurants : titre, texte, icone*/
     &__last-line-container {
+        margin-top: 180px;
         @extend %display_flexrow;
         @extend %alignitems_center;
         justify-content: space-between;
