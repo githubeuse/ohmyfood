@@ -128,6 +128,10 @@ body {
   font-family: Shrikhand;
 }
 
+h1 {
+  font-size: 1.8em;
+}
+
 /* Mise en place de règles de stylisation pour le body*/
 body {
   max-width: 1000px;
@@ -275,7 +279,6 @@ a {
   width: 100%;
   text-align: center;
   font-weight: 500;
-  font-size: 1.9em;
   margin-block-start: 0.5em;
   margin-block-end: 0.35em;
   /*@include tab-only {
@@ -660,7 +663,7 @@ a {
 
 /*Mise en place du style pour la section des plats sur les pages de restaurants*/
 .dish {
-  background: #eaeaea;
+  background: #f7f7f7;
   position: relative;
   top: -30px;
   padding: 0 20px 0 20px;
