@@ -308,7 +308,7 @@
         }
 
         /*Lors du clic : mise en place du style du pseudo-élément after pour l'icone dans la dernière ligne à l'intérieur des cards de restaurants*/
-        &:active::before {
+        &:hover::before {
             @include heart-icon-hover-before;
         }
     }

@@ -997,7 +997,7 @@ a {
   transition: color 100ms ease-in-out;
   cursor: pointer;
 }
-.restaurant-card__heart:active::before {
+.restaurant-card__heart:hover::before {
   cursor: pointer;
   background: -webkit-gradient(linear, left top, left bottom, from(#e72c83), to(#a742c6));
   background: -o-linear-gradient(top, #e72c83 0%, #a742c6 100%);
@@ -1137,16 +1137,16 @@ a {
   -webkit-animation-delay: 1000ms;
           animation-delay: 1000ms;
 }
-.dish__card:active > .dish__visible-part {
+.dish__card:hover > .dish__visible-part {
   width: 73%;
   /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
 }
 @media screen and (min-width: 768px) {
-  .dish__card:active > .dish__visible-part {
+  .dish__card:hover > .dish__visible-part {
     width: 78%;
   }
 }
-.dish__card:active > .dish__sliding-part {
+.dish__card:hover > .dish__sliding-part {
   opacity: 1;
   -webkit-transform: translateX(0%);
       -ms-transform: translateX(0%);
@@ -1183,7 +1183,7 @@ a {
   padding-left: 8px;
   /*Lors du clic : Mise en place du style de l'icpone dans la partie qui se déplace pour recouvrir la card du plat + parametre animation*/
 }
-.dish__visible-part:active + .dish__sliding-part > .dish__ok-icon {
+.dish__visible-part:hover + .dish__sliding-part > .dish__ok-icon {
   -webkit-animation: rotate 400ms ease-in-out 200ms forwards;
           animation: rotate 400ms ease-in-out 200ms forwards;
 }

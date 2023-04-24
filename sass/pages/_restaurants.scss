@@ -115,7 +115,7 @@
         }
 
         /*Lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
-        &:active>.dish__visible-part {
+        &:hover>.dish__visible-part {
             width: 73%;
 
             /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
@@ -125,7 +125,7 @@
         }
 
         /*Lors du clic : mise en place du style de la partie qui se déplace pour recouvrir la card du plat + parametre de transition*/
-        &:active>.dish__sliding-part {
+        &:hover>.dish__sliding-part {
             opacity: 1;
             transform: translateX(0%);
         }
@@ -155,7 +155,7 @@
         padding-left: 8px;
 
         /*Lors du clic : Mise en place du style de l'icpone dans la partie qui se déplace pour recouvrir la card du plat + parametre animation*/
-        &:active+.dish__sliding-part>.dish__ok-icon {
+        &:hover+.dish__sliding-part>.dish__ok-icon {
             animation: rotate 400ms ease-in-out 200ms forwards;
         }
     }
