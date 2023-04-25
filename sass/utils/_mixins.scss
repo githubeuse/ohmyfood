@@ -1,3 +1,7 @@
+/* définition d'une map pour les breakpoints */
+$breakpoints:(tab-only: 768px, desktop-only: 992px);
+
+
 /* Création d'une mixin pour l'utilisation de media queries tab*/
 @mixin tab-only {
     @media screen and (min-width: map-get($breakpoints, tab-only)) {

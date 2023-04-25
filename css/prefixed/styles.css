@@ -1132,7 +1132,7 @@ a {
           animation-delay: 1000ms;
 }
 .dish__card:hover > .dish__visible-part {
-  width: 73%;
+  width: 60%;
   /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
 }
 @media screen and (min-width: 768px) {

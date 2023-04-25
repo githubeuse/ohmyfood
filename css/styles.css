@@ -1,9 +1,9 @@
 @charset "UTF-8";
+/* définition d'une map pour les breakpoints */
 /* Création d'une mixin pour l'utilisation de media queries tab*/
 /* Création d'une mixin pour l'utilisation de media queries desktop*/
 /* Création d'une mixin pour le pseudo élément before de l'icone coeur*/
 /* Lors du survol : création d'une mixin pour le pseudo élément before de l'icone coeur*/
-/* définition d'une map pour les breakpoints */
 /* définition de variables pour les couleurs */
 /* définition de variables pour les ombres portées */
 /* définition d'une variable pour la largeur pour le recouvrement de la card de plats*/
@@ -819,6 +819,7 @@ a {
   /*Lors du survol : Mise en place du style pour les cards de plats, sur les pages de restaurants*/
   /*Création d'une fonction pour créer un délai d'animation en fonction d'un délai d'animation de base et du nombre de carte*/
   /*Lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
+  /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
   /*Lors du clic : mise en place du style de la partie qui se déplace pour recouvrir la card du plat + parametre de transition*/
 }
 @media screen and (min-width: 768px) {
@@ -842,8 +843,7 @@ a {
   animation-delay: 1000ms;
 }
 .dish__card:hover > .dish__visible-part {
-  width: 73%;
-  /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
+  width: 60%;
 }
 @media screen and (min-width: 768px) {
   .dish__card:hover > .dish__visible-part {

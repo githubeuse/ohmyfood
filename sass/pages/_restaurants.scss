@@ -116,13 +116,16 @@
 
         /*Lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
         &:hover>.dish__visible-part {
-            width: 73%;
+            width: 60%;
+        }
 
-            /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
-            @include tab-only {
+        /*Media queries, lors du clic : mise en place de la largeur de la partie visible de la card de plat*/
+        @include tab-only {
+            &:hover>.dish__visible-part {
                 width: 78%;
             }
         }
+
 
         /*Lors du clic : mise en place du style de la partie qui se déplace pour recouvrir la card du plat + parametre de transition*/
         &:hover>.dish__sliding-part {
@@ -169,6 +172,7 @@
         padding-top: 8px;
         font-weight: 500;
         font-size: 1.2em;
+
     }
 
     /*Mise en place du style de la description du plat dans la card de plat*/
@@ -178,6 +182,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         font-size: 0.9em;
+
     }
 
     /*Mise en place du style de la partie qui se déplace pour recouvrir la card de plat*/
