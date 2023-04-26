@@ -22,86 +22,86 @@
             }
         }
 
-            /* Mise en place du style du pseudo élément des 3 boutons de processus sur l'index + parametre de transition*/
+        /* Mise en place du style du pseudo élément des 3 boutons de processus sur l'index + parametre de transition*/
+        &::after {
+            content: "";
+            background: lighten($color-primary, 35);
+            box-shadow: $darker-box-shadow;
+            border-radius: 20px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: opacity 210ms;
+        }
+
+        /* Lors du survol : mise en place du style du pseudo élément des 3 boutons de processus sur l'index + paramètre de transition */
+        &:hover {
             &::after {
-                content: "";
-                background: lighten($color-primary, 35);
-                box-shadow: $darker-box-shadow;
-                border-radius: 20px;
-                opacity: 0;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                transition: opacity 210ms;
+                opacity: 1;
             }
 
-            /* Lors du survol : mise en place du style du pseudo élément des 3 boutons de processus sur l'index + paramètre de transition */
-            &:hover {
-                &::after {
-                    opacity: 1;
-                }
-
-                /* Lors du survol : mise en place du style de l'icone présente dans le bouton de processus */
-                &:hover>.process__icon {
-                    color: $color-primary;
-                }
-
+            /* Lors du survol : mise en place du style de l'icone présente dans le bouton de processus */
+            &:hover>.process__icon {
+                color: $color-primary;
             }
 
-            /* Media queries, à partir de tab : mise en place du style des 3 boutons de processus sur l'index  */
-            @include tab-only() {
-                padding: 2.5px 10px;
-            }
+        }
+
+        /* Media queries, à partir de tab : mise en place du style des 3 boutons de processus sur l'index  */
+        @include tab-only() {
+            padding: 2.5px 10px;
         }
     }
+}
 
-    /* Mise en place du style pour le bouton commander sur les menus*/
-    .menu {
-        &__button {
-            width: fit-content;
-            position: relative;
-            padding: 20px 40px;
-            color: white;
+/* Mise en place du style pour le bouton commander sur les menus*/
+.menu {
+    &__button {
+        width: fit-content;
+        position: relative;
+        padding: 20px 40px;
+        color: white;
+        border-radius: 40px;
+        color: white;
+        @extend %bg-gradient;
+        opacity: 1;
+        z-index: 1;
+        box-shadow: $default-box-shadow;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        cursor: pointer;
+
+
+        /* Mise en place du style du pseudo élément du bouton commander sur les menus + parametre de transition*/
+        &:after {
+            content: "";
+            background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
+            box-shadow: $darker-box-shadow;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border-radius: 40px;
-            color: white;
-            @extend %bg-gradient;
-            opacity: 1;
-            z-index: 1;
-            box-shadow: $default-box-shadow;
-            margin-bottom: 40px;
-            margin-top: 20px;
-            cursor: pointer;
+            z-index: -1;
+            transition: opacity 210ms;
+        }
 
 
-            /* Mise en place du style du pseudo élément du bouton commander sur les menus + parametre de transition*/
+        /* Lors du survol : mise en place du style du pseudo élément du bouton commander sur les menus + paramètre de transition */
+        &:hover {
             &:after {
-                content: "";
-                background: linear-gradient(lighten($color-secondary, 3) 0%, lighten($color-primary, 3) 100%);
-                box-shadow: $darker-box-shadow;
-                opacity: 0;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border-radius: 40px;
-                z-index: -1;
-                transition: opacity 210ms;
-            }
-
-
-            /* Lors du survol : mise en place du style du pseudo élément du bouton commander sur les menus + paramètre de transition */
-            &:hover {
-                &:after {
-                    opacity: 1;
-                }
+                opacity: 1;
             }
         }
     }
+}
