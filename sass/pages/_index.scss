@@ -229,8 +229,11 @@
         width: 100%;
 
         @include tab-only {
-            min-width: 28vw;
-            max-width: 35vw;
+            width: 350px;
+        }
+
+        @include tab-only {
+            max-width: 500px;
         }
 
 

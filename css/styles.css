@@ -669,8 +669,12 @@ a {
 }
 @media screen and (min-width: 768px) {
   .restaurant-card__elements-container {
-    min-width: 28vw;
-    max-width: 35vw;
+    width: 350px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .restaurant-card__elements-container {
+    max-width: 500px;
   }
 }
 .restaurant-card__elements-container p {
